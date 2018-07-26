@@ -2397,7 +2397,7 @@ begin
   dbms_output.put_line(no);
   insert into aa(bun) values(no);
 end;
-
+/
 declare
   type result is record(a number, b number);
   type test is varray(100) of result; -- 배열
@@ -2409,7 +2409,7 @@ begin
   dbms_output.put_line(test1(1).a); -- 출력문.
   dbms_output.put_line(test1(1).b);
 end;
-
+/
 -- exception
 declare
   counter number(3) := 10;
@@ -2422,7 +2422,7 @@ exception when zero_divide then
   when others then -- 다중 에러 잡을 때, java에 catch문과 비슷.
   dbms_output.put_line('기타 error');
 end;
-
+/
 create table jiktest as select * from jikwon;
 select * from jiktest;
 
@@ -2433,7 +2433,7 @@ begin
   select * into v_a from jiktest where jikwon_no = 1; -- into 변수명 : into 변수명에 넣는다는 것
   insert into aa values(v_a.jikwon_no, v_a.jikwon_name, v_a.jikwon_pay); -- 변수명.sql
 end;
-
+/
 select * from aa;
 
 -- 해당 테이블 칼럼 형으로 변수 선언
@@ -2447,7 +2447,7 @@ begin
   where jikwon_no=3;
   dbms_output.put_line(a || ' ' || b || ' ' || c);
 end;
-
+/
 -- 조건판단문 if
 declare
   v_a jiktest%rowtype;
@@ -2468,7 +2468,7 @@ begin
   end if;
   dbms_output.put_line('결과는 ' || v_str);
 end;
-
+/
 declare
   v_a jiktest%rowtype;
   v_str varchar2(20);
@@ -2487,7 +2487,7 @@ begin
   end if;
   dbms_output.put_line('결과는 ' || v_str);
 end;
-
+/
 -- 반복문 for
 declare
   dan number(2) := 2;
@@ -2499,7 +2499,7 @@ begin
     dbms_output.put_line(dan || '*' || i || '=' || tot);
   end loop;
 end;
-
+/
 -- 반복문 while
 declare
   V_count number := 1;
@@ -2510,7 +2510,7 @@ begin
     v_count := v_count + 1;
   end loop;
 end;
-
+/
 -- 반복문 while
 declare
   v_a number := 0;
@@ -2527,3 +2527,291 @@ begin
     end if;
   end loop;
 end;
+/
+-- 커서 : 사용자가 실행한 select문의 단위를 말함
+-- selectd의 결과가 한 개 일 때는 커서를 사용하지 않음
+-- 형식
+-- cursor 커서명
+-- open 커서명
+-- fetch 커서명 into 변수명
+-- close 커서명
+
+select * from jiktest;
+
+declare
+  no number;
+  name varchar2(10);
+  pay number;
+  cursor cur is -- 이 select의 결과를 기억. 
+    select jikwon_no, jikwon_name, jikwon_pay
+    from jiktest
+    where jikwon_jik='사원';
+begin
+  open cur;
+  loop
+    fetch cur into no, name, pay;
+    exit when cur%notfound; -- cur가 모든 것을 읽었을 때(읽을것이 없을 때) 나옴.
+    dbms_output.put_line(no || '  ' || name || '  '  || pay);
+  end loop;
+  close cur;
+end;
+/
+-- open - fetch - close 없이 커서 처리
+declare
+  jik jiktest%rowtype;
+  cursor cur2 is
+    select jikwon_no, jikwon_name, jikwon_pay
+    from jiktest
+    where jikwon_jik = '과장';
+begin
+  for jik in cur2 loop -- 위에 open - close를 사용하지 않고 for문으로 사용 가능.
+    exit when cur2%notfound;
+    dbms_output.put_line(jik.jikwon_no || '  ' || jik.jikwon_name);
+  end loop;
+end;
+/
+select sum(jikwon_pay)
+from jiktest;
+
+-- 함수 작성: 값을 계산하고 결과를 반환, function은 리턴값이 있음.
+-- 인수는 입력만 존재, 출력은 return을 사용
+create or replace function func1(no number)
+  return number is -- 결과를 숫자로 내보냄
+  pay number(9); -- 변수 선언.
+begin
+  pay := 0;
+  select jikwon_pay * 0.1 into pay 
+  from jiktest
+  where jikwon_no = no;
+  return pay;
+end;
+/
+select func1(2) from dual;
+
+select jikwon_no, jikwon_name, jikwon_pay, func1(jikwon_no) as tex 
+from jiktest;
+
+-- 부서명 얻기
+create function func2(bno number) return varchar2 is
+  bname varchar2(10);
+begin
+  select buser_name into bname
+  from buser
+  where buser_no = bno;
+  return bname;
+end;
+/
+select func2(10) from dual;
+
+select jikwon_no , jikwon_name, buser_num, (
+        select buser_name
+        from buser 
+        where buser_no= buser_num) as buname
+from jiktest;
+
+select jikwon_no, jikwon_name, buser_num, func2(buser_num) as buname
+from jiktest;
+
+-- 문1) 부서번호가 없으면 '임시직', 있으면 부서명을 반환하는 함수
+create function func3(bno number) 
+  return varchar2 is bname varchar2(10);
+begin
+  if (bno is null) then return '임시직';
+  else
+    select buser_name into bname
+    from buser
+    where buser_no = bno;
+    return bname;
+  end if;
+end;
+/
+select func3(10) from dual;
+select jikwon_no, jikwon_name, buser_num, func3(buser_num) as buname
+from jiktest;
+
+-- 문2) 고객번호를 입력하는  func4(고객번호)를 작성.
+--     결과로 나이를 출력.
+
+create function func4(no number) 
+  return number is nai number;
+begin
+  select (to_char(sysdate, 'yyyy') - (substr(gogek_jumin, 1,2) + 1900) + 1) into nai
+  from gogek
+  where gogek_no = no;
+  return nai;
+end;
+/
+select gogek_no, gogek_name, func4(gogek_no) as nai
+from gogek;
+
+-- procedure -- 실행만 함.
+create or replace procedure p_a is
+begin
+  delete from jiktest 
+  where jikwon_no=1;
+end;
+/
+execute p_a; -- procedure 실행문
+select * from jiktest;
+
+create or replace procedure p_b is
+  bun number :=2;
+begin
+  update jiktest 
+  set jikwon_pay=jikwon_pay + 1000
+  where jikwon_no=bun;
+end;
+/
+
+execute p_b; -- 계속 실행하면 계속 업뎃됨.
+select * from jiktest;
+
+-- 매개변수가 있는 경우: 삭제
+create or replace procedure p_c(no in jiktest.jikwon_no%type) is
+begin
+  delete 
+  from jiktest
+  where jikwon_no=no;
+end;
+/
+
+execute p_c(2);
+select * from jiktest;
+
+-- 매개변수가 있는 경우: 수정
+create or replace procedure p_d(no jiktest.jikwon_no%type, jik jiktest.jikwon_jik%type) is
+begin
+  update jiktest
+  set jikwon_jik=jik
+  where jikwon_no=no;
+end;
+/
+execute p_d(3,'이사');
+select * from jiktest;
+
+-- parameter type
+-- in : 실행환경에서 program으로 값을 전달
+-- out : program에서 실행환경으로 값을 전달
+-- inout : 실행환경에서 program으로 값을 전달하고 다시 program에서  실행환경으로 처리된 값을 전달.
+
+-- procedure 정리 실습
+create table person(id number(3), name varchar2(20), weight number(3));
+create sequence seq_id;
+insert into person values(seq_id.nextval, '홍길동', 25);
+insert into person values(seq_id.nextval, '신길동', 35);
+
+select * from person;
+
+-- procedure insert
+--create or replace procedure pro_1(name in person.name%type, weight in person.weight%type) is
+create or replace procedure pro_1(name in varchar2, weight in number) is -- 위에를 사용해도 됨.
+begin
+  insert into person values(seq_id.nextval, name, weight);
+  commit;
+exception when others then
+  dbms_output.put_line('insert Error');
+  rollback;
+end;
+/
+execute pro_1('홍다희',65);
+select * from person;
+
+-- procedure update
+create or replace procedure pro_2(pid in person.id%type, pname in person.name%type, pweight in person.weight%type) is
+begin
+  update person
+  set name = pname, weight = pweight
+  where id = pid;
+  commit;
+exception when others then
+  dbms_output.put_line('update Error');
+  rollback;
+end;
+/
+-- exec 까지만 써도 실행 됨.
+execute pro_2(23,'홍다희',23); 
+select * from person;
+
+-- procedure delete
+create or replace procedure pro_3(pid in person.id%type) is
+begin
+  delete from person
+  where id = pid;
+  commit;
+exception when others then
+  dbms_output.put_line('delete Error');
+  rollback;
+end;
+/
+execute pro_3(23); 
+select * from person;
+
+-- procedure select
+create or replace procedure pro_4(vid in person.id%type) is
+  pid person.id%type;
+  pname person.name%type;
+  pweight person.weight%type;
+begin
+  select * into pid, pname, pweight
+  from person
+  where id = vid;
+  dbms_output.put_line(pid || ' ' || pname || ' ' || pweight);
+exception when others then
+  dbms_output.put_line('select Error');
+end;
+/
+execute pro_4(23); 
+select * from person;
+
+-- select : 복수 - 커서
+create or replace procedure pro_5 is
+  cursor cur is
+    select id, name, weight
+    from person;
+  pid person.id%type;
+  pname person.name%type;
+  pweight person.weight%type;
+begin
+  open cur;
+  loop
+    fetch cur into pid, pname, pweight;
+    exit when cur%notfound;
+    dbms_output.put_line(pid || ' ' || pname || ' ' || pweight);
+  end loop;
+  close cur;
+end;
+/
+execute pro_5; 
+select * from person;
+
+-- select : 복수 , cursor : open - fatch - close X
+create or replace procedure pro_6 is
+  cursor cur is
+    select id, name, weight
+    from person;
+begin
+  for plist in cur loop -- 향상된 for문과 비슷.
+    dbms_output.put_line(plist.id || ' ' || plist.name || ' ' || plist.weight);
+  end loop;
+end;
+/
+execute pro_6; 
+select * from person;
+
+create or replace procedure pro_7 is
+  cursor cur is
+    select buser_name, sum(jikwon_pay) as tot, count(*) as cnt
+    from jikwon inner join buser on buser_num=buser_no
+    group by buser_name;
+begin 
+  for jiklist in cur loop
+    dbms_output.put_line(jiklist.buser_name);
+    dbms_output.put_line(jiklist.tot);
+    dbms_output.put_line(jiklist.cnt);
+  end loop;
+  exception when others then
+    dbms_output.put_line('error!');
+end;
+/
+
+exec pro_7;
