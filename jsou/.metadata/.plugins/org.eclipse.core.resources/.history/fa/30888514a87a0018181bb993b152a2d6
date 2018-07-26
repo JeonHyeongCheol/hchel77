@@ -1,0 +1,48 @@
+package pack1;
+
+public class Test8switch {
+
+	public static void main(String[] args) {
+		// 조건 판단문
+		int nai = 15;
+		nai = nai / 10*10; // 나이대 구하기
+		System.out.println(nai);
+		
+		/*		
+		if(nai == 20) {
+			System.out.println("팔팔해");
+		} else if(nai == 30){
+			System.out.println("덜 팔팔해");
+		}
+		*/
+		
+		switch(nai) { // 조건문 사용 못함. 변수값에따라 "case 변수"로 설정해주면 됨. 문자, 숫자 다 가능. 
+					  // switch문에는 조건에 맞는 라인을 수행 후 break를 써줘야 함. 또한 블럭 쓰지 않음
+		case 20:
+			System.out.println("팔팔해");
+			System.out.println("20대");
+			break;
+		case 30:
+			System.out.println("덜 팔팔해");
+			System.out.println("30대");
+			break;
+		case 40:
+			System.out.println("비실비실해");
+			System.out.println("40대");
+			break;
+		default:
+			System.out.println("기타");
+			break;
+			
+		}
+		
+		System.out.println("\n");
+		
+		System.out.println("다음");
+		//double time = Math.random(); // Math : 수학적 함수를 사용 할 수 있음. Random : 난수 발생(0~1사이에 랜덤 값 출력)
+		int time = (int)Math.random() * 10;
+		System.out.println(time);
+		
+	}
+
+}

@@ -1,0 +1,63 @@
+package samples;
+
+import java.awt.Frame;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.util.concurrent.SynchronousQueue;
+
+public class MyFrame3 extends Frame implements WindowListener{ // 상속하고 그 뒤에 인터페이스 추가 가능.
+	// WindowsListener 사용시 7개의 추상메소드를 사용하여야지 가능.
+	public MyFrame3() {
+		super("인터페이스 연습");
+		
+		addWindowListener(this); // 아규먼트를 하나 받아야지 사용 가능. 현재 Frame에 WindowListener 장착  
+	}
+	
+	private void abc() {
+		setTitle("상속 연습");        
+		setLocation(200, 150);
+		setSize(300, 250);
+		setVisible(true);
+	}
+	
+	// 7개의 WindowListener 내의 추상메소드를 오버라이드 하여야 함.
+	
+	@Override
+		public void windowActivated(WindowEvent e) {
+			
+		}
+	
+	@Override
+		public void windowClosed(WindowEvent e) {
+		}
+	
+	@Override
+		public void windowClosing(WindowEvent e) {
+			System.exit(0);
+		}
+	
+	@Override
+		public void windowDeactivated(WindowEvent e) {
+		}
+	
+	@Override
+		public void windowDeiconified(WindowEvent e) {
+			System.out.println("화면 복귀");
+		}
+	
+	@Override
+		public void windowIconified(WindowEvent e) {
+			System.out.println("화면 아이콘화");
+		}
+	
+	@Override
+		public void windowOpened(WindowEvent e) {
+		}
+	
+	public static void main(String[] args) {
+		MyFrame3 frame3 = new MyFrame3();                          
+		frame3.abc();
+		
+	}
+
+}

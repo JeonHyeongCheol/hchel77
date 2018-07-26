@@ -1,0 +1,47 @@
+package pack1;
+
+public class Test12exam {
+
+	public static void main(String[] args) {
+		// while 연습문제
+		// 문제1) 1 ~ 100 사이의 정수 중 3의 배수이지만 2의 배수가 아닌 수를 출력하고 그 합과 갯수 출력
+		/*
+		int w = 1;
+		while(w <= 100) {
+			if(w % 3 == 0) {
+				if(w % 2 != 0)
+				System.out.println(w);
+			}
+			w++;
+			
+		}
+		*/
+		/*
+		// 문제2) -1, 3, -5, 7, -9, 11 ~ 99 까지의 합 출력
+		int e = -1;
+		int sum = 0;
+		while(e < 99) {
+			e = e+2;
+			sum = sum+e;
+			e = e * (-e);
+			System.out.println(e);
+			System.out.println("sum:" + sum);
+		}
+		
+		//System.out.println("-1 ~ 99까지의 합은:" + e);
+		 */
+		
+		// 문제3) 1 ~ 1000 사이의 소수와 그 갯수를 출력
+		// 소수 : 1보다 크고, 자신 이외의 다른 수로는 나누어 떨어지지 않는 수
+		
+		int q = 1;
+		while(q <= 3) {
+			for (int i = 1; i < q; i++) {
+				System.out.println(q);
+			}
+			q++;
+		}
+
+	}
+
+}

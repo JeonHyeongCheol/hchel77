@@ -1,0 +1,13 @@
+package pack1;
+
+public class Test5bigdecimal {
+
+	public static void main(String[] args) {
+		double a = 1.5;
+		double b = 1.2;
+		System.out.println(a + b);
+		System.out.println(a - b);
+
+	}
+
+}

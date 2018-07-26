@@ -1,0 +1,31 @@
+package pack1;
+
+public class Test4 {
+
+	public static void main(String[] args) {
+		// 논리 연산자 수행 시 주의사항
+		boolean a = true, b = false, c; // 꼭 변수 설정 해줘야 쓸 수 있음.
+		
+		c = a || b;
+		System.out.println(c);
+		
+		c = a && b;
+		System.out.println(c);
+		
+		System.out.println("------------");
+		boolean b1, b2;
+		aa();
+		
+		System.out.println("종료");
+	}
+	
+	public static boolean aa() { // 인자는 없고, 반환값은 boolean
+		System.out.println("aa 수행");
+		return true; // boolean 연산자이기 때문에 숫자를 넣거나 문자를 넣으면 되지 않음. true, false 둘 중 하나 입력.
+	}
+	
+	public static boolean bb() {
+		System.out.println("bb 수행");
+		return false;
+	}
+}

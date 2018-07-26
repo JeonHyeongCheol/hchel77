@@ -1,0 +1,20 @@
+package pack1;
+
+public class Test6io {
+
+	public static void main(String[] args) { 
+		//String[]에 args는 실행 시 java 파일명
+		//(ex. test6io 변수값(args) 변수값(args) ... 배열값이 비어있기 때문에 계속 받을 수 있음)
+		// 프로그램 진행 중 외부에서 값 얻기
+		if(args.length == 0) {// length : 크기,길이 
+			System.out.println("외부에서 값 받기 실패");
+			System.exit(1); // 응용프로그램 강제 종료
+		}
+		
+		System.out.println(args[0]);
+		System.out.println("프로그램 정상 종료");
+		
+
+	}
+
+}

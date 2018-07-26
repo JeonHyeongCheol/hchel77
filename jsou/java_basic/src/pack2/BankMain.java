@@ -1,0 +1,113 @@
+package pack2;
+
+import java.lang.System;
+import java.lang.String;
+
+public class BankMain {
+
+	public static void main(String[] args) {
+		Bank tom = new Bank();
+		// withDraw : 출금액, dePosit : 입금액
+		tom.dePosit(5000); // 입금액
+		tom.withDraw(3000); // 출금액
+		tom.withDraw(9000); // 출금액
+		System.out.println("tom의 예금액:" + tom.getMoney()); // 잔금 확인
+		System.out.println();
+
+		Bank oscar = new Bank(2000); // 새로운 객체 선언
+		System.out.println("oscar의 예금액:" + oscar.getMoney()); // 예금(잔금) 확인
+		oscar.dePosit(1000); // 입금액
+		oscar.withDraw(2500); // 출금액
+		System.out.println("oscar의 예금액:" + oscar.getMoney()); // 잔금 확인
+
+		System.out.println("객체의 주소-----------------------");
+		System.out.println("tom의 참조 주소" + tom); // 객체의 참조 주소를 확인 할 수 있음.
+		System.out.println("tom의 참조 주소" + tom.hashCode()); // 객체의 참조 주소의 해시 코드 확인.
+		System.out.println("oscar의 주소:" + oscar);
+		System.out.println("oscar의 주소:" + oscar.hashCode());
+
+		Bank james = null; // 객체에 대하여 참조 주소 및 값을 없앰.
+		System.out.println("james의 주소:" + james);
+		james = oscar;
+		System.out.println("james의 예금액:" + james.getMoney()); // james와 oscar에 값을 같다고 위에서 설정했기 때문에 같음.
+		System.out.println("james의 주소:" + james); // 객체의 주소 값도 같아짐.
+
+		System.out.println();
+		if (james == oscar) // 주소의 비교 if( a==b ) 값의 비교
+			System.out.println("둘은 같은 객체의 주소"); // 둘이 같다고 했기 때문에 같다고 출력
+		else
+			System.out.println("둘은 다른 주소");
+
+		System.out.println();
+
+		if (james == tom) // 주소의 비교 if( a==b ) 값의 비교
+			System.out.println("둘은 같은 객체의 주소");
+		else
+			System.out.println("둘은 다른 주소"); // james와 tom은 같을 수 없음. james와 oscar만 같음
+
+		System.out.println();
+
+		if (james instanceof Bank)
+			// instanceof : 클래스타입 비교연산자, 왼쪽에는 참조변수, 오른쪽에는 클래스명, 정확한 형 변환을 하기위해 사용.
+			System.out.println("Bank");
+		else
+			System.out.println("Bank type 아니네요");
+
+		System.out.println();
+
+		System.out.println("\n String 클래스 ----");
+		String ss1 = "kor";
+		String ss2 = new String(); // 새로운 객체 생성
+		ss2 = "kor";
+		String ss3 = new String("kor"); // 새로운 객체 생성
+
+		System.out.println(ss1 + " " + ss2 + " " + ss3);
+		System.out.println(ss2);
+		System.out.println(ss3);
+
+		if (ss1 == ss2)
+			System.out.println("같아1");
+		// "String ss1 = "kor";" 와 "String ss2= new String(); ss2 ="kor"; 는 같음"
+		else
+			System.out.println("달라1");
+
+		System.out.println();
+
+		if (ss1 == ss3)
+			System.out.println("같아2");
+		// "String ss1 = "kor";" 와 "String ss3 = new String("kor"); 는 다름"
+		else
+			System.out.println("달라2");
+
+		System.out.println();
+
+		if (ss1.equals(ss2)) // if ( --- .equals(anObject) ) <-- String을 위해 만들어진 것
+			System.out.println("같아1"); // "String ss1 = "kor";" 와 "String ss2= new String(); ss2 ="kor"; 는 같음"
+		else
+			System.out.println("달라1");
+
+		System.out.println();
+
+		if (ss1.equals(ss3))
+			System.out.println("같아2"); // "String ss1 = "kor";" 와 "String ss3 = new String("kor"); 는 다름"
+		else
+			System.out.println("달라2");
+
+		System.out.println("---배열-------------");
+		int ar1[] = { 1, 2, 3 };
+		System.out.println(ar1);
+		System.out.println(ar1[0] + " " + ar1[1]);
+
+		int ar2[][] = { { 1, 2, 3 }, { 4, 5, 6 } };
+		System.out.println(ar2);
+		System.out.println(ar2[0]);
+		System.out.println(ar2[0][0]);
+
+		System.out.println();
+		Bank john = new Bank();
+		System.out.println(john.imsi);
+		System.out.println(john.imsi2);
+
+	}
+
+}

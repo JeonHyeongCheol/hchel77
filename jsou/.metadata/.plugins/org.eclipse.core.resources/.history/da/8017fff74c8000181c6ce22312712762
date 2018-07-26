@@ -1,0 +1,52 @@
+package pack2;
+
+public class Production {
+	
+	private int price;
+	private int num;
+	private int number;
+	public String name;  
+	
+	public Production (int price, String name) { 
+		this.price = price;
+		this.name = name;
+		
+	}
+	
+	public void setNum(int num) {
+	this.num = num;
+	
+	}
+	
+	public int getNum() { 
+	return num;
+	
+	}
+	
+	public Production (int num) { 
+		this.num = num;
+		
+	}
+	
+	public void setNumber() {
+		this.number = number;
+		
+	}
+	
+	public int getNumber () {
+		return number;
+		
+	}
+	
+//	public Production (int number) {
+//		this.number = number;
+//	}
+
+	
+	public void display() {
+		System.out.println("상품 이름 : " + name + "\n" +  "가격은 : " + price * num + "\n"  + "갯수는 : " + num + "\n" + "Invoice number : " + number );
+	
+	}
+
+
+}

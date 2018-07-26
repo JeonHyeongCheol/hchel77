@@ -1,0 +1,25 @@
+package samples;
+
+import java.awt.Frame;
+
+public class MyFrame3 extends Frame{ // extends 뒤에 올 수 있는 클래스는 하나만 가능. 다중 상속 X
+	
+	
+	public MyFrame3() {
+		super("인터페이스 연습");
+	}
+	
+	private void abc() {
+		setTitle("상속 연습");        
+		setLocation(200, 150);
+		setSize(300, 250);
+		setVisible(true);
+	}
+	
+	public static void main(String[] args) {
+		MyFrame3 frame3 = new MyFrame3();                          
+		frame3.abc();
+		
+	}
+
+}

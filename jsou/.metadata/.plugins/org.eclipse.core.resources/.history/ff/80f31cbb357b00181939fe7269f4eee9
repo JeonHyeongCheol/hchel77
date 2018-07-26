@@ -1,0 +1,25 @@
+package pack1;
+
+public class Test8switch2 {
+
+	public static void main(String[] args) {
+		String jik = "과장";
+		String msg = "기타";
+		
+		switch (jik) {
+		case "사원":
+			msg = "열심히";
+			break;
+		case "대리":
+
+		case "과정":
+			msg = "우수해";
+			break;
+		default:
+			System.out.println("그 외 직급");
+			break;
+		}
+		System.out.println(msg);
+	}
+
+}

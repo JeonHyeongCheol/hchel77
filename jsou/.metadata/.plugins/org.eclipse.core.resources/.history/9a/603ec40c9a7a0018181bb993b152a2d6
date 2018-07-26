@@ -1,0 +1,62 @@
+package pack1;
+
+public class Test7if {
+
+	public static void main(String[] args) {
+		// 조건 판단문 if
+		int num = 1;
+		
+		if(num >= 3) { // 참이면 수행, 거짓이면 다음라인 수행 안하고 다음으로 넘어 감. 
+			System.out.println("크군요");
+			System.out.println("배고파"); // if랑 상관없음. if문은 한 라인만 수행함. 여러 문장 수행시 대괄호({}) 사용.
+		}
+		
+		System.out.println("다음 작업 계속 1\n");
+		
+		num = 10;
+		if (num < 3) { // 참, 거짓을 따로 출력하고 싶을 때는 if ~ else 사용(단. 대괄호 사용하여 블럭화).
+			System.out.println("작네요");
+			System.out.println("난 참일 때 수행");
+		} else {
+			System.out.println("작지 않아요");
+		}
+		
+		System.out.println("다음 작업 계속 2\n");
+		
+		// if 안에 if문을 계속 넣을 수 있는 다중 if라고 함. 블록을 겹치게 하면 안됨.
+		int jumsu = 40;
+		
+		if(jumsu >= 70) {
+			if(jumsu >= 90) {
+				System.out.println("우수");
+			} else {
+				System.out.println("보통(70~90)");
+			}
+		} else {
+			if (jumsu >= 50) {
+				System.out.println("저조");
+			} else {
+				System.out.println("엄청저조");
+			}
+		}
+		
+		System.out.println();
+		jumsu = 75;
+		String re = "";
+		if(jumsu >=90) {
+			re = "수";
+		} else if(jumsu >= 80) { // 첫 번째 조건 확인 후 거짓이면 두 번째 조건을 만들어서 확인 할 수 있음.
+			re = "우";
+		} else if(jumsu >= 70) {
+			re = "미";
+		} else if(jumsu >= 60) {
+			re = "양";
+		} else { // 마지막은 조건을 쓰지 않고 그냥 else 쓰면 위에를 제외한 나머지는 밑에 결과를 출력 시켜줌.
+			re = "가";
+		}
+		System.out.println("평가 결과:" + re);
+		
+		System.out.println("\n종료");
+	}
+
+}

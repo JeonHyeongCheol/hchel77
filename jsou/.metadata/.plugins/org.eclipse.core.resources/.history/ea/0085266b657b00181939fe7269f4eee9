@@ -1,0 +1,146 @@
+package pack1;
+
+import java.util.Scanner;
+
+public class Test9for {
+
+	public static void main(String[] args) {
+		
+		// 반복문 for
+		int a;
+		int hap = 0; // 누적 기억장소는 초기화
+		for (a = 1; a <= 500000; a++) { // for(초기값;마지막값,증가값) { }
+			System.out.print(a+" ");
+			//hap = hap + a;
+			hap += a;
+			//a = 1; // 블럭 내에서 a의 변화를 주지 말자!!!
+		}
+		System.out.println("\na: " + a);
+		System.out.println("\n합은: " + hap);
+		
+		System.out.println();
+		for (int i = 65;  i < 90; i++) {
+			System.out.print((char)i + "\t"); // \t : 탭 기능
+		}
+		
+		System.out.println();
+		for (int i = 'A'; i < 'Z'; i++) {
+			System.out.print(i + " ");
+		}
+		
+		System.out.println();
+		for(int j = 10; j > 1; j -= 2) {
+			System.out.print(j + " ");
+		}
+		
+//		System.out.println();
+//		for (int ytn = 0, tv = 5; ytn < 5 ; tv++) {
+//			System.out.println(ytn + " " + tv + ",");
+//		}
+		
+		System.out.println();
+		int aa = 1;
+		for(;aa<=5; aa++) {
+			System.out.println(aa + " ");
+		}
+		
+		System.out.println();
+		//구구단(3) 출력
+		for (int count = 1; count < 10; count++) {
+			if(count==5) {
+				System.out.println("5 만세");
+			}
+			System.out.println("3 * " + count + " = " + (3*count));
+		}
+		
+		System.out.println("\n");
+		
+		//다중 for문
+		for (int m = 1; m <= 3; m++) {
+			System.out.println("m=" + m);
+			for (int n = 0; n <= 4; n++) {
+				System.out.print("n=" + n + " ");
+			}
+			System.out.println();
+		}
+		
+		for (char i = 65; i <= 90; i++) {
+			System.out.print(i + " : ");
+			for (char j = i; j <= 'Z'; j++) {
+				System.out.print(j);
+			}
+			System.out.println();
+		}
+
+		System.out.println("\n");
+		// 문1 : 키보드로 부터 숫자를 (2 ~ 9) 구구단 출력
+		Scanner gu = new Scanner(System.in);
+		System.out.print("숫자를 입력하세요 : ");
+		int num = gu.nextInt();
+		
+		for (int i = 1; i < 10; i++) {
+			System.out.print(num + " * " + i + " = " + (num*i) + " ");			
+		}
+		
+		System.out.println("\n");
+		
+		// 문2 : 1 ~ 100 사이의 정수 중 3의 배수이면서 5의 배수의 갯수와 그 수들의 합을 출력
+		int q;
+		int cou = 0;
+		int sum = 0;
+		for(q = 1; q <= 100; q++) {
+			if(q % 3 == 0 && q % 5 == 0) {
+				System.out.println(q + " ");
+				cou += 1;
+				sum += q;
+			}
+		}
+		System.out.println("3의 배수이고 5의 배수인 갯수는" + cou + "개");
+		System.out.println("합은 : " + sum);
+		
+		System.out.println();
+		
+		// 문3 : 2 ~ 9단을 출력
+		for(int i = 2; i <= 9; i++) {
+			for (int j = 1; j <= 9; j++) {
+				System.out.print(i + " * " + j + " = " + (i*j) + " ");
+			}
+			System.out.println();
+		}
+		System.out.println();
+		
+		// 문4 : *********
+		//		 *******
+		//		  *****
+		//		   *** 
+		//          *
+		for(int i = 5; i >= 1; i-- ) {
+			for(int p = 0 ; p < 5-i ; p++ ) {
+				System.out.print(" ");
+			}	
+			for(int j = 1 ; j <= (i*2)-1 ; j++ ) {
+					System.out.print("*");
+			}
+			System.out.println();
+		}
+		
+		System.out.println();
+		
+		// 문5 : 4번을 뒤집어서 출력
+				for(int i = 1; i <= 5; i ++ ) {
+					for(int p = 0 ; p < 5-i ; p++ ) {
+						System.out.print(" ");
+					}	
+					for(int j = 1 ; j <= (i*2)-1 ; j++ ) {
+							System.out.print("*");
+					}
+					System.out.println();
+				}
+
+
+		
+		
+		System.out.println("\n프로그램 종료");
+	}
+
+}

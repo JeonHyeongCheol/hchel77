@@ -1,0 +1,49 @@
+package pack1;
+
+public class Test4 {
+
+	public static void main(String[] args) {
+		// 논리 연산자 수행 시 주의사항
+		boolean a = true, b = false, c; // 꼭 변수 설정 해줘야 쓸 수 있음.
+		
+		c = a || b;
+		System.out.println(c);
+		
+		c = a && b;
+		System.out.println(c);
+		
+		System.out.println("------------");
+		boolean b1, b2;
+		System.out.println(aa()); 
+		// 아무겂도 없이 aa()만 써서 실행 시키면 aa메소드에 있는 println을 수행하지만 syso를 써서 실행하면 True가 넘어 옴.
+		aa();
+		
+		b1 = aa();
+		System.out.println(b1); // b1는 boolean연산자기 때문에 aa에 대해서 true, false 인지 확인 후 출력.
+		System.out.println(bb()); // 위에 aa와 같은 얘기.
+		
+		System.out.println("\n\n\n ------- 주의 할 점 -------");
+		//b2 = aa() || bb();  // OR 연산자에서 하나만 만족하면 참이기 때문에 첫번째값이 참이면 그 값만 출력 해버림.
+		b2 = bb() || aa(); // 위에와 같은 내용이지만 bb()까지 확인하기 때문에 aa,bb 둘 다 출력하게 됨.
+		System.out.println(b2);
+		
+		System.out.println();
+		b2 = aa() && bb();
+		System.out.println(b2); // 
+		
+		
+		
+		
+		System.out.println("종료");
+	}
+	
+	public static boolean aa() { // 인자는 없고, 반환값은 boolean
+		System.out.println("aa 수행");
+		return true; // boolean 연산자이기 때문에 숫자를 넣거나 문자를 넣으면 되지 않음. true, false 둘 중 하나 입력.
+	}
+	
+	public static boolean bb() {
+		System.out.println("bb 수행");
+		return false;
+	}
+}

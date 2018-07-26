@@ -1,0 +1,25 @@
+package java_basic3;
+
+import java.util.HashMap;
+
+public class Maptest {
+	public static void main(String[] args) {
+		HashMap<String, String> list = new HashMap<>(); // <key, value> 키와 값을 어떤 타입으로 설정할 것인지.
+		
+		list.put("0","lee");
+		list.clear();
+		
+		list.put("0","lee");
+		list.put("1","lee1");
+		list.put("2","lee2");
+		list.put("3","lee3");
+		list.put("4","lee4");
+		list.put("5","lee5");
+		list.put("2","park"); // 같은 키 값은 덮어 쓰게 됨. 2번은 lee1에서 park으로 바뀜.
+		System.out.println(list.size());
+		System.out.println(list.containsKey("11"));
+		System.out.println(list.containsValue("park"));
+		
+		
+	}
+}

@@ -1,0 +1,12 @@
+package pack5;
+
+public class JepumMain {
+	public static void main(String[] args) {
+		// Jepum jepum = new jepum(); // 제품은 추상클래스이기 때문에 new 할 수 없음. 생성자는 만들 수 있음.
+		Jepum jepum = null;
+		
+		JepumTv tv = new JepumTv();
+		tv.volumeShow();
+		tv.volumeControl();
+	}
+}

@@ -1,0 +1,10 @@
+package pack5;
+
+abstract public class AniDog extends Animal { // 부모로서의 추상클래스. 부모클래스에 대해서 다 받지 않아도 됨. 
+	@Override
+	public String name() {
+		return "개";
+	}
+	
+	
+}

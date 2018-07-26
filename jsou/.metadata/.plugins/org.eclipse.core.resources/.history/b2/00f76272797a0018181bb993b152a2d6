@@ -1,0 +1,18 @@
+package pack1;
+
+public class Test4 {
+
+	public static void main(String[] args) {
+		// 논리 연산자 수행 시 주의사항
+		boolean a = false, b = true, c; // 꼭 변수 설정 해줘야 쓸 수 있음.
+		
+		c = a || b;
+		System.out.println(c);
+		
+		c = a && b;
+		System.out.println(c);
+		
+
+	}
+
+}

@@ -1,0 +1,32 @@
+package java_basic3;
+
+import java.util.Vector;
+
+public class VectorTest {
+	// 컬렉션 프레임웍(Collections Framework) : 데이터 군을 저장하는 클래스들을 표준화한 설계
+	// 다수의 데이터를 다루는데 필요한 다양하고 풍부한 클래스들을 제공하기 때문에 프로그래머의 짐을 상당히 덜어주며,
+	// 인터페이스와 다형성을 이용한 객체지향적 설계를 통해 표준화되어 사용법을 익히기에 편리하며 재사용성이 높은 코드를 작성 할 수 있는 장점이 있음.
+	
+	// 컬렉션 프레임웍에 핵심 인터페이스
+	// List : 순사기 있는 데이터의 집합, 데이터의 중복 허용.
+	// Set : 순서를 유지않는 데이터의 집합, 데이터의 중복을 허용하지 않음.
+	// Map : 키와 값의 쌍으로 이루어진 데이터의 집합, 순서가 유지되지 않고, 키는 중복을 허용하지 않고, 값은 중복을 허용
+	
+	
+	
+	public static void main(String[] args) {
+		//Vector<Object> v = new Vector<>(5, 3); // 선언도 가능
+		Vector<Object> v = new Vector<>();
+		v.add('a'); // auto boxing : 기본형을 객체로 변환해서 저장함으로 아무타입이나 집어 넣을 수 있으나 컬렉션에 들어오는 타입을 설정 하여 막을 수 있음.
+		v.addElement("홍길동");
+		v.add(100);
+		v.add(12.3456);
+		Vector vector = new Vector<>();
+		v.add(vector);
+		System.out.println("백터 크기는 " + v.size());
+		
+		for(Object k:v) {
+			System.out.println(k);
+		}
+	}
+}

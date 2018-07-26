@@ -1,0 +1,25 @@
+package java_basic3;
+
+import java.util.HashSet;
+
+public class SetTest {
+	public static void main(String[] args) {
+		// 컬렉션 HashSet<Object>
+		HashSet<Object> list = new HashSet<>(); // <> 안에 들어가는 객체타입만 담아 둠. object는 모든 것을 담아줌.
+		list.add("lee"); // string 들어감.
+		list.add(12); // int로 들어감.
+		TryTest test = new TryTest();
+		list.add(test);
+		System.out.println(list.size()); // 컬렉션 list에 3개가 들어가 있기 때문에 3을 출력.
+		
+		list.clear(); // 컬렉션 내에 모든 내용을 지움
+		System.out.println(list.size());
+		
+		list.add("lee");
+		list.add("kim");
+		list.add("choi");
+		list.add("han");
+		list.add("han"); // 중복을 허용하지 않음
+		System.out.println(list.size()); // 중복이 하나 있기 때문에 list size는 4가 되는 것
+	}
+}

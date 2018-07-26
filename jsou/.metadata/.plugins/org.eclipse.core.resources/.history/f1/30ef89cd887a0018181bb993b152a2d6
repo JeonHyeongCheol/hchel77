@@ -1,0 +1,18 @@
+package pack1;
+
+public class Test7if {
+
+	public static void main(String[] args) {
+		// 조건 판단문 if
+		int num = 1;
+		
+		if(num >= 3) // 참이면 수행, 거짓이면 다음라인 수행 안하고 다음으로 넘어 감. 
+			System.out.println("크군요");
+			System.out.println("배고파");
+		
+		System.out.println("다음 작업 계속 1");
+		
+		System.out.println("종료");
+	}
+
+}

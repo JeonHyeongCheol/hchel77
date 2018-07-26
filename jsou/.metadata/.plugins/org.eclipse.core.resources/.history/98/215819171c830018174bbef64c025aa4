@@ -1,0 +1,7 @@
+package pack5;
+
+public class AnimalMain {
+	Animal ani = null;
+	
+
+}

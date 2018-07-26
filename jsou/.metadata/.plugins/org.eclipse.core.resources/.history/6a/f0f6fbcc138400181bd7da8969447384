@@ -1,0 +1,29 @@
+package samples;
+
+import java.awt.Frame;
+
+//자바 제작자가 제공하는 Frame 클래스를 사용 - 포함
+public class MyFrame1 {
+	private Frame fr;                  //자신의 맴버들과 같은등급
+	
+	public MyFrame1() {
+		fr = new Frame("포함 연습");
+//		fr.setLocation(200, 150);     //창이 어디에 띄울것인가 가로 x좌표  세로y좌표
+//		fr.setSize(500, 300);         // x , y
+//		fr.setVisible(true);
+		display();
+	}
+	
+	private void display() {
+		fr.setLocation(750, 250);       //등장 위치 지점
+		fr.setSize(500, 500);           //창의 크기사이즈
+		fr.setVisible(true);            //참일때 계속 돈다.
+	}
+	
+	public static void main(String[] args) {
+		//new MyFrame1();               //생성자에 있으면 객체변수 만들 필요가 없다.
+		MyFrame1 frame1 = new MyFrame1();
+		frame1.display();
+		
+	}
+}

@@ -1,0 +1,40 @@
+package pack1;
+
+import java.util.Scanner;
+
+public class Test8switch2 {
+
+	public static void main(String[] args) {
+		String jik = "과장";
+		String msg = "기타";
+		
+		switch (jik) {
+		case "사원":
+			msg = "열심히";
+			break;
+		case "대리":
+
+		case "과장":
+			msg = "우수해";
+			break;
+		default:
+			System.out.println("그 외 직급");
+			break;
+		}
+		System.out.println(msg);
+		
+		//키보드로 부터 년과 월을 입력받아 해당년월의 날수를 출력
+		String str = "평년";
+		int year, month, nalsu = 28;
+		Scanner input = new Scanner(System.in);
+		System.out.println("년도 :");
+		year = input.nextInt();
+		System.out.println("월 :");
+		month = input.nextInt();
+		
+		System.out.println(year + "년" + month + "월은 " + nalsu + " " +str);
+		
+		
+	}
+
+}

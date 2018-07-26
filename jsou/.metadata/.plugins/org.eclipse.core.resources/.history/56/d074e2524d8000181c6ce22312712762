@@ -1,0 +1,16 @@
+package pack2;
+
+public class Pro {
+
+	public static void main(String[] args) {
+		System.out.println("______");
+				
+		Production goods = new Production(3000, "과자");
+		goods.setNum(34);
+//		goods.setNumber(231);
+		
+		goods.display();
+
+	}
+
+}

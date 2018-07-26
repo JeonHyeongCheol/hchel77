@@ -1,0 +1,21 @@
+package pack2;
+import java.lang.System;
+import java.lang.String;
+
+
+public class BankMain {
+
+	public static void main(String[] args) {
+		Bank tom = new Bank();
+		// withDraw : 출금액, dePosit : 입금액
+		tom.dePosit(5000); // 입금액
+		tom.withDraw(3000); // 출금액
+		tom.withDraw(9000); // 출금액
+//		System.out.println("tom의 예금액:" + tom.getMoney()); // 잔금 확인
+		System.out.println();
+
+		
+		
+	}
+
+}

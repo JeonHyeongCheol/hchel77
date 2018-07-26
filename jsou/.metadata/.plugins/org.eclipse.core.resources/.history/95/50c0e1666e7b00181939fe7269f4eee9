@@ -1,0 +1,16 @@
+package pack1;
+
+public class Test10 {
+
+	public static void main(String[] args) {
+		// for 계속
+		for(int i = 1; i <= 10; i++) {
+			if(i == 3) continue; // continue : 3일 때 출력하지 않고 지나 간다는 뜻.
+			System.out.println(i);
+			//if(i == 5) break; // break : 5일 때 for문(반복문) 탈출 한다는 뜻
+			if(i == 5) System.exit(1);
+		}
+		System.out.println("종료");
+	}
+
+}

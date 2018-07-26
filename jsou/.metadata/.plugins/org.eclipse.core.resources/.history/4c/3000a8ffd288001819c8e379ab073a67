@@ -1,0 +1,165 @@
+package ex5;
+
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
+public class SwingCalc extends JFrame implements ActionListener{
+	JTextField txtnum1, txtnum2;
+	JLabel lblResult;
+	ButtonGroup btng = new ButtonGroup();
+	JRadioButton plus, minus, mult, div;
+	
+	
+	public SwingCalc() {
+		super("미니 계산기");
+		layinit();
+		
+		setBounds(400, 400, 400, 400);
+		setVisible(true);
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		// 버튼
+		JPanel pa5 = new JPanel();
+		JButton calc = new JButton("계산");
+		calc.addActionListener(this);
+		JButton clear = new JButton("초기화");
+		clear.addMouseListener(new Clear());
+		JButton exit = new JButton("종료");
+		exit.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.exit(0);
+			}
+		});
+		
+		pa5.add(calc);
+		pa5.add(clear);
+		pa5.add(exit);
+		add(pa5);
+		
+		
+	}
+	
+	public void layinit() {
+		setLayout(new GridLayout(5,1)); 
+		
+		JLabel lbl1 = new JLabel("숫자 1 :"); // 숫자 1
+		txtnum1 = new JTextField("", 20);
+		JPanel pa1 = new JPanel();
+		pa1.add(lbl1);
+		pa1.add(txtnum1);
+		add(pa1);
+		
+		JLabel lbl2 = new JLabel("숫자 2 : "); // 숫자 2
+		txtnum2 = new JTextField("", 20);
+		JPanel pa2 = new JPanel();
+		pa2.add(lbl2);
+		pa2.add(txtnum2);
+		add(pa2);
+		
+		// 라디오 버튼(연산 버튼)
+		plus = new JRadioButton("더하기", true);
+		minus = new JRadioButton("빼기", false);
+		mult = new JRadioButton("곱하기", false);
+		div = new JRadioButton("나누기", false);
+		btng.add(plus);
+		btng.add(minus);
+		btng.add(mult);
+		btng.add(div);
+		JPanel pa3 = new JPanel();
+		JLabel lbl3 = new JLabel("연산선택 : ");
+		pa3.add(lbl3);
+		pa3.add(plus);
+		pa3.add(minus);
+		pa3.add(mult);
+		pa3.add(div);
+		add(pa3);
+		
+		// 결과 값
+		lblResult = new JLabel("결과 : ", JLabel.CENTER);
+		JPanel pa4 = new JPanel();
+		pa4.add(lblResult);
+		add(pa4);
+		
+
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// 입력 여부 확인
+		if(txtnum1.getText().equals("")) {
+			JOptionPane.showMessageDialog(this, "숫자 1을 입력하세요");
+			txtnum1.requestFocus();
+			return;
+		}
+		
+		if(txtnum2.getText().equals("")) {
+			JOptionPane.showMessageDialog(this, "숫자 2을 입력하세요");
+			txtnum2.requestFocus();
+			return;
+		}
+		
+		// 숫자 확인
+		int num1 = 0, num2 = 0;
+		try {
+			num1 = Integer.parseInt(txtnum1.getText());
+			num2 = Integer.parseInt(txtnum2.getText());
+		} catch(Exception e2) {
+			if(txtnum1.getText().equals(txtnum1)) {
+				JOptionPane.showMessageDialog(this, "숫자만 허용합니다. 다시 입력해주세요");
+				txtnum1.requestFocus();
+				return;
+			} else {
+				JOptionPane.showMessageDialog(this, "숫자만 허용합니다. 다시 입력해주세요");
+				txtnum2.requestFocus();
+				return;
+			}
+			
+		} 
+		
+		// 계산
+		int calc = 0;
+		String calc2 = "";
+		if(plus.isSelected()) {
+			calc = num1 + num2;
+			calc2 = "+";
+		} else if(minus.isSelected()) {
+			calc = num1 - num2;
+			calc2 = "-";
+		} else if(mult.isSelected()) {
+			calc = num1 * num2;
+			calc2 = "*";
+		} else if(div.isSelected()) {
+			calc = num1 / num2;
+			calc2 = "/";
+		}
+		
+		String ss = "결과 : " + txtnum1.getText() + " " +  calc2 + txtnum2.getText() + " " + "값은 " + calc + " 입니다";
+		lblResult.setText(ss);
+		
+	}
+	
+	class Clear extends MouseAdapter {
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			layinit();
+		}
+	}
+	
+	public static void main(String[] args) {
+		new SwingCalc();
+	}
+}
