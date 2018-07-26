@@ -2104,9 +2104,33 @@ select * from v_exam3;
 -- 사용자가 삭제되었습니다.
 
 -- synonym(동의어)
+
+--
+---------------------
+-- Synonym(동의어)
+---------------------
+--
+-- A. 개념
+-- - 동의어(Synonym)은 Table, View, SnapShot,Sequence,Procedure, Function, Package에 대한 별칭이다.
+-- - 공용 및 전용 동의어의 두가지 종류가 있다. 공용동의어는 public이라는 특정사용자 그룹에서
+--   소유하며 DB의 모든 사용자가 사용할수 있다. 전용동의어는 다른 사용자에 대해 전용동의어의 
+--   가용성을 제어할수 있는 특정 사용자의 스키마에 들어있다.
+-- B. 생성
+-- - 예를들어 scott의 Schema에 포함된 Emp Table에 대해 puiblic_emp라는 공용 Synonym생성
+-- - Create public synonym public_emp for scott.emp;
+-- - 이상과 같이 공용으로 생성하면 Oracle의 다른 사용자는 public_emp라는 별칭을 사용하여 Query 할수있다.
+-- - tiger라는 User는 public_emp라는 별칭을 사용하여 다음과 같이 Query 할수있다.
+-- Sqlplus>select * from public_emp;
+-- C. 삭제
+-- - drop public synonym public_emp
+--
+-------------------------------------------------------------------------
+-- 만약 Synonym이 전용이라면 생성과 삭제시 public이라는 Option을 안쓰면 된다.
+ 
+
 -- system cmd 
-SQL> show user
-USER은 "SYSTEM"입니다
+-- SQL> show user
+-- USER은 "SYSTEM"입니다
 
 -- scott cmd
 -- SQL> show user;
@@ -2301,12 +2325,14 @@ where buser_name in (
 group by buser_no, buser_name
 order by inwon desc;
 
+drop view v_account;
+
 create or replace view v_account as
-select buser_no, buser_name, count(*) as inwon
-from jikwon 
-inner join buser on buser_num=buser_no 
+select buser_no, buser_name, count(jikwon_no) as inwon
+from buser
+left join jikwon on buser_num=buser_no 
 group by buser_no, buser_name
-having count(*) <= 3
+having count(jikwon_no) <= 3
 order by inwon desc;
 
 select * from v_account;
@@ -2357,3 +2383,147 @@ commit;
 --              *
 -- 1행에 오류:
 -- ORA-00942: 테이블 또는 뷰가 존재하지 않습니다
+
+-- PL/SQL 및 Stored Procedure (카페 DB-RDBMS 40번)
+create table aa(bun number, munja varchar2(20), su number);
+set serveroutput on; -- pl/sql 수행 결과를 콘솔로 출력
+select * from aa;
+
+-- 변수 처리
+declare
+  no number := 0; -- 치환
+begin
+  no := 500 + 300;
+  dbms_output.put_line(no);
+  insert into aa(bun) values(no);
+end;
+
+declare
+  type result is record(a number, b number);
+  type test is varray(100) of result; -- 배열
+  test1 test := test(); -- 배열 초기화 작업을 해줘야 함.
+begin
+  test1.extend(50); -- 공간 할당.
+  test1(1).a := 10; -- 변수에 값 넣기.
+  test1(1).b := 20;
+  dbms_output.put_line(test1(1).a); -- 출력문.
+  dbms_output.put_line(test1(1).b);
+end;
+
+-- exception
+declare
+  counter number(3) := 10;
+  re number;
+begin
+  re := counter / 0; -- 나누는 값을 2로 했을 때는 에러가 나지 않지만, 0으로 했을 때 exception으로 넘어가 에러 출력.
+  dbms_output.put_line('결과는' || re); -- ||는 문자열 더하기
+exception when zero_divide then
+  dbms_output.put_line('error');
+  when others then -- 다중 에러 잡을 때, java에 catch문과 비슷.
+  dbms_output.put_line('기타 error');
+end;
+
+create table jiktest as select * from jikwon;
+select * from jiktest;
+
+-- 해당 테이블 형으로 변수 선언
+declare
+  v_a jiktest%rowtype; -- v_a 는 jiktest rowtype
+begin
+  select * into v_a from jiktest where jikwon_no = 1; -- into 변수명 : into 변수명에 넣는다는 것
+  insert into aa values(v_a.jikwon_no, v_a.jikwon_name, v_a.jikwon_pay); -- 변수명.sql
+end;
+
+select * from aa;
+
+-- 해당 테이블 칼럼 형으로 변수 선언
+declare
+  a jiktest.jikwon_no%type; -- a는 직원테스트 직원넘버에 타입이라는 것.
+  b jiktest.jikwon_name%type;
+  c jiktest.jikwon_pay%type;
+begin
+  select jikwon_no, jikwon_name,jikwon_pay into a,b,c
+  from jiktest
+  where jikwon_no=3;
+  dbms_output.put_line(a || ' ' || b || ' ' || c);
+end;
+
+-- 조건판단문 if
+declare
+  v_a jiktest%rowtype;
+  v_str varchar2(20);
+begin
+  select * into v_a from jiktest where jikwon_no = 4;
+  if (v_a.buser_num=10) 
+    then v_str := concat(v_a.jikwon_name, ' 10'); -- concat : 문자열 더하기
+  end if;
+  if (v_a.buser_num=20) 
+    then v_str := concat(v_a.jikwon_name, ' 20');
+  end if;
+  if (v_a.buser_num=30) 
+    then v_str := concat(v_a.jikwon_name, ' 30');
+  end if;
+  if (v_a.buser_num=40) 
+    then v_str := concat(v_a.jikwon_name, ' 40');
+  end if;
+  dbms_output.put_line('결과는 ' || v_str);
+end;
+
+declare
+  v_a jiktest%rowtype;
+  v_str varchar2(20);
+begin
+  select * into v_a from jiktest where jikwon_no = 4;
+  if (v_a.buser_num=10) 
+    then v_str := concat(v_a.jikwon_name, ' 10'); -- concat : 문자열 더하기
+  elsif (v_a.buser_num=20) 
+    then v_str := concat(v_a.jikwon_name, ' 20');
+  elsif (v_a.buser_num=30) 
+    then v_str := concat(v_a.jikwon_name, ' 30');
+  elsif (v_a.buser_num=40) 
+    then v_str := concat(v_a.jikwon_name, ' 40');
+  else
+    v_str := concat(v_a.jikwon_name, ' 기타');
+  end if;
+  dbms_output.put_line('결과는 ' || v_str);
+end;
+
+-- 반복문 for
+declare
+  dan number(2) := 2;
+  i number(2) := 0;
+  tot number := 0;
+begin
+  for i in 1..9 loop
+    tot := dan * i;
+    dbms_output.put_line(dan || '*' || i || '=' || tot);
+  end loop;
+end;
+
+-- 반복문 while
+declare
+  V_count number := 1;
+begin
+  while(v_count <= 10) loop
+    dbms_output.put_line(v_count);
+    exit when(v_count = 5);-- Java에 break와 동일.
+    v_count := v_count + 1;
+  end loop;
+end;
+
+-- 반복문 while
+declare
+  v_a number := 0;
+  v_b number := 0;
+begin
+  while(v_a < 10) loop
+    v_a := v_a+1;
+    if mod(v_a, 2) = 0 then 
+      v_b := v_b + 10;
+      dbms_output.put_line(v_a || ' 짝수 ' || v_b);
+    else
+      v_b := v_b + 5;
+      dbms_output.put_line(v_a || ' 홀수 ' || v_b);
+    end if;
+  end loop;
+end;
