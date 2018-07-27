@@ -50,6 +50,25 @@ public class ThreadTest1 extends Thread {
 	// 2. 특정한 영역을 임계 영역으로 지정 
 	// 		synchronized(객체의 참조변수) { }
 	
+	// wait(), notify(), notifyAll()
+	// 1.Object에 정의 되어 있음.
+	// 2. 동기화 블록(synchronized블록)내에서만 사용
+	// 3. 보다 효율적인 동기화를 가능하게 함.
+	// wait() : 실행 중이던 쓰레드는 해당 객체의 대기실에 있음. 즉 쓰레드가 락을 반납하고 기다림.
+	// notify() : 해당 객체의 대기실에 있던 모든 쓰레드 중에서 임의의 쓰레드만 받음.
+	// notifyAll() : 기다리고 있는 모든 쓰레드에게 통지. 하지만 Lock을 얻을 수 있는 것은 하나의 쓰레드.
+	
+	// Lock, Condition
+	// ReentrantLoock : 재진입이 가능한 lock. 가장 일반적인 배타 lock.
+	// ReentrantReadWriteLock : 읽기에는 공유적이고, 쓰기에는 배타적인 lock.
+	// StampedLock : ReentrantReadWriteLock에 낙관적인 lock의 기능을 추가
+	
+	// fork, join 프레임웍
+	// RecursiveAction : 반환값이 없는 작업을 구현 할 때 사용.
+	// RecursiveTask : 반환값이 있는 작업을 구현 할 때 사용.
+	// fork() : 해당 작업을 쓰레드 풀의 작업 큐에 넣음. 비동기 메서드.
+	// join() : 해당 작업의 수행이 끝날 때 까지 기다렸다가, 수행이 끝나면 그 결과를 반환.
+	
 	public ThreadTest1() {
 		
 	}

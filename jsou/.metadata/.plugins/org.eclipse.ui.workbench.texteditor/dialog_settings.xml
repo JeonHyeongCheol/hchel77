@@ -8,6 +8,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="nofity"/>
 			<item value="초기화"/>
 			<item value="|"/>
 			<item value="cast"/>
@@ -22,7 +23,6 @@
 			<item value="논리"/>
 			<item value="실수"/>
 			<item value="문자"/>
-			<item value="mnuex"/>
 		</list>
 		<list key="replacehistory">
 		</list>
