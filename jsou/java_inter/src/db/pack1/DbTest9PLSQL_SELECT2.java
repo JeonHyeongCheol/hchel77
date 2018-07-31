@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import oracle.jdbc.OracleCallableStatement;
 import oracle.jdbc.OracleTypes;
 
-// SQL 테이블 생성 후 클래스 작업 실행
+// SQL 테이블 생성 후 클래스 작업 실행(직원넘버를 받고 그 이하에 자료만 출력 하는 것).
 /*
 SQL> create or replace procedure pro_sel2(cur2 out SYS_REFCURSOR,
   2  no in number) is
