@@ -70,7 +70,7 @@ public class DbTest13CRD extends JFrame implements ActionListener{
 						if(rs != null) rs.close();
 						if(pstmt != null) pstmt.close();
 						if(conn != null) conn.close();
-						System.exit(0);
+						setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					} catch (Exception e2) {
 						// TODO: handle exception
 					}
@@ -136,41 +136,47 @@ public class DbTest13CRD extends JFrame implements ActionListener{
 			InsertForm insertForm = new InsertForm(this);
 			dispData(); // 추가 후 자료 다시 읽기
 		} else if(e.getSource() == btnDelete) { // 상품 삭제
-			String delNo = JOptionPane.showInputDialog(this, "삭제할 코드 입력");
-			//String delNo = JOptionPane.showInputDialog(this, "삭제할 코드 입력");
-			try {
-				conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "scott", "tiger");
-
-				// 삭제 여부 묻기 필요 : 생략				
-				int re = JOptionPane.showConfirmDialog(this, "정말로 삭제하시겠습니까?", "삭제", JOptionPane.YES_NO_OPTION);
-				if(re == JOptionPane.YES_OPTION) {
-					
+			String delNo;
+			while(true) {
+				delNo = JOptionPane.showInputDialog(this,"삭제할 코드 입력");
+				if(delNo!=null && delNo.equals("") ) {
+					JOptionPane.showMessageDialog(this, "삭제할 코드를 입력하세요.");
+				}else if(delNo==null) {
+					return;
+				}else if(delNo!=null){
+					break;
+				}
+			}
+			
+			// String delNo = JOptionPane.showInputDialog(this, "삭제할 코드 입력");
+			int res = JOptionPane.showConfirmDialog(this, "정말로 삭제하시겠습니까?", "확인", JOptionPane.YES_NO_CANCEL_OPTION);
+			if(res == JOptionPane.YES_OPTION) {
+				try {
+					conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "scott", "tiger");
+					// 삭제 여부 묻기 필요 : 생략
 					String sql = "delete from sangdata where code=?";
 					pstmt = conn.prepareStatement(sql);
 					pstmt.setString(1, delNo);
-					if(pstmt.executeUpdate() == 0) {
+					if (pstmt.executeUpdate() == 0) {
 						JOptionPane.showMessageDialog(this, "delNo" + "등록된 코드가 아닙니다");
 						return;
 					} else {
 						JOptionPane.showMessageDialog(this, "삭제 성공");
 						dispData();
 					}
-				} else {
-					setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-				}
-				
-
-			} catch (Exception e2) {
-				// TODO: handle exception
-			} finally {
-				try {
-					if(rs != null) rs.close();
-					if(pstmt != null) pstmt.close();
-					if(conn != null) conn.close();
 				} catch (Exception e2) {
 					// TODO: handle exception
+				} finally {
+					try {
+						if(rs != null) rs.close();
+						if(pstmt != null) pstmt.close();
+						if(conn != null) conn.close();
+					} catch (Exception e2) {
+						// TODO: handle exception
+					}
 				}
 			}
+			
 		} else if(e.getSource() == btnExit) { // 종료
 			int re = JOptionPane.showConfirmDialog(DbTest13CRD.this, "정말로 종료 할까요?", "종료", JOptionPane.OK_CANCEL_OPTION);
 			if(re == JOptionPane.OK_OPTION) {
@@ -178,6 +184,7 @@ public class DbTest13CRD extends JFrame implements ActionListener{
 					if(rs != null) rs.close();
 					if(pstmt != null) pstmt.close();
 					if(conn != null) conn.close();
+					//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					dispose();// == System.exit(0);
 				} catch (Exception e2) {
 					System.out.println("DB Close Err : " + e2.getMessage());
@@ -222,7 +229,8 @@ public class DbTest13CRD extends JFrame implements ActionListener{
 			addWindowListener(new WindowAdapter() {
 				@Override
 				public void windowClosing(WindowEvent e) {
-					dispose();
+					setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					//dispose();
 				}
 			});
 		}
@@ -230,8 +238,40 @@ public class DbTest13CRD extends JFrame implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource() == btnOk) { // 새 상품 추가 작업
-				// 입력 자료 오류 검사
-				// 생략...
+				
+				if(txtSang.getText().equals("")) { 
+					JOptionPane.showMessageDialog(this, "상품명을 입력하시오"); 
+					txtSang.requestFocus(); 
+					return;
+				}
+				
+				if(txtSu.getText().equals("")) { 
+					JOptionPane.showMessageDialog(this, "수량을 입력하시오"); 
+					txtSu.requestFocus(); 
+					return;
+				}
+//				
+				if(txtDan.getText().equals("")) { 
+					JOptionPane.showMessageDialog(this, "단가를 입력하시오"); 
+					txtDan.requestFocus(); 
+					return;
+				}
+				
+				try {
+					Integer.parseInt(txtSu.getText());
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(this, "수량은 숫자만 허용");
+					txtSu.requestFocus();
+					return;
+				}
+				
+				try {
+					Integer.parseInt(txtDan.getText());
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(this, "단가는 숫자만 허용");
+					txtDan.requestFocus();
+					return;
+				}
 				
 				// 등록 가능한 상태
 				try {

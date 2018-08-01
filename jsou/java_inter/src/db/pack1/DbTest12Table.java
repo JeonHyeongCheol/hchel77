@@ -1,5 +1,7 @@
 package db.pack1;
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -29,6 +31,23 @@ public class DbTest12Table extends JFrame {
 		setBounds(200, 100, 300, 250);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				table = (JTable)e.getComponent(); // 마우스 클릭 대상
+				model = (DefaultTableModel)table.getModel(); // 값은 모델에 저장되어 있음.
+				//System.out.println(table);
+				/*
+				System.out.println("행/열 번호 : " +
+									table.getSelectedRow() + "/" +
+									table.getSelectedColumn());
+				*/
+				//System.out.println("열이름 : " + table.getColumnName(table.getSelectedColumn()));
+				//System.out.println("값 : " + model.getValueAt(table.getSelectedRow(), table.getSelectedColumn()));
+				System.out.println("열고정 값 : " + model.getValueAt(table.getSelectedRow(), 1)); // 열을 고정 할 때. 클릭 할 때 설정한 열에 대한 값을 계속 출력.
+			}
+		});
 	}
 	
 	private void layInit() {

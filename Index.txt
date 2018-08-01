@@ -165,9 +165,23 @@ DbTest8PLSQL_SELECT - OracleCallableStatement(Out)
 DbTest9PLSQL_SELECT - CallableStatment(In), OracleCallableStatement(Out)
 DbTest10MariaDb - Maria DB 연결
 DbTest11Prepared - PreparedStatement 와 Statement 차이, PreparedStatement 자료 추가, 수정, 삭제, 부분자료 읽기
-DbTest12Table - JFrame Table, PreparedStatement
+DbTest12Table - JFrame Table, PreparedStatement, 테이블 값 가져오기.
 DbTest13CRD - JFrame Table, JDialog, PreparedStatement를 조합한 추가, 삭제
 
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
+ex6 - JFrame + DB 업데이트(Update) 문제
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+ex7 - JTable + DB(select) + 행/열 값 받아 오기 문제
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+db.pack2
+
+MdiTest - 서브 프레임(Sub Frame), 새 창, 자식 창
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
 클래스 다이어그램, 시퀀스 다이어 그램, 유스케이스 다이어그램은 코딩시 먼저 선작업 해야 할 것!!
