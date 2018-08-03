@@ -24,6 +24,7 @@ public class Test3 {
 		//int ii = 8, ij;
 		//System.out.println(ii + " " + ij); // ij에 초기값 설정을 하지 않았기 때문에 추력 될 수 없음. 초기값 설정을 해주어야 함. 
 		
+		
 		int ii = 8, ij = 0;
 		System.out.println(ii + " " + ij);
 		System.out.println("ii:" + ii + " " + Integer.toBinaryString(ii)); // Integer.toBinaryString()는 2진수로 나타내준 것

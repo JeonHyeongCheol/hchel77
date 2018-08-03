@@ -13,7 +13,7 @@ public class Test14Arr {
 		
 		int num = 10;
 		for (int i = 0; i < su.length; i++) { // 행에 대해서 돔
-			for (int j = 0; j < su[i].length; j++) { // i보다 작은 동안에 돔
+			for (int j = 0; j < su[i].length; j++) { // i보다 작은 동안에 돌림.
 				su[i][j] = num++;
 			}
 		}

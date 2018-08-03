@@ -30,14 +30,14 @@ public class BookBannap extends JPanel implements ActionListener{
 	JTextField txtBbun,txtBjemok,txtBdaeil,txtBdaebun, txtJemok;
 	static JTextField txtBbanil;
 	JButton btnBbun,btnChange,btnBannap,btnNew,btnClose;
-	DefaultTableModel mod;
+	static DefaultTableModel mod;
 	
 	static JFrame calFrame; 
 	
-	Connection conn;
-	PreparedStatement pstmt;
-	ResultSet rs1, rs2;
-	String sql;
+	static Connection conn;
+	static PreparedStatement pstmt;
+	static ResultSet rs1, rs2;
+	static String sql;
 	
 	public BookBannap(){
 		design();
@@ -63,7 +63,7 @@ public class BookBannap extends JPanel implements ActionListener{
 		}
 	}
 	
-	private void daebookDisplay() {
+	static void daebookDisplay() {
 		mod.setNumRows(0); // 표 초기화 시킴.
 		try {
 			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "scott", "tiger");

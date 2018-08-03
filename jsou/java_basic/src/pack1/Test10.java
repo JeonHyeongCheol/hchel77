@@ -10,7 +10,7 @@ public class Test10 {
 			}
 			
 			ex)
-			for( int  tmp : arr {
+			for( int  tmp : arr ) { // 향상된 for문
 					System.out.println(tmp);
 			}
 			
@@ -24,13 +24,14 @@ public class Test10 {
 		}
 	
 		System.out.println();
-		
+		/*
 		int kk = 0;
 		for(;;) { // 무한루프
 			kk++;
 			System.out.println("출력");
 			if(kk == 5) break;
-		}
+		} 
+		 */
 		
 		System.out.println(); // 밑에있는 방법은 잘 안쓰이지만 알고는 있을 것.
 		aa:for (int i = 0; i <= 3; i++) {

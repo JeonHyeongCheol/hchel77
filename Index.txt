@@ -26,6 +26,7 @@ Animal, Main - 클래스, 객체, 인스턴스 정의, 인스턴스(객체) 생성, this(자기 자신 
 Bank, Main - this, 생성자
 Pro, Production - get, set
 MyCalc, OurProjectMain - 메소드 구현, 메소드 호출
+MySingleton, Main - 캘린더, 클래스, 메스드 구현
 
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 

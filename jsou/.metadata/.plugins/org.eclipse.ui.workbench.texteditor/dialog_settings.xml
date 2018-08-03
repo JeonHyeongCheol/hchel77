@@ -2,12 +2,18 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Cal" key="selection"/>
+		<item value="Listener" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="listener"/>
+			<item value="mouse"/>
+			<item value="btnDaeyeo"/>
+			<item value="btndae"/>
+			<item value="disp"/>
+			<item value="dis"/>
 			<item value="Cal"/>
 			<item value="txtBban"/>
 			<item value="a"/>
@@ -17,12 +23,6 @@
 			<item value="format"/>
 			<item value="현재 대여"/>
 			<item value="guswo"/>
-			<item value="대여"/>
-			<item value="현재"/>
-			<item value="set"/>
-			<item value="true"/>
-			<item value="bun"/>
-			<item value="bannap"/>
 		</list>
 		<list key="replacehistory">
 		</list>

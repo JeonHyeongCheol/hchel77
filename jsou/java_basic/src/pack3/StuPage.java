@@ -9,6 +9,7 @@ public class StuPage extends Student{
 		System.out.println("StuPage 생성자");
 	}
 	
+	
 	@Override // 기존의 상속받은 메서드의 내용을 변경하는 것
 	protected void study() {
 		System.out.println("학생은 자바+python을 잘 해야 한다");

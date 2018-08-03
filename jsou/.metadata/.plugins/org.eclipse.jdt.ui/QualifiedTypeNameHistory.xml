@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.awt.Frame"/>
 <fullyQualifiedTypeName name="db.pack1.DbTest5Pooling"/>
 <fullyQualifiedTypeName name="db.pack1.DBConnectionMgr"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="javax.swing.JFrame"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="kr.co.kic.BookBannap"/>
 </qualifiedTypeNameHistroy>

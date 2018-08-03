@@ -37,7 +37,6 @@ public class Car { // [접근지정자] [기타제한자] calss 클랙스명
 
 	private void def() {
 		System.out.println("def 메소드 처리");
-
 	}
 	
 	// return문

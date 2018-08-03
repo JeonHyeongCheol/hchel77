@@ -5,7 +5,7 @@ public class Bank {
 		int imsi = 1;
 		public int imsi2 = 2;
 		
-		public Bank( ) { //생성자 오버로딩을 할 경우 내용이 없더라도 반드시 생성자를 써야한다. 
+		public Bank( ) { // 생성자 오버로딩을 할 경우 내용이 없더라도 반드시 생성자를 써야한다. 
 			
 		}
 		

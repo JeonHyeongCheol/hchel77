@@ -17,6 +17,7 @@ public class MyMain {
 		car1.abc();	
 		//car1.def(); //private method이므로 접근 불가
 		//car1.speed; // private member이므로 접근 불가
+		System.out.println("\n");
 		
 		System.out.println("속도는 " +car1.getSpeed());
 //		car1.setSpeed(80);

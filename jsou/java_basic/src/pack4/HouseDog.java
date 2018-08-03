@@ -11,7 +11,7 @@ public class HouseDog extends Dog{
 		System.out.println("거주 :" + where);
 	}
 	
-	@Override                                                    //상속에서만 나오는 용어
+	@Override    //상속에서만 나오는 용어
 	public void print() {
 		System.out.println(getName() + " : " + where + "에 산다");
 	}

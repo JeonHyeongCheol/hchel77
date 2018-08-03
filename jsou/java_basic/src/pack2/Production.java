@@ -28,7 +28,7 @@ public class Production {
 		
 	}
 	
-	public void setNumber() {
+	public void setNumber(int number) {
 		this.number = number;
 		
 	}

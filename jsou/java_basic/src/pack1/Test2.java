@@ -41,7 +41,7 @@ public class Test2 {
 		 System.out.println(ss3);
 		 System.out.println(ss3 + " " + 2018); // 숫자는 문자열화가 됨.
 		 System.out.println(ss3 + " " + 2018 + 6);
-		 System.out.println(ss3 + " " + (2018 + 6)); // 가로 먼저 문자열화 후 출력
+		 System.out.println(ss3 + " " + (2018 + 6)); // 가로 먼저 계산 후 문자열로 바꿔서 출력
 		 
 		 String ss4 = "5" + 6; // 문자열 더하기
 		 System.out.println(ss4);

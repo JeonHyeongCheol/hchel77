@@ -27,11 +27,11 @@ public class Programmer {
 		
 		public void displayData ( ) {
 				String sp = reSpeck();
-				System.out.println("별명이 " + nickName + "은(는)" + age + "살" + sp);
+				System.out.println("별명이 " + nickName + "은(는) " + age + "살" + sp);
 		}
 		
 		private String reSpeck( ) {
-			return "보유 기술은" + spec; 
+			return "보유 기술은 " + spec; 
 		}
 		
 		public void setAge(int age) {

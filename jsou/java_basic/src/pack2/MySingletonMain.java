@@ -9,7 +9,7 @@ public class MySingletonMain {
 
 			System.out.println(s1 + " " + s2); // 아무것도 없기 때문에 주소 값만 찍어냄.
 			System.out.println();
-			MySingleton s3 = MySingleton.getInstance();
+			MySingleton s3 = MySingleton.getInstance(); // static 이기 때문에 바로 부름.
 			MySingleton s4 = MySingleton.getInstance();
 			System.out.println(s3+" "+s4); // 아무것도 없기 때문에 주소 값만 찍어냄.
 			System.out.println();

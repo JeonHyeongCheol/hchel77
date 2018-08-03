@@ -18,8 +18,11 @@ public class Test4 {
 		// 아무겂도 없이 aa()만 써서 실행 시키면 aa메소드에 있는 println을 수행하지만 syso를 써서 실행하면 True가 넘어 옴.
 		aa();
 		
+		System.out.println("\n");
 		b1 = aa();
 		System.out.println(b1); // b1는 boolean연산자기 때문에 aa에 대해서 true, false 인지 확인 후 출력.
+		
+		System.out.println("\n");
 		System.out.println(bb()); // 위에 aa와 같은 얘기.
 		
 		System.out.println("\n\n\n ------- 주의 할 점 -------");

@@ -158,6 +158,8 @@ public class BookDaeyeo extends JPanel implements ActionListener{
 				
 				btnDaeyeo.setEnabled(false); // 대여 후 버튼 비활성화
 				btnNew.setEnabled(true); // 대여 후 새로입력 클릭시 활성화
+				
+				BookBannap.daebookDisplay();
 			} catch (Exception e2) {
 				System.out.println("대여 갱신 오류 : " + e);
 			} finally {
@@ -242,7 +244,6 @@ public class BookDaeyeo extends JPanel implements ActionListener{
 			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "scott", "tiger");
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, fData);
-			
 			rs2 = pstmt.executeQuery();
 			
 			if(rs2.next()) {
