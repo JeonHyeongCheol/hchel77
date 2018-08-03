@@ -15,8 +15,8 @@ import javax.swing.WindowConstants;
 public class MdiTest extends JFrame implements ActionListener{
 
 	JMenuItem mnuNew, mnuExit;
-	JInternalFrame childWin;
-	JDesktopPane desktopPane = new JDesktopPane();
+	JInternalFrame childWin; // 내부 프레임 만듬.
+	JDesktopPane desktopPane = new JDesktopPane(); // 내부 프레임을 열기위한 도화지(?)라고 생각하면 됨.
 	
 	public MdiTest() {
 		setTitle("Mdi 연습");
@@ -42,7 +42,8 @@ public class MdiTest extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getActionCommand().equals("새창")) {
-			getContentPane().add(desktopPane);
+			getContentPane().add(desktopPane); 
+			// 메뉴바를 만들면 나머지 공간은 contentpane 공간이 됨. 그 안에 desktoppane을 집어 넣음.
 			createListen();
 			desktopPane.add(childWin);
 			childWin.setLocation(10,10);

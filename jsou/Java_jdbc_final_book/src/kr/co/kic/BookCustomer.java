@@ -17,7 +17,7 @@ public class BookCustomer extends JPanel implements ActionListener {
 	Connection conn;
 	PreparedStatement pstmt;
 	ResultSet rs1, rs2;
-	String Sql;
+	String sql;
 	
 	int iTotal = 0;	// 자료의 갯수
 	int iLast = 0; 	// 마지막 레코드 번호
@@ -29,6 +29,9 @@ public class BookCustomer extends JPanel implements ActionListener {
 		design();
 		addListener();
 		accDb();
+		
+		init();
+		display();
 	}
 	
 	private void addListener() {
@@ -49,8 +52,42 @@ public class BookCustomer extends JPanel implements ActionListener {
 	private void accDb() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
+			// 레코드 이동을 계속 해야하기 때문에 DB(Conn)를 열어주고 있어야함.
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "scott", "tiger");
 		} catch (Exception e) {
-			System.out.println("드라이버 로딩 실패 : " + e);
+			System.out.println("Customer accDb err : " + e);
+		}
+	}
+	
+	private void init() {
+		try {
+			sql = "select * from customer order by c_bun asc";
+			pstmt = conn.prepareStatement(sql,
+					ResultSet.TYPE_SCROLL_SENSITIVE,
+					ResultSet.CONCUR_UPDATABLE); // 스크롤 가능이면서 수정 가능
+			rs1 = pstmt.executeQuery();
+			rs1.last(); // 포인터를 마지막에 있도록 함.
+			iTotal = rs1.getRow(); // 행의 전체 갯수를 알기위해 행의 위치에 있는 값을 가져옴으로서 몇 개인지 알 수 있음.
+			//System.out.println("전체 자료수 : " + iTotal);
+			iLast = rs1.getInt("c_bun"); // 마지막 고객번호 얻기 : 신규 고객 등록 시 사용
+			rs1.first(); // 포인터를 다시 처음으로 가져다 놓음.
+			
+		} catch (Exception e) {
+			System.out.println("init err : " + e);
+		}
+	}
+	
+	private void display() {
+		try {
+			txtCbun.setText(rs1.getString("c_bun"));
+			txtCirum.setText(rs1.getString("c_irum"));
+			txtCjunhwa.setText(rs1.getString("c_junhwa"));
+			txtCjuso.setText(rs1.getString("c_juso"));
+			txtCdaesu.setText(rs1.getString("c_daesu"));
+			taCmemo.setText(rs1.getString("c_memo"));
+			lblRec.setText(rs1.getRow() + " / " + iTotal); // 이거는 순서 1부터 ~ 해서 순서를 알려줌.
+		} catch (Exception e) {
+			System.out.println("display err : " + e);
 		}
 	}
 	
@@ -80,14 +117,26 @@ public class BookCustomer extends JPanel implements ActionListener {
 				BookMain.book_customer.setEnabled(true); // 메인화면의 대여메뉴 활성화
 				BookMain.childWinCustomer.dispose(); // 메인화면에 있는 대여창 닫기
 			}
-		} else if(e.getSource() == btnF) {
-			
-		} else if(e.getSource() == btnP) {
-			
-		} else if(e.getSource() == btnN) {
-			
-		} else if(e.getSource() == btnL) {
-			
+		} 
+		
+		try {
+			if(e.getSource() == btnF) {
+				rs1.first();
+				display();				
+			} else if(e.getSource() == btnP) {
+				if(rs1.isFirst()) return; // 맨 처음에서 그 전으로 갈려고 하면 return 함.
+				rs1.previous();
+				display();
+			} else if(e.getSource() == btnN) {
+				if(rs1.isLast()) return; // 맨 마지막에서 더 갈려고 하면 return 함.
+				rs1.next();
+				display();
+			} else if(e.getSource() == btnL) {
+				rs1.last();
+				display();
+			}			
+		} catch (Exception e2) {
+			System.out.println("레코드 이동 오류 : " + e2);
 		}
 	}
 	
