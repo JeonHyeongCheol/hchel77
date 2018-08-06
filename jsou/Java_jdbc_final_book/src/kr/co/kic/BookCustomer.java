@@ -93,18 +93,178 @@ public class BookCustomer extends JPanel implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == btnInsert) {
+		if(e.getSource() == btnInsert) { // 신규 고객
+			if(isInsert == false) {
+				btnInsert.setText("취소");
+				isInsert = true;
+				btnOk.setEnabled(true);
+				
+				txtCirum.setEditable(true);
+				txtCjunhwa.setEditable(true);
+				txtCjuso.setEditable(true);
+				
+				txtCbun.setText(String.valueOf(iLast + 1)); // 신규 번호 얻기
+				
+				txtCirum.setText(null);
+				txtCjunhwa.setText(null);
+				txtCjuso.setText(null);
+				txtCdaesu.setText(null);
+				taCmemo.setText(null);
+				txtCirum.requestFocus();
+				
+			} else {
+				btnInsert.setText("신규");
+				isInsert = false;
+				btnOk.setEnabled(false);
+				
+				txtCirum.setEditable(false);
+				txtCjunhwa.setEditable(false);
+				txtCjuso.setEditable(false);
+				
+				display();
+			}
 			
 		} else if(e.getSource() == btnOk) {
-			
-		} else if(e.getSource() == btnUpdate) {
-			
+			// 신규 고객 등록 작업 : 입력자료 오류 검사 필요하나 생략.(따로 해볼 것)
+			// 이름 Text 비었을 때
+			if (txtCirum.getText().equals("")) {
+				JOptionPane.showMessageDialog(this, "이름을 입력하시오");
+				txtCirum.requestFocus();
+				return;
+			}
+			// 전화 Text 비었을 때
+			if (txtCjunhwa.getText().equals("")) {
+				JOptionPane.showMessageDialog(this, "전화번호를 입력하시오");
+				txtCjunhwa.requestFocus();
+				return;
+			}
+			// 주소 Text 비었을 때
+			if (txtCjuso.getText().equals("")) {
+				JOptionPane.showMessageDialog(this, "주소를 입력하시오");
+				txtCjuso.requestFocus();
+				return;
+			}
+			try {
+				sql = "insert into customer values(?,?,?,?,0,null)";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, txtCbun.getText());
+				pstmt.setString(2, txtCirum.getText());
+				pstmt.setString(3, txtCjunhwa.getText());
+				pstmt.setString(4, txtCjuso.getText());
+				pstmt.executeUpdate();
+
+				init(); // 전체 건수 출력
+				rs1.last(); // 추가했으므로 마지막 자료가 보여야 함.
+				display();
+
+				txtCirum.setEditable(false);
+				txtCjunhwa.setEditable(false);
+				txtCjuso.setEditable(false);
+				btnInsert.setEnabled(false);
+				btnOk.setEnabled(false);
+
+			} catch (Exception e2) {
+				System.out.println("신규 등록 오류 : " + e2);
+			}
+		} else if(e.getSource() == btnUpdate) { // 수정
+			if (isUpdate == false) {
+				isUpdate = true;
+				btnUpdate.setText("완료");
+
+				txtCirum.setEditable(true);
+				txtCjunhwa.setEditable(true);
+				txtCjuso.setEditable(true);
+
+			} else {
+				isUpdate = false;
+				btnUpdate.setText("수정");
+
+				// 수정 처리
+				
+				try {
+					sql = "update customer set c_irum=?, c_junhwa=?, c_juso=? where c_bun=?";
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, txtCirum.getText());
+					pstmt.setString(2, txtCjunhwa.getText());
+					pstmt.setString(3, txtCjuso.getText());
+					pstmt.setString(4, txtCbun.getText());
+					pstmt.executeUpdate();
+					
+					int currentRow = rs1.getRow();
+					init(); // 수정된 자료 출력을 위해
+					rs1.absolute(currentRow); // 레코드 포인트를 해당위치로 이동 그 지점에 자료를 display() 하면 수정된 자료를 보임.
+					display();
+					
+				} catch (Exception e2) {
+					System.out.println("고객 수정 오류 : " + e2);
+				}
+				
+				txtCirum.setEditable(false);
+				txtCjunhwa.setEditable(false);
+				txtCjuso.setEditable(false);
+			}
 		} else if(e.getSource() == btnDel) {
+			int re = JOptionPane.showConfirmDialog(this, "정말로 삭제할까요?", "삭제", JOptionPane.YES_NO_CANCEL_OPTION);
+			if(re == JOptionPane.YES_OPTION) {
+				try {
+					if(rs1.getRow() == 0) {
+						JOptionPane.showMessageDialog(this, "삭제할 고객이 없습니다");
+						return; // 작업할 것이 없기 때문에 return.
+					}
+					
+					// 현재 도서를 대여 중인 고객은 삭제 안됨.
+					if(taCmemo.getText().equals("")) {
+						int currentRow = rs1.getRow();
+						sql = "delete from customer where c_bun=?";
+						pstmt = conn.prepareStatement(sql);
+						pstmt.setString(1, txtCbun.getText());
+						pstmt.executeUpdate();
+						
+						init();
+						if(currentRow == 1) { // 첫번째 사람이면 그냥 그대로
+							
+						} else {
+							rs1.absolute(currentRow - 1); // 다른 행에서 삭제시 레코드 1 감소시킨 후 출력
+						}
+						display();
+					} else {
+						JOptionPane.showMessageDialog(this, "도서 반납 후 삭제가 가능합니다");
+					}
+					
+					
+				} catch (Exception e2) {
+					System.out.println("고객 삭제 오류 : " + e2);
+				}
+			}
+		} else if(e.getSource() == btnFind) { // 검색
+			// 고객번호로 검색.. 다른 검색은 생략 따로 해볼 것(이름, 전화번호 등).
+			String fBun = JOptionPane.showInputDialog(this, "검색할 고객번호 입력하세요");
+			//if(fBun.equals("")) return;
+			if(fBun == null) return;
 			
-		} else if(e.getSource() == btnFind) {
-			
-		} else if(e.getSource() == btnOption) {
-			
+			try {
+				int currentRow = rs1.getRow(); // 검색결과가 없는 경우를 대비.
+				rs1.beforeFirst(); // 검색 결과가 없는 경우 다시 돌아감.
+				int find = 0;
+				int cou = 0;
+				while(rs1.next()) {
+					String ss = rs1.getString("c_bun");
+					if(fBun.equals(ss)) {
+						display();
+						cou++;
+						break;
+					}
+				}
+				if (cou == 0) {
+					JOptionPane.showMessageDialog(this, "검색결과가 없습니다");
+					rs1.absolute(currentRow);
+				}
+				
+			} catch (Exception e2) {
+				System.out.println("고객 찾기 오류 : " + e2);
+			}
+		} else if(e.getSource() == btnOption) { // 옵션
+			// 생략
 		} else if(e.getSource() == btnClose) { // 닫기 
 			try {
 				if(rs1 != null) rs1.close();
@@ -124,11 +284,17 @@ public class BookCustomer extends JPanel implements ActionListener {
 				rs1.first();
 				display();				
 			} else if(e.getSource() == btnP) {
-				if(rs1.isFirst()) return; // 맨 처음에서 그 전으로 갈려고 하면 return 함.
+				if(rs1.isFirst()) {
+					JOptionPane.showMessageDialog(this, "자료의 처음 또는 마지막입니다"); // 사용자에게 보여줘야하는 메세지.
+					return; // 맨 처음에서 그 전으로 갈려고 하면 return 함.
+				}
 				rs1.previous();
 				display();
 			} else if(e.getSource() == btnN) {
-				if(rs1.isLast()) return; // 맨 마지막에서 더 갈려고 하면 return 함.
+				if(rs1.isLast()) {
+					JOptionPane.showMessageDialog(this, "자료의 처음 또는 마지막입니다"); // 사용자에게 보여줘야하는 메세지.
+					return; // 맨 마지막에서 더 갈려고 하면 return 함.
+				}
 				rs1.next();
 				display();
 			} else if(e.getSource() == btnL) {

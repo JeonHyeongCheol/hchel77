@@ -2,6 +2,8 @@ package kr.co.kic;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.text.SimpleDateFormat;
+
 import javax.swing.*;
 import javax.swing.table.*;
 import java.util.*;
@@ -58,7 +60,7 @@ public class BookCal extends JPanel implements MouseListener,ActionListener{
 	}
 	public void actionPerformed(ActionEvent e) {
 		Calendar cal=Calendar.getInstance();
-		String imsis=cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH)+1) + "-";
+		String imsis= cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH)+1) + "-";
 		BookBannap.txtBbanil.setText(imsis + strban);
 		BookBannap.calFrame.dispose();
 	}
