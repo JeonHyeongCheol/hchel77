@@ -131,9 +131,9 @@ public class BookBook extends JPanel implements ActionListener{
 			lblPic.setIcon(icon);
 			lblPic.setToolTipText("이미지 파일명 : " + imgPath); // 이미지 위에 마우스를 올리면 경로가 나옴.
 			if(icon != null) {
-				lblPic.setText(null);
+				lblPic.setText(null); // 이미지가 있으면 라벨에 Text 없이 그림만 뜨게함.
 			} else {
-				lblPic.setText("이미지 없음");
+				lblPic.setText("이미지 없음"); // 이미지가 없으면 라벨에 이미지 없음을 출력.
 			}
 		}
 	}

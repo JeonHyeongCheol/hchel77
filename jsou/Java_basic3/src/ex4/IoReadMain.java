@@ -10,7 +10,7 @@ public class IoReadMain {
 	public static void main(String[] args) throws IOException {
 		int count = 0;
 		
-		File f = new File("c:\\work\\ex.txt"); // 불러올 파일 경로 설정
+		File f = new File("c:\\work\\festival.ttl"); // 불러올 파일 경로 설정
 		FileReader fr = new FileReader(f); // 파일을 읽음
 		BufferedReader br = new BufferedReader(fr); // 가져온 자료 버퍼에 저장
 		System.out.println("학교명" +  "\t\t"  +"학구ID" + "\t\t" + "학교ID" + "\t\t"+ "학교급구분" + "\t\t" + "시도교육청코드");
