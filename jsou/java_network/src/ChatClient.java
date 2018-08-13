@@ -126,7 +126,7 @@ public class ChatClient extends JFrame implements ActionListener, Runnable {
 
 			try {
 				// System.out.println(txtname.getText());
-				soc = new Socket("192.168.0.18", 7777); // 객체를 만나는 순간 Server에 accept()를 만남.
+				soc = new Socket("192.168.0.8", 7778); // 객체를 만나는 순간 Server에 accept()를 만남.
 				in = new BufferedReader(new InputStreamReader(soc.getInputStream(), "euc-kr")); // 메세지를 보내면 받아서 저장 후 밑에서
 																								// readLine하여 출력.
 				out = soc.getOutputStream();
@@ -136,17 +136,34 @@ public class ChatClient extends JFrame implements ActionListener, Runnable {
 				System.out.println("접속 오류 : " + e2);
 			}
 		} else if (e.getSource() == btnchange) { // 대화명 변경
+			if(btnchange.getText().equals("대화명 변경")) {
+				btnchange.setText("변경확인");
+				txtname.setEditable(true);
+				txtname.requestFocus();
+			} else {
+				btnchange.setText("대화명 변경");
+				txtname.setEditable(false);
+			}
 			try {
-				// 나중에 ...
+				out.write(("/r" + txtname.getText() + "\n").getBytes("euc-kr"));
 			} catch (Exception e2) {
-				txtarea.append("대화명 변경 실패 : " + e2);
+				txtarea.append("대화명 변경 오류 : " + e2);
 			}
 
 		} else if (e.getSource() == btnclose) { // 나가기
 			try {
-
+				out.write(("/q\n").getBytes());
 			} catch (Exception e2) {
-				txtarea.append("나가기 실패 : " + e2);
+				txtarea.append("나가기 오류 : " + e2);
+			} finally {
+				try {
+					in.close();
+					out.close();
+					soc.close();
+					System.exit(0);
+				} catch (Exception e3) {
+					// TODO: handle exception
+				}
 			}
 
 		}
@@ -179,7 +196,16 @@ public class ChatClient extends JFrame implements ActionListener, Runnable {
 							}
 						}
 					} else if (msg.charAt(1) == 'r') { // 대화명 변경
-						// 나중에 ...
+						String oldName = msg.substring(2, msg.indexOf('-'));
+						String newName = msg.substring(msg.indexOf('-') + 1);
+						txtarea.append("*" + oldName + "님의 대화명이 " + newName + "으로 변경되었습니다.\n");
+						
+						for (int i = 0; i < count; i++) {
+							if(oldName.equals(list.getItem(i))) {
+								list.replaceItem(newName, i);
+								break;
+							}
+						}
 					}
 				} else { // 일반 메세지
 					txtarea.append(msg + "\n");

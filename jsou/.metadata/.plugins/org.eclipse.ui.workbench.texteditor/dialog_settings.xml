@@ -6,12 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="for" key="selection"/>
+		<item value="props" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="props"/>
+			<item value="pop"/>
+			<item value="auth"/>
+			<item value="+1"/>
+			<item value="thread"/>
+			<item value=".thisr"/>
+			<item value=".this"/>
+			<item value="Service"/>
 			<item value="jsou"/>
 			<item value="for"/>
 			<item value="잠시 후"/>
@@ -19,14 +27,6 @@
 			<item value="마직"/>
 			<item value="socket"/>
 			<item value="socket e"/>
-			<item value="soket"/>
-			<item value="msg"/>
-			<item value="list"/>
-			<item value="package kr.co.kic;"/>
-			<item value="display"/>
-			<item value="displayt"/>
-			<item value="dis"/>
-			<item value="마지막"/>
 		</list>
 		<list key="replacehistory">
 		</list>

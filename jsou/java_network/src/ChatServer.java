@@ -70,9 +70,19 @@ public class ChatServer implements Runnable {
 					// 메세지가 있는 경우 처리
 					if(msg.charAt(0) == '/') { // 약속이 있는 메세지 ('/').  
 						if(msg.charAt(1) == 'r') { // 대화명 변경
-							
+							messageAll("/r" + chat_name + "-" + msg.substring(2)); // 옛이름 - New 이름.
+							chat_name = msg.substring(2);
 						} else if(msg.charAt(1) == 'q') { // 퇴장
-						
+							try {
+								messageAll("/q" + chat_name);
+								list.remove(this); // 현재 객체 삭제
+								in.close();
+								out.close();
+								socket.close();
+							} catch (Exception e) {
+								// TODO: handle exception
+							} 
+							break;
 						} else if(msg.charAt(1) == 's') { // 귓속말
 							// /s 접속자명 - 메세지
 							String name = msg.substring(2, msg.indexOf('-')).trim(); // 하이폰 전까지를 name으로 잡음.
@@ -106,7 +116,7 @@ public class ChatServer implements Runnable {
 				service.messageSend("/c" + service.chat_name); // '/c'는 최초접속 : connect
 				for (Service ser : list) {
 					ser.messageSend("/c" + service.chat_name);
-					service.messageSend("/c" + service.chat_name); // 뭘까.. 주석 없애면 접속자가 너무 많이뜸...
+					service.messageSend("/c" + service.chat_name); 
 				}
 				list.add(service);
 			} catch (Exception e) {
