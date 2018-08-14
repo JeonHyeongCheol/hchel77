@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+표 연습<br>
+<table border="1">
+	<!--<tr style="text-align: center;">
+	 	<td>번호</td><td>이름</td><td>주소</td> -->
+	 <tr>
+	 	<th>번호</th><th>이름</th><th>주소</th><!-- th : 가운데정렬, 글씨굵게 -->
+	</tr>
+	<tr>
+		<td>10</td><td>이기자</td><td>강남구 역삼동</td>
+	</tr>
+	<tr>
+		<td>20</td><td>이겨라</td><td>강남구 압구정동</td>
+	</tr>
+</table>
+<br>
+<table border="1" background="image/back.png" width="70%">
+	<caption>상품자료</caption>
+	<tr bgcolor="red"> <!-- bgcolor : 테이블 색 변경 -->
+		<td bgcolor="yellow" width="150">상품명</td> <!-- td에는 데이터에만 -->
+		<td>수량</td>
+		<td>단가</td>
+	</tr>
+	<tr>
+		<td bgcolor="cyan">컴퓨터</td>
+		<td>100</td>
+		<td>
+			<table>
+				<tr>
+					<td>aa</td><!-- 테이블안에 테이블을 넣을 수 있음 -->
+					<td>bb</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<br>
+<table border="1" width="300">
+	<tr>
+		<td colspan="2">a</td> <!-- colspan : 열 단위 병합 -->
+		<td>b</td>
+		<td rowspan="2">c</td> <!-- rowspan : 행 단위 병합 -->
+	</tr>
+	<tr>
+		<td>d</td>
+		<td>e</td>
+		<td>f</td>
+	</tr>
+</table>
+<br>
+<iframe src="http://www.daum.net" width="500" height="300" name="star"></iframe> <!-- 너비는 비율을 줄 수 있으나 높이는 안됨 -->
+<br>
+<a href="aa.html" target="star">iframe에 삽입</a> <!-- target : name이 star인 iframe에 현 링크를 덮어씀 -->
+<p>
+이미지 맵 연습<br>
+<img alt="" src="image/book.png" usemap="#gold">
+<map name="gold">
+	<area alt="웹표준" shape="rect" coords="0,0,50,50" href="http://www.daum.net"><!-- 이미지를 쪼개서 링크 걸기(부분링크). -->
+	<area alt="웹표준" shape="rect" coords="51,51,100,100" href="http://www.naver.com">
+</map>
+</body>
+</html>

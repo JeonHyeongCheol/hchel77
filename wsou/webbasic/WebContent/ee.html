@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="홍길동" content="기본연습">
+<meta name="subject/title" content="연습용 홈피">
+
+<meta name="keyword" content="html 상세 연습"> 
+<!-- 메타는 검색 할 때 조금더 빠르게 찾아 올 수 있도록 해주는 역할을 해줌 -->
+<meta name="description" content="페이지에 대한 설명">
+<!-- 
+<meta http-equiv="refresh" content="3; url=aa.html"><!-- 3초 동안 있다가 연결된 html을 보여줌 
+-->
+<title>Insert title here</title>
+</head>
+<body>
+form tag : 사용자와 서버 간에 정보를 주고 받을 수 있는 입력 양식
+<br>
+<h2>개인 정보 입력</h2>
+<form action="aa.jsp" name="frm1" method="get"> <!-- action은 넘어가는 곳, #은 로컬-->
+<!-- 넘어가면 get 방식은 http://192.168.0.8/webbasic/ee.html?irum=tom&id=good&pwd=#  이렇게 넘어감-->
+<!-- 
+get : 입력한 정보를 서버로 보낸다는 것
+get의 단점
+1. 보안에 취약함(넘어가는게 다 보임)
+2. 4096byte를 넘길 수 없음, 
+
+post : body 전체를 넘겨버림
+1. 그래서 url에 아무것도 보이지 않음  
+2. 데이터의 양의 제한이 없음
+-->
+1. 이름: <input type="text" id="irum" name="irum" size="10" maxlength="10" value="tom">
+<br>
+2. 아이디 : <input type="text" name="id" value="good">
+<br>
+3. 비번 : <input type="password" name="pwd">
+<br>
+4. 파일 선택 : <input type="file" name="fname">
+<br>
+5. 내용 :
+<textarea rows="5" cols="50" name="content"></textarea> 
+<!-- textarea는 절대 붙여놓을 것, 엔터, 스페이스바 하지말 것. 나중에 자바에서 오류찾기 힘들어짐. -->
+<br>
+6. 성별
+<input type="radio" id="m" name="gender" value="m" checked="checked">
+<label for="m">남자</label><!-- id가 m을 위한 라벨 -->
+<!-- 라디오 버튼은 name으로 그룹화 시킬 것, checked : 기본적으로 먼제 체크되게 하는 것 -->
+&nbsp;&nbsp;
+<input type="radio" id="f" name="gender" value="f">
+<label for="f">여자</label><!-- id가  f를 위한 라벨 -->
+<br>
+7. 과목 :
+<input type="checkbox" name="gwa" value="C언어">c언어 
+&nbsp;&nbsp;
+<input type="checkbox" name="gwa" value="java">자바
+&nbsp;&nbsp;
+<input type="checkbox" name="gwa" value="python">파이썬
+<!-- 라디오버튼이나 체크박스에서 넘어가는 값은 value 값임 -->
+<br>
+8. 지역선택
+<select name="site" > <!--multiple="multiple"--> <!-- 콤보박스, multiple을 할 경우 여러가지 선택 가능-->
+	<option value="s" selected="selected">강남</option>
+	<option value="n" >강북</option>
+	<option value="e" >강동</option>
+</select>
+<br>
+9. 숨김
+<input type="hidden" name="hello" value="안녕하세요"><!--서버에는 넘어가지만 페이지상에는 보여지지 않음 -->
+<br><br>
+<input type="submit" value="자료전송">
+<input type="reset" value="입력취소"> <!-- reset : 입력한것 reset -->
+</form>
+<br>
+<form action="#" name="frm2"> <!-- form 태그는 여러개 해도 상관 없음 -->
+	검색:<input type="text" name="query">
+	<input type="submit" value="검색">
+</form>
+</body>
+</html>
