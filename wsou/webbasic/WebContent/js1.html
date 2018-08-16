@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+** 자바 스크립트 **
+<br>
+<script type="text/javascript">
+window.document.write("환영합니다");
+document.write("<br>js 세상");
+document.write("<hr><b>자바</b><i>스크립트</i>연습");
+</script>
+<br>
+여기 html
+<br>
+<script type="text/javascript">
+document.write("여긴 js");
+
+var a = 10;
+var b = a + 10;
+document.write("<br>b는 " , b);
+
+var aa; // 변수 선언 /* 여러 줄 주석 */
+aa = 100;
+var bb = 200;
+str = 300;
+str = '<br>의 합은 '; // 큰 따움표, 작은 따옴표 갈음.
+document.write(str, aa+bb);
+
+ee = false;
+ff = null;
+gg = undefined;
+document.write("br>", ee, ff, gg);
+document.write("<br>", '강남구 ' + "역삼동" + 123 + "번지");
+{
+	var v1 = 1;
+	{
+		var v2 = 2;
+		{
+			var v3 = 3;
+			
+		}
+	
+	}
+}
+document.write("<br>", v1, v2, v3);
+document.write("<br>", 3 + 4 * 5);
+document.write("<br>", (3 + 4) * 5);
+
+x = 5; y = 7;
+document.write("<br>", (x>y)?5:10);
+document.write("<br>", typeof(1), ' ', typeof(1.5), ' ',
+					typeof("하하"), ' ', typeof(true), ' ',
+					typeof(null))
+
+re1 = 5 == 5;
+document.write("<br>", re1);
+re2 = 5 == "5"; // 형 변환후 비교
+document.write("<br>", re2);
+re3 = 5 === "5"; // 형 변환 없이 비교
+document.write("<br>", re3);
+					
+re4 = 'c' + "a" + 't' === 'cat'
+document.write("<br>", re4);
+
+//re5 = 'cat' === 'CAT'
+re5 = 'cat'.toUpperCase === 'CAT'
+document.write("<br>", re5);
+
+</script>
+</body>
+</html>

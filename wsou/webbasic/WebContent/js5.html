@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+// 함수는 head tag 내에서 선언하는 것이 일반적
+count = 0;
+
+function aa() {
+	count += 1;
+	//return; // 함수의 무조건 탈출
+	document.write(count + "번 수행<br>")
+}
+
+function bb() {
+	document.write("함수가 함수 호출");
+	cc(5);
+	
+	var re = cc(10);
+	document.write("<br>re : " + re);
+	
+	dd(5, 10);
+	dd(5, 10, 15);
+	dd(5);
+}
+
+function cc(arg) {
+	var kk = arg + 10;
+	document.write("<br>kk : " + kk);
+	return kk; // 함수결과 반환
+}
+
+function dd(arg1, arg2) {
+	document.write("<br>" + arg1 + " " + arg2);
+}
+
+// 일급함수 : 인자로 함수, 반환값이 함수
+function f1() {
+	document.write("힘내");
+}
+
+function f2(func) { // 함수가 들어올수도(숫자, 문자)
+	func(); // ()는 들어오는 함수를 실행하라는 것
+}
+
+function f3() {
+	//return f1(); // 함수 수행 결과를 반환
+	return f1; // 함수를 반환
+	
+}
+
+function hello() {
+	//f2(f1()); // f1의 수행 결과를 넘김
+	f2(f1); // 실인자로 함수 전달(함수 자체를 들고 가는 것)
+	document.write("<br>-------------<br>");
+	ff = f3(); // ff는 f3를 가져 왔는데 f3는 f1 함수를 가져왔기 때문에 실행 시켜줘야 함.
+	ff(); // f1 실행되는 것
+	f3()(); // 57번, 58번 라인을 한번에 실행.
+}
+</script>
+</head>
+<body>
+함수 처리<br>
+<script type="text/javascript">
+aa();
+aa();
+bb();
+document.write("<br>일급함수<br>")
+document.write(f1);
+f1();
+document.write("<br>")
+hello();
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+js 배열<br>
+<script type="text/javascript">
+aa = new Array();
+aa[0] = 10;
+aa[1] = 20;
+aa[3] = "결과 확인 :";
+document.write(aa[3] + " " + (aa[0] + aa[1]));
+document.write("<br>", aa.length);
+
+document.write("<br>");
+bb = new Array();
+for (k = 0; k < 10; k++) {
+	bb[k] = k + 1;
+}
+document.write("<br>");
+
+for (k = 0; k < 10; k++) {
+	document.write(bb[k] + " ");
+}
+document.write("<br>");
+
+/* 향상된 for문 */
+for(var k in bb) { // var 변수명 in 배열이름
+	document.write(bb[k]+ " ");
+}
+document.write("<br>");
+animal.push("사자"); // push : 배열에 추가 할 때
+var animal = ["토끼", "강아지", "고양이"];
+document.write("<br>", animal.length);
+
+for(var a=0; a < animal.length; a++) {
+	document.write(animal[a] + " ");
+}
+</script>
+</body>
+</html>

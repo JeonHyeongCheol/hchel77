@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+var str = "Java Script Language";
+// 내장 함수
+document.write("<br>", str.charAt(2));
+document.write("<br>", str.indexOf('v'));
+document.write("<br>", str.indexOf('V'));
+document.write("<br>", str.substring(1,3));
+document.write("<br>", str.length);
+document.write("<br>");
+
+// 스타일 관련 내장 함수
+document.write("<br>", str.bold());
+document.write("<br>", str.italics().fontcolor('#ff0000').fontsize(24));
+
+// 수학 관련 내장 함수
+document.write("<br>");
+document.write("<br>", Math.abs(-5));
+document.write("<br>", Math.round(3.4), Math.round(3.6));
+document.write("<br>", Math.random());
+document.write("<br>");
+
+// eval : 수식 수행
+document.write("10" + 5," ", eval("10") + 5);  
+document.write("<br>","10 + 5 * 2"," ", eval("10 + 5 * 2"));
+document.write("<br>");
+
+// 인코딩, 디코딩
+var ss = encodeURI("점심이후");
+document.write("ss : ", ss);
+var ss = decodeURI("점심이후");
+document.write("<br> ss : ", ss);
+
+// isNaN : 숫자가 아닌 것
+document.write("<br>", isNaN("3"), isNaN("삼"));
+document.write("<br>");
+
+// 창 새로 띄우기
+document.write("open('문서명','창제목','속성')");
+open("js1.html", "제목", "width=300, height=200,resizable=yes");
+
+alert("대화상자");
+</script>
+
+</body>
+</html>

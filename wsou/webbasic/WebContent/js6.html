@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+a = 10; // 전역변수
+var b = 20; // 전역변수(권장)
+
+function func1(){
+	var c = 30; // 지역변수
+	d = 40; // 전역변수
+	document.write("<br>a: " + a + ", b: " + b);
+	document.write("<br>c: " + c + ", d: " + d);
+}
+
+function func2() {
+	document.write("<br>a: " + a + ", b: " + b);
+	//document.write("<br>c:" + c + ", d: " + d);
+	
+	document.write("<br>e: "
+			+ ", f: " + f);
+	{
+		e = 50;
+		var f = 60;
+	}
+	document.write("<br>e: " + e + ", f: " + f);
+}
+document.write("<br>");
+func1();
+document.write("<br>");
+func2();
+</script>
+</head>
+<body>
+<hr>js test<br>
+<script type="text/javascript">
+document.write("<br>a:" + a + ", b: " + b);
+//document.write("<br>c:" + c + ", d: " + d); //c는 지역변수 이기 때문에 여기에서는 알 수 없음.
+</script>
+</body>
+</html>
