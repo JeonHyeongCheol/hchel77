@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function func(){
+	document.write("이벤트 처리 성공");
+}
+</script>
+</head>
+<body>
+이벤트 기초<br>
+<a href="javascript:func();">이벤트 1</a>
+<br>
+<a href="javascript:onclick=func();">이벤트 2</a>
+<br>
+<button onclick="func()">이벤트 3</button>
+<br>
+<form>
+<input type="button" onclick="func()" value="이벤트 4"> <!-- 서버로 넘길 때 많이 사용 -->
+</form>
+</body>
+</html>

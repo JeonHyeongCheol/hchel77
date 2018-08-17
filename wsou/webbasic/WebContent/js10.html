@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function chColor() {
+	document.body.bgColor = document.frm.cc.value;
+	document.body.text = frm.tc.value;
+}
+</script>
+</head>
+<body>
+<form name="frm">
+<table border="1">
+	<tr>
+		<td>색상선택</td>
+		<td colspan="2" style="text-align: center">
+	</tr>
+
+	<tr>
+		<td>배경색 : </td>
+		<td> 
+			<select name="cc" size="1">
+				<option value="black">black
+				<option value="blue">blue
+				<option value="green">green
+				<option value="white" selected="selected">white
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>글자색: </td>
+		<td> 
+			<select name="tc" size="1">
+				<option value="black" selected="selected">black
+				<option value="blue">blue
+				<option value="green">green
+				<option value="white">white
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="button" name="button" value="변경 확인" onclick="chColor()">
+	</tr>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function func1() {
+	//alert("성공");
+	var tag1 = "이름 : <input type='text' name='irum'/>";
+	var tag2 = "나이 : <input type='text' name='nai'/>";
+	//alert(document.getElementById("test1").innerHTML);
+	document.getElementById("test1").innerHTML = tag1; 
+	// InnerHTML을 이용함으로써 화면이 움직이는데 서버와 무관하게 처리 됨.
+	document.getElementById("test2").innerHTML = tag2;
+}	
+
+function func2() {
+	var str1 = "<b style='font-size:24px'>일반 메세지로 변경</b>";
+	var str2 = "<b style='font-size:24px'>문자열 출력</b>";
+	document.getElementById("test1").innerHTML = str1; // 함수내용 HTML로 변형 후 출력
+	document.getElementById("test2").innerText = str2; // 함수내용 그대로 문자열로 출력
+}
+</script>
+</head>
+<body>
+
+** 진행 중 태그 및 자료 변경 **<br>
+<div id="test1">innerHTML은 현재 화면 자료의 일부를 수정</div>
+<div id="test2">안녕</div>
+<br>
+<input type="button" value="처리1" onclick="func1()">
+<input type="button" value="처리2" onclick="func2()">
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>계산기</title>
+<script type="text/javascript">
+window.onload = function() {
+   document.getElementById("calc").onclick=function() {
+      var result;
+      var num1, op, num2;
+      
+      num1 = document.getElementById("num1").value;
+      num2 = document.getElementById("num2").value;
+      op = document.getElementById("sel").value;
+      
+      if(op == "/") {
+         if(num1 == 0 || num2 == 0) alert("0으로 나울수 없습니다");
+      }
+      
+      result = eval(num1 + op + num2);
+      document.getElementById("disp").innerHTML = result;
+   }
+   
+   document.getElementById("reset").onclick=function() {
+      document.getElementById("disp").innerHTML = "계산값";
+   }
+   
+   
+}
+
+
+</script>
+</head>
+<body>
+<form>
+<div>숫자 1 : <input type="text" id="num1"></div>
+<div>숫자 2 : <input type="text" id="num2"></div>
+
+
+<select id="sel">
+   <option value="+">+</option>
+   <option value="-">-</option>
+   <option value="*">*</option>
+   <option value="/">/</option>
+</select>
+
+<div><button type="button" id="calc">결과보기</button></div>
+<br>
+<div id="disp">계산값</div>
+<button id="reset" type="reset" >지우기</button>
+
+</form>
+</body>
+</html>

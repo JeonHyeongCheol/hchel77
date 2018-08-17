@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function func1() {
+	document.write("func1 함수");
+}
+func1();
+document.write("<br>");
+my = func1;
+my();
+
+function func2(a, b){
+	var c = a + b;
+	return c;
+}
+result = func2(10, 20);
+document.write("<br>result : " + result);
+result = func2("대한", "민국");
+document.write("<br>result : " + result);
+
+// args를 안받으면 arguments 함수를 사용하여 여러개의 args를 받을 수 있음.
+function func3() {
+	document.write("<br>arg 수 : " + arguments.length);
+	document.write("<br>arg 값 : " + arguments[0] + " " + arguments[1]);
+}
+
+func3();
+func3(3,4);
+func3(3,4,5);
+func3("kor", "eng");
+func3(1, "으뜸");
+
+function hap() { 
+	var tot = 0;
+	for(var i=0; i < arguments.length; i++) {
+		tot += arguments[i]
+	}
+	return tot;
+}
+document.write("<br>" + hap(1,2,3));
+document.write("<br>" + hap(1,2,3,4));
+document.write("<br>" + hap("a","b"));
+
+function evenOdd(num) {
+	var re = "";
+	if(num % 2 === 0) 
+		re = "짝";
+	else
+		re = "홀";
+	return re;
+}
+document.write("<br>" + evenOdd(1));
+document.write("<br>" + evenOdd(2));
+
+document.write("<br>익명함수 -----");
+(function(){
+	document.write("<br>이름이 없는 함수");
+})(); // 초기화 작업에 효과적
+
+var test = function(n1, n2) { // 함수 이름없이 바로 변수에 넣을 수 있음
+	document.write("<br>두 수의 합은" + (n1 + n2));
+}
+
+test(2,3);
+var test2 = test;
+test2(2,3);
+
+document.write("<br>선언적 함수와 익명 함수의 차이 -----");
+func4(); // 선언전 함수는 한번 스쳐 지나가기 때문에 출력됨..인터프린트?
+function func4() {
+	document.write("<br>선언적 함수 호출(메모리에 상주)");
+}
+func4();
+
+//mbc(); // 익명함수는 선언을 해준다음에 호출 해야함
+var mbc = function() {
+	document.write("<br>익명 함수 호출(휘발성, 단발성, 동적)");
+}
+mbc();
+mbc();
+
+document.write("<br>중첩 함수(내부함수)---");
+function func5() {
+	function fu1() { // func5에 sub 함수, func5에만 유효한 함수
+		document.write("<br>fu1 수행");
+	}
+	function fu2() {
+		document.write("<br>fu2 수행");
+	}
+	fu1(); //func5 에서 호출 해야만 함.
+	fu2();
+}
+func5();
+//fu1();
+
+document.write("<br>함수 반환");
+function outer1() {
+	return function() { // 익명함수 반환
+		document.write("<br>Hello");
+	}
+}
+
+aa = outer1();
+aa();
+outer1()();
+
+function outer2(name) {
+	var msg = "안녕" + name
+	return function() { // 익명함수 반환
+		document.write("<br>" + msg);
+	}
+} 
+outer2("tom")();
+
+document.write("<br>-----");
+
+var sbs = function(arg1) { // 두 개다 익명함수로 받고 있음
+	var b = function(arg2) { // arg1에 들어 온 값을 arg2에 넘겨서 계산하고 리턴하고 있음
+		return 2 * arg2;
+	}; // 익명함수
+	return '결과 :' + b(arg1)
+}; // 익명함수
+
+document.write("<br>" + sbs(3));
+</script>
+</head>
+<body>
+
+</body>
+</html>

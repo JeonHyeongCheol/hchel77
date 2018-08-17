@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<HTML>
+    <HEAD>
+    <meta charset="UTF-8">
+        <TITLE> 라디오 버튼의 id기준으로 value 값 전달 받기 </TITLE>
+	   <script type="text/javascript">
+            function RadioCheck(){
+
+                 size = document.getElementsByName("duck").length;
+
+                 alert(size);
+
+                 for(var i = 0; i < size; i++) {
+                      if(document.getElementsByName("duck")[i].checked) {
+                          alert(document.getElementsByName("duck")[i].value);
+                          break;
+                      }
+                 }
+            }
+        </script>
+    </HEAD>
+    <BODY>
+        <form name="formname">
+            한번 <input type=radio id=duck1 name=duck value="Quack!"><br>
+            두번 <input type=radio id=duck1 name=duck value="Quack! Quack!"><br>
+            세번 <input type=radio id=duck1 name=duck value="Quack! Quack! Quack!"><br>
+            <input type=button value=확인 onClick="RadioCheck()">
+        </form>
+    </BODY>
+</HTML>

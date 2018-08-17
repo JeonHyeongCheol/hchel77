@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function disp(su1, op, su2) { // alert : 경고창
+	//alert(su1 + "\n" + op + "\n" + su2);
+	var s1 = parseInt(su1); 
+	// 그냥가져오면 문자열로 가져오기 때문에 ParseInt(정수형 숫자)로 변환시켜줘야함
+	var s2 = parseInt(su2);
+	//result = s1 + s2;
+	/*
+	if(op === "+")
+		result = s1 + s2;
+	else if(op === "-")
+		result = s1 - s2;
+	else if(op === "*")
+		result = s1 * s2;
+	else if(op === "/")
+		result = s1 / s2;
+	else 
+		result = "연산오류"
+	*/
+	result = eval(su1 + op + su2); //"10 + 5"
+	//alert(result);
+	document.write("연산 결과 : " + result);
+}
+
+</script>
+</head>
+<body>
+<script type="text/javascript">
+var data = prompt("수식을 입력하시오", "10 + 5");
+var arr = [];
+for(var i=0; i<3; i++) {
+	arr = data.split(' '); // 문자열 자르기
+}
+console.log(arr.length); // 결과를 콘솔창으로 찍음.
+disp(arr[0],arr[1],arr[2]);
+//disp(1,"+",2);
+var re = confirm("계속할까요?\n 버튼 선택");
+document.write("선택 결과 : " + re);
+
+if(re === false) window.close();
+
+</script>
+</body>
+</html>

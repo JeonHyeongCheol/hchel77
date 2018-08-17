@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function() {
+	document.getElementById("colorW").onclick=function() {
+		document.bgColor="white";
+	}
+	
+	document.getElementById("colorG").onclick=function() {
+		document.bgColor="green";
+	}
+	
+	document.getElementById("colorR").onclick=function() {
+		document.bgColor="red";
+	}
+	
+	document.getElementById("hello").onclick=function() {
+		document.getElementById("show").innerHTML = "red";
+	}
+	
+	document.getElementById("calc").ondblclick=function() {
+		var imsi = "연산결과 : " + (3 + 4);
+		document.getElementById("show").innerText = imsi;
+	}
+	
+	document.getElementById("name").onmouseover=function() {
+		document.getElementById("show").innerText = "홍길동";
+	}
+	
+	document.getElementById("name").onmouseout=function() {
+		document.getElementById("show").innerText = "";
+	}
+	
+	document.getElementById("daum").onclick=function(event) {
+		sbs();
+		
+		//event.prevenDefault(); // tag 고유의 기능 해제
+		return false;
+	}
+	
+	var sdata = document.getElementById("sel"); // select는 onchange를 많이씀.
+	//document.getElementById("sel").onclick=function() {
+	document.getElementById("sel").onchange=function() {
+		alert(sdata.value);
+	}
+	
+	document.getElementById("go").onclick = display;
+}
+
+function sbs() {
+	alert("서울방송");
+}
+
+var msg = "자바스크립트세상";
+var i = 0;
+function display() {
+	document.getElementById("go").innerText = msg.charAt(i);
+	i++;
+	if(msg.length === i) i = 0;
+	setTimeout("display()", 500); // 0.5초 마다 display 호출
+	// setTimeout 내장함수
+}
+</script>
+</head>
+<body>
+* 이벤트 * <br>
+<input type="button" value="흰색" id="colorW">
+<!-- 
+<input type="button" value="녹색" id="colorG">
+<input type="button" value="적색" id="colorR">
+ -->
+ <span id=colorG> 녹&nbsp;&nbsp;&nbsp;색</span>
+ <b id="colorR" style="border 1px solid cyan"> 적색</b>
+<hr/>
+
+<button id="hello">인사하기 - click</button>
+<button id="calc">계산하기 - dbclick</button>
+<button id="name">이름알기 - mouseover</button>
+
+<br>
+<div id="show">출력장소1</div>
+<div id="disp" style="color: blue">출력장소2</div>
+
+<a href="http://m.daum.net" id="daum">앵커 클릭</a>
+
+<br><br><br>
+<select id="sel">
+	<option value="프로그래머">프로그래머</option>
+	<option value="웹디자이너">웹디자이너</option>
+	<option value="프로게이머">프로게이머</option>
+</select>
+<br>
+<a id="go">글자출력</a>
+</body>
+</html>
