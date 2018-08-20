@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+function func() {
+	var name = "tom";
+	var no = 1;
+	function displayName() {
+		alert(name + " " + no);
+		no++;
+	} // 함수 내부 멤버는 외부에서는 참조가 되지 않음.(지역임)
+	displayName();
+}
+func();
+func();
+
+// 클로저는 내부 멤버를 외부에서 참조하고 싶을 때
+function makeFunc() { // 클로저
+	var name = "james";
+	var no = 1;
+	function displayName() {
+		console.log(name + " " + no);
+		no++;
+	}
+	return displayName; // 이게 closuer
+}
+
+var my = makeFunc();
+my();
+my();
+
+function makeAdd(arg){
+	return function(arg2){
+		return arg + arg2;
+	};
+}
+
+var our = makeAdd(5); // 객체1
+console.log(our(1));
+console.log(our(10));
+console.log(our(100));
+
+console.log("\n");
+var our2 = makeAdd(5); // 객체1
+console.log(our2(1));
+console.log(our2(3))
+</script>
+</body>
+</html>

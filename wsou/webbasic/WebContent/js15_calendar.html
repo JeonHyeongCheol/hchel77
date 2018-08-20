@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/cal.js"></script> <!-- 함수를 js에 옮겨서 가능.(외부 자바스크립트를 사용) -->
+<script type="text/javascript">
+window.onload = function() {
+	document.getElementById("btnOk").addEventListener("click", func1, false);
+	document.getElementById("btnPyear").addEventListener("click", func2, false);
+	document.getElementById("btnPmonth").addEventListener("click", func3, false);
+	document.getElementById("btnNmonth").addEventListener("click", func4, false);
+	document.getElementById("btnNyear").addEventListener("click", func5, false);
+}
+
+</script>
+</head>
+<body>
+<button id="btnOk">달력보기</button>
+<br><br>
+<div id="disp">
+</div>
+<div id="etc" style="display:none">
+	<button id="btnPyear">이전 년</button>
+	<button id="btnPmonth">이전 월</button>
+	<button id="btnNmonth">다음 월</button>
+	<button id="btnNyear">다음 년</button>
+</div>
+</body>
+</html>

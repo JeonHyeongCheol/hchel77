@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function(){
+	document.getElementById("btnSend").onclick = chkData; //이거 리스너로도 가능
+	document.getElementById("btnClear").onclick = clsData;
+}
+
+function chkData(){ //check data?
+	//alert("a");
+	if(frm.name.value === "" || isNaN(frm.name.value) === false){
+		frm.name.focus();
+		alert("이름 입력");
+		return;
+	}
+	
+	if(frm.id.value.length < 3){
+		frm.id.focus();
+		alert("id는 3자 이상 허용");
+		return;
+	}
+	
+
+	
+	//document.getElementById("show").innerText = str.match(regExp);
+	//match말고 except로 뽑거나, replace로 대체할 수도 있음
+	
+	//정규 표현식으로 이메일 검사
+	var regExp = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/;
+	if (!frm.email.value.match(regExp)) {
+		frm.email.focus();
+        alert("이메일");
+		return;
+	}
+	
+	
+	var regExp2 = /^[0-9]{1,2}$/; //1글자나 2글자의 숫자만 허용
+	if (!frm.age.value.match(regExp2)) {
+		frm.age.focus();
+        alert("나이");
+		return;
+	}
+	
+	//frm.action="form.jsp"; //w3c에서는 이 방법 권장(action, method를 여기다 쓰는것)
+	//frm.method="get";
+	frm.submit(); //frm이라는 이름의 form 태그 안의 내용을 서버로 제출
+	
+	
+}
+
+function clsData(){ //clear data?
+	//alert("b");
+	frm.name.focus(); //이름이 name인 '이름'칸으로 focus 이동
+}
+
+</script>
+</head>
+<body>
+** 입력양식 - 입력자료 검사 **<br>
+<form action="ex.jsp" name="frm" method="get"> <!-- form.jsp파일 만드는것. method는 기본적으로 get -->
+	이 름 : <input type="text" name="name" value="홍길동"><br>
+	아이디 : <input type="text" name="id" value="ks12" placeholder="3자 이상"><br>
+	이메일 : <input type="email" name="email" value="abc@abc.com"><br> 
+	<!-- type에 email, number등 쓸수있음. email은 티 잘안남. 모바일로 하면 보임? -->
+	나 이 : <input type="number" name="age"><br><br>
+	<input type="button" id="btnSend" value="자료 전송">
+	<input type="reset" value="내용 삭제" id="btnClear">
+
+</form>
+<hr>
+<div id="show"></div> <!-- 연습용 출력장소 -->
+
+</body>
+</html>

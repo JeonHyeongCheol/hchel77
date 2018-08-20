@@ -1,0 +1,131 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//객체 선언 방법
+window.onload = function() {
+	// 1. new 연산자 이용
+	//var obj1 = {}; 이 방법이나 밑에 방법이나 비슷
+	var obj1 = new Object();
+	obj1.irum = "홍길동";
+	obj1.nai = 22;
+	obj1.juso = "강남구 역삼1동";
+	obj1.getJuso = function() {
+		return obj1.juso;
+	}
+
+	//alert(typeof(obj1));
+	//alert(obj1.toString());
+	//alert(obj1);
+	//alert(obj1.getJuso());
+	var str1 = obj1.irum + "님의 나이는" + obj1.nai + "이고 주소는 " + obj1.getJuso();
+	document.getElementById("disp1").innerHTML = str1;
+
+	var obj2 = obj1;
+	obj2.irum = "한가해";
+	var str2 = obj1.irum + "님의 나이는" + obj1.nai + "이고 주소는 " + obj1.getJuso();
+	document.getElementById("disp2").innerHTML = str2;
+	
+	// 2. literal 사용
+	var myObj = {
+			irum:"한국인",
+			nai:23,
+			showNai:function(msg){
+				return this.nai + msg;
+			}
+	};
+	
+	//alert(typeof(myObj));
+	//alert(myObj);
+	var str3 = myObj.irum + " 님의 나이는" + myObj.nai + " : " + myObj.showNai("살");
+	document.getElementById("disp3").innerHTML = str3;
+	
+	yourObj = myObj;
+	yourObj.irum = "김밥";
+	var str4 = myObj.irum + " 님의 나이는" + yourObj.nai + " : " + yourObj.showNai("살");
+	document.getElementById("disp4").innerHTML = str4;
+	
+	// 중첩 객체
+	var myFriend = {
+			name:"공기밥",
+			age:"33",
+			otherFriend:{
+				name:"박치기",
+				job:"프로그래머"
+			}
+			
+	};
+	
+	var str5 = myFriend.name + " 님의 나이는" + myFriend.age + " " + 
+			   myFriend.otherFriend.name + " " +
+			   myFriend.otherFriend.job;
+	document.getElementById("disp5").innerHTML = str5;
+	
+	// JSON type
+	var obj = {"번호" : "10", "이름" : "홍길동", "전화" : "111-1111"};
+	var str = obj["번호"] + " " + obj["이름"] + " " + obj["전화"] + "<br>";
+	for(var key in obj) {
+		str += "-" + key + "의 값은 " + obj[key] + "<br>"
+	}
+	document.getElementById("disp6").innerHTML = str;
+	
+	// 3. 생성자 함수를 이용
+	function Person(name) {
+		this.name = name; // 방법 1
+		this.setName = function(newName) { // 방법 2
+			this.name = newName;
+		}
+	}
+	
+	var pp = new Person("손오공"); // 방법 1
+	document.getElementById("disp7").innerHTML = pp.name;
+	var pp2 = new Person(); // 위에나 밑에나 같음.
+	//var pp2 = new Person;
+	document.getElementById("disp7").innerHTML = pp2.name;
+	pp2.setName("사오정"); // 방법 2
+	document.getElementById("disp7").innerHTML = pp2.name;
+	document.getElementById("disp7").innerHTML = pp2.name + " " + pp2["name"];
+	
+	//prototype : 객체에 대한 전역 멤버(static)를 가지도록 함.
+	Person.prototype.getName = function() {
+		return this.name;
+	}
+	
+	var pro1 = new Person("저팔계");
+	var pro2 = new Person("삼장");
+	var ss = pro1.getName() + " " + pro2.getName();
+	
+	document.getElementById("disp8").innerHTML = ss;
+	
+	// 배열 객체
+	var arr1 = []; // 배열 선언.
+	var arr2 = new Array();
+	var sss = ""; 
+		//arr1.constructor + " " + arr1.constructor; 
+	// 실행결과는 arr1과 arr2는 같다는 것. 아무거나 사용해도 상관없음.
+	arr1.push("a"); // 배열에 추가 해줌.
+	arr1.push("c");
+	arr1.push("b");
+	//sss = arr1[0] + " " + arr1[1] + " " +arr1[2];
+	for(var i in arr1) {
+		sss += arr1[i] + " ";
+	}
+	document.getElementById("disp9").innerHTML = sss;
+	
+}
+</script>
+</head>
+<body>
+객체 생성 후 처리<br>
+<div id="disp1"></div>
+<div id="disp2"></div>
+<div id="disp3"></div>
+<div id="disp4"></div>
+<div id="disp5"></div>
+<div id="disp6"></div>
+<div id="disp7"></div>
+<div id="disp8"></div>
+<div id="disp9"></div>
+</body>
+</html>

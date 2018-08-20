@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function() {
+	document.getElementById("btnSend").onclick = chkData; 
+	document.getElementById("btnClear").onclick = clsData;
+}
+
+function chkData() { 
+	//alert("a");
+	if(frm.name.value === "" || isNaN(frm.name.value) == false) {
+		frm.name.focus();
+		alert("이름 입력");
+		return;
+	}
+	
+	if(frm.id.value.length < 3) {
+		frm.id.focus();
+		alert("id는 3자 이상 허용!");
+		return;
+	}
+
+	// 정규 표현식 - 완전중요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	// 이메일 검사 abc@abc.com
+	var str = "12허허abcd_12_12_abc_하하하_abc3450";
+	var regExp = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/g; // g flag : 배열 반환, [] : 범위, {} : 연속적으로 이어져 있는
+	//document.getElementById("show").innerText = (str.match(regExp));
+	// str에 regExp에 match 되는 것을 찾아서 출력.
+	if(!frm.email.value.match(regExp)) {
+		frm.email.focus();
+		alert("이메일 정확히 입력!");
+		return;
+	}
+	
+	var regExp2 = /^[0-9]{1,2}$/; // g flag : 배열 반환, [] : 범위, {} : 연속적으로 이어져 있는
+	if(!frm.age.value.match(regExp2)) {
+		frm.age.focus();
+		alert("나이 정확히 입력!");
+		return;
+	}
+	
+	frm.action="form.jsp"
+	frm.submit();
+}
+
+function clsData() {
+	frm.name.focus();
+}
+</script>
+</head>
+<body>
+** 입력양식 - 입력자료 검사 **
+<form action="form.jsp" name="frm" method="get">
+	이  름 : <input type="text" name="name" value="홍길동"/><br/>
+	아이디 : <input type="text" name="id" placeholder="3자 이상" value="ks12"/><br/> <!-- placeholder : 주석 개념 -->
+	이메일 : <input type="email" name="email" /><br/>
+	나  이 : <input type="number" name="age" /><br/><br/>
+	<input type="button" id="btnSend" value="자료 전송">
+	<input type="reset" id="btnClear" value="내용 삭제">
+</form>
+
+<hr>
+<div id="show"></div>
+</body>
+</html>
