@@ -42,3 +42,10 @@ js14 - 입력자료 검사, 정규식 표현
 js15_calendar, js-cal.js - 캘린더 만들기
 js16 - 메뉴 만들기
 js17 - obj
+js18 - 클로저 
+js19 - 클로저 연습
+js20 - dom 객체
+js21 - dom 연습
+js22, datas-aa.html, aa.xml, aa.txt - AJAX
+
+

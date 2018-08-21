@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function abc() {
+	var my = document.getElementById("my");
+	alert(my.nodeName + " " + 
+			my.childNodes[0].nodeValue + " " + 
+			my.firstChild.nodeValue + " " + 
+			my.getAttribute("id") + " " + 
+			my.getAttribute("comments") + " " +
+			my.childNodes[1].nodeValue);
+}
+
+
+function def() {
+	var arr = document.getElementsByTagName("input");
+	alert("검색 요소 수 : " + arr.length + " " + arr[0].getAttribute("value"));
+}
+
+function func1(arg) {
+	var ele = document.createElement("i"); // i tag 추가
+	var str = document.createTextNode(arg); // 태크 안에 값
+	ele.appendChild(str); // <i>arg값</i>
+	document.getElementById("disp").appendChild(ele);
+}
+
+function func2() {
+	var re = document.getElementById("disp");
+	while(re.hasChildNodes()) {
+		re.removeChild(re.childNodes[0]);
+	}
+}
+</script>
+</head>
+<body>
+<h2 id="my" comments="이건 속성">Dom 객체 연습</h2> <!-- h2는 형제 노드 -->
+<h2 id="my2">Dom 객체 연습2</h2>
+<h2 id="my3">Dom 객체 연습3</h2>
+
+<input type="button" value="id검색" onclick="abc()"><br>
+<input type="button" value="element검색" onclick="def()"><br>
+
+<h2>요소 생성 및 삭제</h2>
+<input type="button" value="요소생성1" onclick="func1('안녕')">
+<input type="button" value="요소생성2" onclick="func1('반가워')">
+<input type="button" value="요소삭제" onclick="func2()">
+<br>
+<div id="disp">출력결과 : </div>
+</body>
+</html>

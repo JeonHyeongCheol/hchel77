@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function() {
+
+	document.getElementById("danSel").onchange = function () {
+		
+		var danSel = frm.danSel.options[frm.danSel.selectedIndex].value;
+		
+		var row = document.createElement("tr");
+		var col = addTd(danSel + "단 결과");
+		row.appendChild(col);
+		document.getElementById("danTbody").appendChild(row);
+		
+		addTr(danSel);
+		
+		
+	}	
+	
+	document.getElementById("danDel").onclick = function () {
+		var del = document.getElementById("danTbody");
+		while(del.hasChildNodes()) {
+			del.removeChild(del.childNodes[0]);
+		}
+	}
+}
+
+function addTr(danSel) { // table에 tr 추가
+	var dan = 1;
+	
+	for(var i = 0; i < 3; i++) {
+		var row = document.createElement("tr");	
+		for (var j = 0; j < 3; j++) {
+			var col = addTd(danSel + " * " + dan + " = " + (danSel * dan)); 
+			row.appendChild(col);
+			dan++;
+		}
+		document.getElementById("danTbody").appendChild(row);
+	}
+	
+}
+
+function addTd(data) { // tr에 td 추가
+	var col = document.createElement("td");
+	var text = document.createTextNode(data);
+	col.appendChild(text);
+	return col;
+}
+	
+
+
+</script>
+</head>
+<body>
+<h1>* 구구단 *</h1>
+<form action="#" name="frm">
+단 :
+	<select id="danSel">
+		<option value="">선택</option>
+		<option value="2">2단</option>
+		<option value="3">3단</option>
+		<option value="4">4단</option>
+		<option value="5">5단</option>
+		<option value="6">6단</option>
+		<option value="7">7단</option>
+		<option value="8">8단</option>
+		<option value="9">9단</option>
+	</select>
+	<input type="button" id="danDel" value="삭제">
+</form> 
+
+<br>
+<span id="danHeader"></span>
+<table id="danTable">
+	<tbody id="danTbody">
+	
+	</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function() {
+		document.getElementById("btnOk").onclick = function() {
+			startXhr();
+		} 
+}
+
+
+var xhr;
+function createXhr() {
+	if(window.ActiveXObject) {
+		xhr = new ActiveXObject("Msxml2.XMLHTTP");
+	} else if(window.XMLHttpRequest) {
+		xhr = new XMLHttpRequest(); // Ajax 지원 클래스
+	}
+}
+
+function startXhr() { // AJAX 이용 할 때 기본 방식
+	createXhr();
+	//aleart(xhr);
+	
+	// 통신 상태를 확인 후 자료를 송수신
+	//xhr.open("get", "datas/aa.html", true); // 비동기방식이면 true, 동기방식이면 false
+	xhr.open("get", "datas/aa.xml", true);
+	xhr.onreadystatechange = function() {
+		//alert(xhr.readyState);
+		if(xhr.readyState === 4) {
+			//alert("통신상태 양호");
+			//alert(xhr.status); // 200 : 해당파일이 있고, 문서에 이상이 없을 경우, 404 : 파일이 없음.
+			if(xhr.status === 200) {
+				//alert("요청 성공");
+				processFunc();
+			} else {
+				//alert("요청 실패 : " + xhr.status);
+			}
+		}
+	}
+	xhr.send(null);
+}
+
+function processFunc() {
+	/*
+	var data = xhr.responseText;
+	//document.getElementById("disp").innerText = data;
+	var my = document.createTextNode(data);
+	document.getElementById("disp").appendChild(my);
+	*/
+	
+	//var data = xhr.responseText;
+	var data = xhr.responseXML; //파싱
+	var itemNode = data.getElementsByTagName("item");
+	//alert(itemNode.length);
+	var codeNode = data.getElementsByTagName("code");
+	var sangNode = data.getElementsByTagName("sang");
+	
+	var ss = "";
+	for (var i=0; i < itemNode.length; i++) {
+		ss += codeNode[i].childNodes[0].nodeValue + " ";
+		ss += sangNode[i].firstChild.nodeValue + " ";
+		ss += "<br>";
+	}
+	
+	document.getElementById("disp").innerHTML = ss;
+}
+</script>
+</head>
+<body>
+<button id = "btnOk">Ajax의 이해</button>
+<br>
+<div id ="disp"></div>
+</body>
+</html>

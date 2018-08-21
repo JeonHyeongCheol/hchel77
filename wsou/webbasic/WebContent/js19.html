@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function makeSizer(n){
+	return function() { // 클로저이기 때문에 누를때마다 누적 되고 있음.
+		n +=10;
+		document.body.style.fontSize = n + 'px';
+	};
+}
+
+var size12 = makeSizer(12); // szie12는 객체변수, n은 12이고 12가 n으로 들어감.
+var size14 = makeSizer(14);
+var size16 = makeSizer(16);
+
+/*
+window.onload = function() {
+	
+}
+ */
+
+document.addEventListener("DOMContentLoaded", function() { // 위에 window.onload와 동일한 코드
+	//alert("a");
+	document.getElementById("s12").onclick = size12; // 내부 함수 수행
+	document.getElementById("s14").onclick = size14;
+	document.getElementById("s16").onclick = size16;
+});
+</script>
+
+</head>
+<body>
+<p>클러저 연습</p>
+<h1>대상 문자열1</h1>
+<h2>대상 문자열2</h2>
+<a href="#" id="s12">12</a>
+<a href="#" id="s14">14</a>
+<a href="#" id="s16">16</a>
+</body>
+</html>

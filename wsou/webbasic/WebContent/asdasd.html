@@ -3,75 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript">
+<script type="text/javascript"> 
+//각 상품 누르면 그 상품에 대한 정보를 테이블 행으로 추가하기
 window.onload = function(){
-	document.getElementById("btnSend").onclick = chkData; //이거 리스너로도 가능
-	document.getElementById("btnClear").onclick = clsData;
+	document.getElementById("dan").onchange = function(){
+		var num = parseInt(frm.dan.options[frm.dan.selectedIndex].value);
+		//여기 parseInt 안해도 구구단 계산 됐음
+		
+		//1행인 '몇단 결과' 추가
+		var row = document.createElement("tr");
+		var col = addTd(num + "단 결과");
+		row.appendChild(col);
+		document.getElementById("myTbody").appendChild(row);
+		
+		//구구단 요소 추가
+		addResult(num);
+
+	}
+
+	document.getElementById("delete").onclick = function(){
+		var re = document.getElementById("myTbody");
+		while(re.hasChildNodes()){
+			re.removeChild(re.childNodes[0]);
+		}
+	}
+ 	
 }
 
-function chkData(){ //check data?
-	//alert("a");
-	if(frm.name.value === "" || isNaN(frm.name.value) === false){
-		frm.name.focus();
-		alert("이름 입력");
-		return;
+function addResult(num){ //table에 구구단 값 추가
+	var dan = 1; //num에다 곱할 수 초기값
+	
+	for (var i = 0; i < 3; i++) {
+		var row = document.createElement("tr");
+		for (var j = 0; j < 3; j++) {
+			var col = addTd(num + "*" + dan + "=" + (num * dan));
+			row.appendChild(col);
+			dan ++;
+		}	
+		document.getElementById("myTbody").appendChild(row);
 	}
-	
-	if(frm.id.value.length < 3){
-		frm.id.focus();
-		alert("id는 3자 이상 허용");
-		return;
-	}
-	
-
-	
-	//document.getElementById("show").innerText = str.match(regExp);
-	//match말고 except로 뽑거나, replace로 대체할 수도 있음
-	
-	//정규 표현식으로 이메일 검사
-	var regExp = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/;
-	if (!frm.email.value.match(regExp)) {
-		frm.email.focus();
-        alert("이메일");
-		return;
-	}
-	
-	
-	var regExp2 = /^[0-9]{1,2}$/; //1글자나 2글자의 숫자만 허용
-	if (!frm.age.value.match(regExp2)) {
-		frm.age.focus();
-        alert("나이");
-		return;
-	}
-	
-	//frm.action="form.jsp"; //w3c에서는 이 방법 권장(action, method를 여기다 쓰는것)
-	//frm.method="get";
-	frm.submit(); //frm이라는 이름의 form 태그 안의 내용을 서버로 제출
-	
 	
 }
 
-function clsData(){ //clear data?
-	//alert("b");
-	frm.name.focus(); //이름이 name인 '이름'칸으로 focus 이동
+function addTd(data){ //tr에 td 추가
+	var col = document.createElement("td");
+	var text = document.createTextNode(data);
+	col.appendChild(text);
+	return col;
+	
 }
+
 
 </script>
 </head>
 <body>
-** 입력양식 - 입력자료 검사 **<br>
-<form action="ex.jsp" name="frm" method="get"> <!-- form.jsp파일 만드는것. method는 기본적으로 get -->
-	이 름 : <input type="text" name="name" value="홍길동"><br>
-	아이디 : <input type="text" name="id" value="ks12" placeholder="3자 이상"><br>
-	이메일 : <input type="email" name="email" value="abc@abc.com"><br> 
-	<!-- type에 email, number등 쓸수있음. email은 티 잘안남. 모바일로 하면 보임? -->
-	나 이 : <input type="number" name="age"><br><br>
-	<input type="button" id="btnSend" value="자료 전송">
-	<input type="reset" value="내용 삭제" id="btnClear">
-
+<form action="#" name="frm">
+단 : 
+<select id="dan" name="dan">
+	<option value="">선택</option>
+	<option value="2">2단</option>
+	<option value="3">3단</option>
+	<option value="4">4단</option>
+	<option value="5">5단</option>
+	<option value="6">6단</option>
+	<option value="7">7단</option>
+	<option value="8">8단</option>
+	<option value="9">9단</option>
+</select>
+<input type="button" id="delete" value="삭제">
 </form>
-<hr>
-<div id="show"></div> <!-- 연습용 출력장소 -->
+<span id="res"></span>
+<table id="mytable"> 
+	<tbody id="myTbody">
+	</tbody>
+</table>
+
 
 </body>
 </html>

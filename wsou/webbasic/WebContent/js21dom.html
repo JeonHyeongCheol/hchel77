@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+// dom 서버에서는 모르지만 client 상에서는 출력해줌.
+window.onload = function() {
+	document.getElementById("sel").onchange = function () {
+		var sangpum=comment="";
+		
+		var sel = frm.sel.options[frm.sel.selectedIndex].value; // form에 select에 옵션으로 선택하여 값 가져옴
+		var sang = frm.sel.options[frm.sel.selectedIndex].text;
+		//console.log(sel + " " + sang);
+		
+		if(sel === "1000") {
+			sangpum = sang;
+			comment = "부드럽게 잘 써짐";
+		} else if(sel === "2000") {
+			sangpum = sang;
+			comment = "보조기억장치";
+		} else if(sel === "3000") {
+			sangpum = sang;
+			comment = "게임에 적합";
+		}
+		//console.log(sang + " " + comment);
+		
+		addTr(sangpum, comment);
+		
+		// table에 속성 추가
+		document.getElementById("myTable").setAttribute("border","1");
+	}
+	
+	// 제목 출력
+	var hele = document.createElement("h1");
+	var htext = document.createTextNode("결과는")
+	hele.appendChild(htext)
+	document.getElementById("header").appendChild(hele);
+}
+
+function addTr(sangpum, comment) { // table에 tr 추가
+	var row = document.createElement("tr");
+	var col = addTd(sangpum); // 상품을 보냄. // <td>상품명</td>
+	row.appendChild(col); // <tr><td>상품명</td></tr>
+	var col = addTd(comment); // 코맨트을 보냄. // <td>설명</td>
+	row.appendChild(col); // <tr><td>설명</td></tr>
+	// <tr><td>상품명</td><td>설명</td></tr>
+	
+	document.getElementById("myTbody").appendChild(row);
+}
+
+function addTd(data) { // tr에 td 추가
+	var col = document.createElement("td");
+	var text = document.createTextNode(data); // 상품을 받음
+	col.appendChild(text);
+	return col;
+}
+</script>
+</head>
+<body>
+* 요소처리 *<br>
+<form action="#" name= "frm">
+상품 선택 : 
+<select id="sel">
+	<option value="">선택</option>
+	<option value="1000">볼펜</option>
+	<option value="2000">노트</option>
+	<option value="3000">마우스</option>
+</select>
+</form>
+<br>
+<span id="header"></span>
+<table id="myTable">
+	<tbody id="myTbody">
+	
+	</tbody>
+</table>
+</body>
+</html>
