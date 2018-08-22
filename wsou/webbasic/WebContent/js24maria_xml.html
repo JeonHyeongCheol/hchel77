@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function() {
+		document.getElementById("btnmaria").onclick = startXhr;
+}
+
+var xhr;
+function startXhr() { // AJAX 이용 할 때 기본 방식
+	xhr = new XMLHttpRequest();
+
+	xhr.open("get", "http://localhost/webbasic/datas/sang_xml.jsp", true);
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState === 4) {
+			if(xhr.status === 200) {
+				jsonProcessFunc();
+			} else {
+				alert("요청 실패 : " + xhr.status);
+			}
+		}
+	}
+	xhr.send(null);
+}
+
+function jsonProcessFunc() {
+
+	var data = xhr.responseXML; // json는 객체를 만들어 줘야 함.
+	//alert(data);	
+	var sangpum = data.getElementsByTagName("sangpum");
+	var coNode = data.getElementsByTagName("code");
+	var saNode = data.getElementsByTagName("sang");
+	var suNode = data.getElementsByTagName("su");
+	var daNode = data.getElementsByTagName("danga");
+	
+	var str = "<table border='1'>";
+	str += "<tr><th>코드</th><th>상품명</th><th>수량</th><th>단가</th></tr/>"; 
+		
+	for(var i = 0; i < sangpum.length; i++) {
+		str += "<tr>";
+		str += "<td>" + coNode[i].childNodes[0].nodeValue + "</td>"; 
+		str += "<td>" + saNode[i].childNodes[0].nodeValue + "</td>";
+		str += "<td>" + suNode[i].childNodes[0].nodeValue + "</td>";
+		str += "<td>" + daNode[i].childNodes[0].nodeValue + "</td>";
+		str += "</tr>";
+	}
+		
+	str += "</table>";
+	document.getElementById("disp").innerHTML = str;
+}
+
+</script>
+</head>
+<body>
+<button id = "btnmaria">Ajax로 RDBMS 자료 읽기</button>
+<br>
+<hr>
+<div id="disp"></div>
+</body>
+</html>

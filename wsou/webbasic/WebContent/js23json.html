@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function() {
+	document.getElementById("btnOk").onclick = function() {
+		startXhr();
+	}
+}
+
+var xhr;
+
+function startXhr() {
+	xhr = new XMLHttpRequest();
+	
+	xhr.open("get", "datas/bb.json", true);
+	xhr.onreadystatechange = function() {
+	
+		if(xhr.readyState === 4) {
+			if(xhr.status === 200) {
+				processFunc();
+			} else {
+				alert("요청 실패 : " + xhr.status)
+			}
+		}
+	}
+	xhr.send(null);
+}
+
+function processFunc() {
+	var data = xhr.responseText; // json는 객체를 만들어 줘야 함.
+	var parseData = JSON.parse(data); // 객체화(배열)
+	//alert(parseData.sangpum.length);
+	var ss = "";
+	for(var i = 0; i < parseData.sangpum.length; i++) {
+		ss += parseData.sangpum[i].code + " " +
+			  parseData.sangpum[i].sang + "<br>";
+		ss += "<br>";
+	}
+	document.getElementById("disp").innerHTML = ss;
+}
+
+</script>
+</head>
+<body>
+<button id="btnOk">Ajax로 json 읽기</button>
+<div id="disp"></div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function() {
+		document.getElementById("btnXml").onclick = function() {
+			var xml = "xml";
+			startXhr(xml);
+		}
+		
+		document.getElementById("btnJson").onclick = function() {
+			var json = "json";
+			startXhr(json);
+		}
+}
+
+
+var xhr;
+function startXhr(arg) { // AJAX 이용 할 때 기본 방식
+	xhr = new XMLHttpRequest();
+
+	xhr.open("get", "http://openapi.seoul.go.kr:8088/sample/" + arg + "/SeoulLibraryTime/1/5/", true);
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState === 4) {
+			if(xhr.status === 200) {
+				if(arg == "xml") {
+					xmlProcessFunc();	
+				} else if(arg == "json") {
+					jsonProcessFunc();
+				}
+			} else {
+				alert("요청 실패 : " + xhr.status);
+			}
+		}
+	}
+	xhr.send(null);
+}
+
+function xmlProcessFunc() {
+	
+	var del = document.getElementById("myTbody1");
+	while(del.hasChildNodes()) {
+		del.removeChild(del.childNodes[0]);
+	}
+	
+	var data = xhr.responseXML; //파싱
+	document.getElementById("myhd1").innerHTML = "XML 생성";
+	var nameNode = data.getElementsByTagName("LBRRY_NAME");
+	var AdresNode = data.getElementsByTagName("ADRES");
+	var telNode = data.getElementsByTagName("TEL_NO");
+	
+	var row = document.createElement("tr");
+	var col = addTd("도서관명");
+	row.appendChild(col);
+	var col = addTd("주소");
+	row.appendChild(col);
+	var col = addTd("전화");
+	row.appendChild(col);
+	
+	document.getElementById("myTbody1").appendChild(row);
+	
+	for (var i=0; i < nameNode.length; i++) {
+		var row = document.createElement("tr");
+		var col = addTd(nameNode[i].childNodes[0].nodeValue + " ");
+		row.appendChild(col);
+		var col = addTd(AdresNode[i].firstChild.nodeValue + " ");
+		row.appendChild(col);
+		if(telNode[i].firstChild == null) {
+			var col = addTd("");
+			row.appendChild(col);
+		} else {
+			var col = addTd(telNode[i].firstChild.nodeValue);
+			row.appendChild(col);
+		}
+	
+		document.getElementById("myTbody1").appendChild(row);
+		
+	}
+	document.getElementById("myTable1").setAttribute("border","1px solid black");
+	document.getElementById("myTable1").setAttribute("style","border-collapse:collapse");
+}
+
+function jsonProcessFunc() {
+	
+	var del = document.getElementById("myTbody2");
+	while(del.hasChildNodes()) { // hasChildNodes() : 자식노드가 있는지 없는 지 boolean으로 반환.
+		del.removeChild(del.childNodes[0]);
+	}
+	
+	var data = xhr.responseText; // json는 객체를 만들어 줘야 함.
+	var parseData = JSON.parse(data); // 객체화(배열)
+	document.getElementById("myhd2").innerHTML = "JSON 생성";
+	var row = document.createElement("tr");
+	var col = addTd("도서관명");
+	row.appendChild(col);
+	var col = addTd("주소");
+	row.appendChild(col);
+	var col = addTd("전화");
+	row.appendChild(col);
+	document.getElementById("myTbody2").appendChild(row);
+
+	for(var i = 0; i < parseData.SeoulLibraryTime.row.length; i++) {
+		var row = document.createElement("tr");
+		var col = addTd(parseData.SeoulLibraryTime.row[i].LBRRY_NAME);
+		row.appendChild(col);
+		var col = addTd(parseData.SeoulLibraryTime.row[i].ADRES);
+		row.appendChild(col);
+		var col = addTd(parseData.SeoulLibraryTime.row[i].TEL_NO);
+		row.appendChild(col);
+		
+		document.getElementById("myTbody2").appendChild(row);
+
+	}
+	document.getElementById("myTable2").setAttribute("border","1");
+	document.getElementById("myTable2").setAttribute("style","border-collapse:collapse");
+
+}
+
+function addTd(data) { // tr에 td 추가
+	var col = document.createElement("td");
+	var text = document.createTextNode(data); // 상품을 받음
+	col.appendChild(text);
+	return col;
+}
+</script>
+</head>
+<body>
+<button id = "btnXml">XML 읽기</button>
+<button id = "btnJson">JSON 읽기</button>
+<br>
+<h1 id="myhd1"></h1>
+<table id="myTable1">
+	<tbody id="myTbody1">
+	</tbody>
+</table>
+<hr>
+<h1 id="myhd2"></h1>
+<table id="myTable2">
+	<tbody id="myTbody2">
+	</tbody>
+</table>
+</body>
+</html>

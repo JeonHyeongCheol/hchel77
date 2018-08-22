@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
 	<item> <!-- <item code="10">는 밑에 있는 내용이랑 같음.-->
-		<code>10</code>
+		<code price="25000">10</code>
 		<sang>자바의 이해</sang>
 	</item>
 	<item>

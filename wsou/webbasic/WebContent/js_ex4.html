@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var re = "";
+
+window.onload = function() {
+		document.getElementById("btnSend").onclick = function() {
+			
+			if(frm.jik.value === "" || isNaN(frm.jik.value) == false) {
+				frm.jik.focus();
+				alert("직급을 입력하세요");
+				return;
+			}
+			
+			re = document.getElementById("jik").value;
+			//console.log(re);
+			//frm.action="datas/jik_xml.jsp";
+			//frm.submit();
+			startXhr();
+		}		
+}
+
+var xhr;
+function startXhr() { // AJAX 이용 할 때 기본 방식
+	xhr = new XMLHttpRequest();
+	xhr.open("get", "http://localhost/webbasic/datas/jik_xml.jsp?jik=" + re , true);
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState === 4) {
+			if(xhr.status === 200) {
+				ProcessFunc();
+			} else {
+				alert("요청 실패 : " + xhr.status);
+			}
+		}
+	}
+	xhr.send(null);
+}
+
+function ProcessFunc() {
+
+	var data = xhr.responseXML; // json는 객체를 만들어 줘야 함.
+	var noNode = data.getElementsByTagName("no");
+	var nameNode = data.getElementsByTagName("name");
+	var jikNode = data.getElementsByTagName("jik");
+	var str = "<table border='1'>";
+	str += "<tr><th>사번</th><th>이름</th><th>직급</th></tr/>"; 
+	
+	var cou = 0;
+	for(var i = 0; i < noNode.length; i++) {
+		
+		str += "<tr>";
+		str += "<td>" + noNode[i].childNodes[0].nodeValue + "</td>"; 
+		str += "<td>" + nameNode[i].childNodes[0].nodeValue + "</td>";
+		str += "<td>" + jikNode[i].childNodes[0].nodeValue + "</td>";
+		str += "</tr>";
+		cou++;
+	}
+	str += "</table>";
+	
+	str += cou + "명"	
+	document.getElementById("disp").innerHTML = str;
+}
+
+</script>
+</head>
+<body>
+<form action="#" name="frm" method="get">
+직급 : <input type="text" id="jik" name="jik" placeholder="직급을 입력하세요">
+<input type="button" id="btnSend" value="확인"><br>
+<hr>
+</form>
+<div id="disp"></div>
+</body>
+</html>
