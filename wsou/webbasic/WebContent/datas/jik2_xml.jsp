@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -22,13 +21,18 @@ try{
 try{
 	String url="jdbc:mysql://127.0.0.1:3306/test"; 
 	conn = DriverManager.getConnection(url,"root","123");
-	pstmt = conn.prepareStatement("select jikwon_no, jikwon_name, jikwon_jik, jikwon_gen from jikwon where jikwon_jik=?");
-	pstmt.setString(1, jik);
+	if(jik.equals("전체")) {
+		pstmt = conn.prepareStatement("select jikwon_no, jikwon_name, jikwon_jik, jikwon_gen, buser_name from jikwon right join buser on buser_num=buser_no");
+	} else {
+		pstmt = conn.prepareStatement("select jikwon_no, jikwon_name, jikwon_jik, jikwon_gen, buser_name from jikwon right join buser on buser_num=buser_no where jikwon_jik=?");
+		pstmt.setString(1, jik);
+	}
 	rs = pstmt.executeQuery();
 	while(rs.next()) {
 		
 		result += "{";
 		result += "\"no\":"+"\"" + rs.getString("jikwon_no") + "\",";
+		result += "\"buser\":"+"\"" + rs.getString("buser_name") + "\",";
 		result += "\"name\":"+"\"" + rs.getString("jikwon_name") + "\",";
 		result += "\"jik\":"+"\"" + rs.getString("jikwon_jik") + "\",";
 		result += "\"gen\":"+"\"" + rs.getString("jikwon_gen") + "\"";
@@ -51,6 +55,4 @@ try{
 ]
 }
     
-    
-
     

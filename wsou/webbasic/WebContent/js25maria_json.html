@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function() {
+	document.getElementById("btnMaria").onclick = startXhr;
+}
+
+var xhr;
+function startXhr() { // AJAX 이용 할 때 기본 방식
+	xhr = new XMLHttpRequest();
+	
+	xhr.open("get", "http://localhost/webbasic/datas/sang_json.jsp", true);
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState === 4) {
+			if(xhr.status === 200) {
+				JsonProcessFunc();
+			} else {
+				alert("요청 실패 : " + xhr.status);
+			}
+		}
+	}
+		xhr.send(null);
+}
+
+function JsonProcessFunc() {
+	var data = xhr.responseText;
+	console.log(data);
+	var parseData = JSON.parse(data);
+	
+	var ss = "";
+	for(var i = 0; i < parseData.mysang.length; i++) {
+		ss += parseData.mysang[i].code + " " +
+			  parseData.mysang[i].sang + " " +
+			  parseData.mysang[i].su + " " +
+			  parseData.mysang[i].dan + "<br>";
+	}
+	document.getElementById("disp").innerHTML = ss;
+}
+</script>
+</head>
+<body>
+<button id="btnMaria">Ajax로 DB자료 읽기</button>
+<br><br>
+<input type="text">
+<div id=disp></div>
+</body>
+</html>

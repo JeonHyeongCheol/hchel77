@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var re = "";
+
+window.onload = function() {
+		document.getElementById("btnAll").onclick = function() {			
+			re = document.getElementById("btnAll").value;
+			startXhr();
+		}
+		
+		document.getElementById("btnBu").onclick = function() {			
+			re = document.getElementById("btnBu").value;
+			startXhr();
+		}	
+		
+		document.getElementById("btnGa").onclick = function() {			
+			re = document.getElementById("btnGa").value;
+			startXhr();
+		}
+		
+		document.getElementById("btnDae").onclick = function() {			
+			re = document.getElementById("btnDae").value;
+			startXhr();
+		}
+		
+		document.getElementById("btnSa").onclick = function() {			
+			re = document.getElementById("btnSa").value;
+			startXhr();
+		}		
+}
+
+var xhr;
+function startXhr() { // AJAX 이용 할 때 기본 방식
+	xhr = new XMLHttpRequest();
+	xhr.open("get", "http://localhost/webbasic/datas/jik2_xml.jsp?jik=" + re , true);
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState === 4) {
+			if(xhr.status === 200) {
+				JsonProcessFunc();
+			} else {
+				alert("요청 실패 : " + xhr.status);
+			}
+		}
+	}
+	xhr.send(null);
+}
+
+function JsonProcessFunc() {
+	var data = xhr.responseText;
+	var parseData = JSON.parse(data);
+	
+	var ss = "<table border='1px solid black' style='border-collapse:collapse'>";
+	ss += "<tr><th>사번</th><th>이름</th><th>직급</th><th>성별</th></tr/>"; 
+	for(var i = 0; i < parseData.jik.length; i++) {
+		var xhrUrl = "http://localhost/webbasic/datas/jik2buser_xml.jsp?buser=" + parseData.jik[i].buser;
+		ss += "<tr>";
+		ss += "<td>" + parseData.jik[i].no + "</td>";
+		ss += "<td>" + "<a href='"+ xhrUrl +"' target='star'>" + parseData.jik[i].name + "</a> " + "</td>";
+		ss += "<td>" + parseData.jik[i].jik + "</td>";
+		ss += "<td>" + parseData.jik[i].gen + "</td>";
+		ss += "</tr>";
+	}
+
+	document.getElementById("disp").innerHTML = ss;
+}
+</script>
+</head>
+<body>
+<button id="btnAll" name="jik" value="전체">전체</button>
+<button id="btnBu" name="jik" value="부장">부장</button>
+<button id="btnGa" name="jik" value="과장">과장</button>
+<button id="btnDae" name="jik" value="대리">대리</button>
+<button id="btnSa" name="jik" value="사원">사원</button>
+<hr>
+<form action="#" name="frm" method="get">
+<div id="disp"></div>
+</form><br>
+<iframe src="" width="300" height="200" name="star"></iframe>
+</body>
+</html>

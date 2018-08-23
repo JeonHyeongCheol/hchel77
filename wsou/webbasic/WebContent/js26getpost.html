@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function() {
+	document.getElementById("btnGet").onclick = getFunc;
+	document.getElementById("btnPost").onclick = postFunc;
+}
+
+var xhr;
+function getFunc() {
+	var irum = frm.name.value;
+	var nai = frm.age.value;
+	
+	fname = "getpost.jsp?name=" + irum + "&age=" + nai;
+	//alert(fname);
+	
+	xhr = new XMLHttpRequest();
+	
+	xhr.open("get", "datas/" + fname, true);
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState === 4) {
+			if(xhr.status === 200) {
+				ProcessFunc1();
+			} else {
+				alert("요청 실패 : " + xhr.status);
+			}
+		}
+	}
+	xhr.send(null);
+}
+
+function postFunc() {
+	var irum = frm.name.value;
+	var nai = frm.age.value;
+	
+	fname = "datas/getpost.jsp";
+	//alert(fname);
+	
+	xhr = new XMLHttpRequest();
+	xhr.open("post", fname, true);
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState === 4) {
+			if(xhr.status === 200) {
+				ProcessFunc2();
+			} else {
+				alert("요청 실패 : " + xhr.status);
+			}
+		}
+	}
+	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xhr.send("name=" + irum + "&age=" + nai);
+}
+
+function ProcessFunc1() {
+	var data = xhr.responseText;
+	alert("get 요청 처리 결과욥 : "  + data);
+}
+
+function ProcessFunc2() {
+	var data = xhr.responseText;
+	alert("post 요청 처리 결과욥 : " + data);
+}
+</script>
+</head>
+<body>
+get, post 연습<br>
+<form name="frm">
+이름 : <input type="text" name="name"><br>
+나이 : <input type="text" name="age"><br>
+<input type="button" value="get" id="btnGet">
+<input type="button" value="post" id="btnPost">
+</form>
+</body>
+</html>

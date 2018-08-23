@@ -7,6 +7,7 @@
     <!-- contentType="text/html;는 client 에게 보여주기, 알려주기 위함. -->
     <!-- 여기서는 mime(contenttype)타입이 text/xml 사용 -->
     <!-- xml는 태그를 이름을 마음대로 정의 할 수 있음. -->
+    <!-- json는 contentType="text/plain; 을 사용 -->
 <mysang>
 <% //여기는 메소드
 Connection conn = null;

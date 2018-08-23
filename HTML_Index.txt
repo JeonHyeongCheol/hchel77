@@ -38,14 +38,26 @@ js10 - 색상
 js11 - InnerHTML
 js12 - 이벤트 처리1(핸들러)
 js13 - 이벤트 처리2(onclick), window.onload
-js14 - 입력자료 검사, 정규식 표현
+js14re - 입력자료 검사, 정규식 표현
 js15_calendar, js-cal.js - 캘린더 만들기
 js16 - 메뉴 만들기
-js17 - obj
-js18 - 클로저 
+js17ojb - obj
+js18closur - 클로저 
 js19 - 클로저 연습
-js20 - dom 객체
-js21 - dom 연습
-js22, datas-aa.html, aa.xml, aa.txt - AJAX
+js20dom - dom 객체
+js21dom - dom 연습
+js22ajaxnhtml, datas-aa.html, aa.xml, aa.txt, sfc_web_map - xml을 이용한 AJAX 사용
+js23json, datas-bb.json - json파일를 이용한 AJAX 사용
+js24maria_xml, datas-sang_xml.jsp - java로 xml을 만들고 mariaDB를 이용한 AJAX 사용
+js25maria_json, datas-sang_json.jsp - java로 json 만들고 mariaDB를 이용한 AJAX 사용
+js26getpost, datas-getpost.jsp - AJAX에 get, post 이용하기
+js27csv, datas-my.txt - txt로 AJAX사용
+js28suggest, datas-suggest.xml - suggest
 
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
+js_ex1 - js를 이용한 계산기 만들기
+js_ex2 - form, select, function()을 이용한 구구단 만들기
+js_ex3, _ - xml, json 파일을 AJAX로 불러와 출력하기 
+js_ex4, datas-jik_xml, - 직급을 입력하여 DB로 보낸 후 출력된 값 AJAX로 받아오기 
+js_ex5, datas-jik2_xml, jik2buser_xml - 버튼, jsp, iframe을 이용하여 각 직급의 사원들과 그 직급의 부서정보 받아오기

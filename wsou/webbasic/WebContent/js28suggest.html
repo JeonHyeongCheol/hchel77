@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자동완성</title>
+<script type="text/javascript" src="js/sug.js"></script>
+</head>
+<body>
+<form name="frm"> <!-- action쓰면 ajax가 아님 -->
+** 이름 검색(Ajax) **<p/>
+검색어 : <input type="text" name="keyword" id="keyword" onkeydown="sijak()">
+<br><br><br><br><br><br><br>
+<hr>
+선택된 직원명 : <input type="text" name="sel" size="10">
+<input type="button" value="담당고객출력">
+</form>
+<div id="suggest" style="display:; position:absolute; left:100px; top:100px">
+	<div id="suggestList"></div>
+</div>
+</body>
+</html>
