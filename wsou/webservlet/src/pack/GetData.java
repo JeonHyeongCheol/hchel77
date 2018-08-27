@@ -58,6 +58,8 @@ public class GetData extends HttpServlet {
 		
 		int result = (Integer.parseInt(age)) / 10; // 세번째 방법
 		return (result * 10) + "대";
+		
+		reuslt = (interget.parseInt(age)).substring(0,1) + "대"; // 네번째 방법
 		*/
 	}
 

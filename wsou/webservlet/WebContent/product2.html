@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function() {
+	document.getElementById("btnOk").onclick = function() {
+		frm.submit();
+	}
+}
+</script>
+</head>
+<body>
+<table>
+	<tr>
+		<td><img src="images/p2.jpg" width=80%></td>
+		<td>
+			<pre>
+상품 상세스펙
+제품명	제품분류	2in1 태블릿PC
+시스템	통신규격	WiFi
+프로세서 제조사	애플
+프로세서	A10X (64bit)
+디스플레이	LCD	26.6㎝(10.5″)
+해상도	2224x1668
+저장장치	메모리	DDR4
+내장메모리	64GB
+기본사양	운영체제	iOS
+입/츨력단자	USB3.0
+부가기능	부가기능	블루투스,IPS패널(광시야각),GPS
+카메라	전면: 700만화소
+후면: 1200만화소
+기타	배터리	약10시간
+무게	469g
+크기	250.6 x 174.1 x 6.1 mm
+가격 : 698,000
+			</pre>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<form action="Cart" name="frm" method="post">
+			<input type="hidden" name="name" value="애플 태블릿PC 64GB [아이패드 프로 10.5]">
+			<input type="hidden" name="price" value="698800">
+			<input type="button" id="btnOk" value="장바구니에 담기">
+			<input type="button" value="홈으로" onclick="history.back()"> <!-- history.back() : 이전화면으로 돌아가기 -->
+			</form>
+</table>
+</body>
+</html>

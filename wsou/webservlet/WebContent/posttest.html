@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>post 연습</h2>
+<form action="PostData" method="post"> <!-- method에 Post가 없으면 다 Get방식 -->
+이름 : <input type="text" name="name" value="한국인"><br>
+주소1 : <input type="text" name="addr" value="서울시"><br>  <!-- name이 같으면 배열로 받아야 함. 라디오 버튼에서는 그룹화. -->
+주소2 : <input type="text" name="addr" value="강남구"><br>
+<br>
+
+<!-- checkbox -->
+현재 가능한 언어는?<br>
+<input type="checkbox" name="lan" value="C언어">C<br> <!-- checkbox도 name이 같으면 배열로 받아야 함. -->
+<input type="checkbox" name="lan" value="Java">Java<br>
+<input type="checkbox" name="lan" value="python">python<br>
+<br>
+
+<!-- radio -->
+현재 이동중인 교통수단은?<br>
+<input type="radio" name="tr" value="버스" checked="checked">버스&nbsp;&nbsp;
+<input type="radio" name="tr" value="전철">전철&nbsp;&nbsp;
+<input type="radio" name="tr" value="도보">도보
+<br>
+
+<!-- select -->
+<br>
+운영체제는 ?
+<br>
+<select name="os"><!-- multiple도 사용가능(여러 개 선택) -->
+	<option>윈도우</option>
+	<option>리눅스</option>
+	<option>Mac</option>
+</select>
+<br>
+
+<!-- hidden -->
+<input type="hidden" name="hobby" value="게임">
+
+<br><br>
+<input type="submit" value="자료 전송">
+</form>
+</body>
+</html>

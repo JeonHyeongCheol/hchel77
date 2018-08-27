@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function() {
+	document.getElementById("btnOk").onclick = function() {
+		frm.submit();
+	}
+}
+</script>
+</head>
+<body>
+<table>
+	<tr>
+		<td><img src="images/p1.jpg" width=80%></td>
+		<td>
+			<pre>
+상품번호	1397221580
+상품상태	새상품
+부가세 면세여부	과세상품
+사업자구분	사업자 판매자
+모델명	아이패드 9.7 (2018) 32G[정품]
+브랜드	애플
+원산지	중국
+가격 : 	395,000
+			</pre>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<form action="Cart" name="frm" method="post">
+			<input type="hidden" name="name" value="아이패드 9.7 (2018) 32G[정품]">
+			<input type="hidden" name="price" value="395000">
+			<input type="button" id="btnOk" value="장바구니에 담기">
+			<input type="button" value="홈으로" onclick="history.back()"> <!-- history.back() : 이전화면으로 돌아가기 -->
+			</form>
+</table>
+</body>
+</html>
