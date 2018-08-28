@@ -106,3 +106,17 @@ servlet_ex1.html  - 서블릿 문제 1(학생 성적표)
 StuEx, Stus - 서블릿 문제 1(학생 성적표), 세션 사용
 
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+webjsp
+
+err404.jsp - Error 페이지 본문
+error.jsp - Error 에러 발생 시 생성 문서
+jspgo.jsp - JSP 기본
+jsppage.jsp - JSP 지시어
+include_test.jsp - include(지시어, action tag)
+in_top.jsp - include_test의 윗부분
+in_bottom.jsp - include_test의 뒷부분
+intag1.jsp - include_test의 중간 부분 intag1
+intag2.jsp - include_test의 중간 부분 intag2
+builtin_obj.jsp - 내장 객체 연습
+built_other.jsp - 내장 객체 메소드

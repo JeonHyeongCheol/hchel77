@@ -11,7 +11,8 @@ window.onload = function() {
 			return false;
 		}
 		frm.method="post";
-		frm.action="../BangServlet";
+		frm.action="../BangServlet"; 
+		// 이 html은 폴더 안에 있지만 BangServlet은 루트에서 수행 되기 때문에 한 단계 위로 올라가야 함.
 		frm.submit();
 	}
 	
@@ -20,6 +21,7 @@ window.onload = function() {
 </head>
 <body>
 <h2>방명록 글쓰기</h2>
+<a href="../BangList">글 보기</a>
 <form name="frm">
 <table>
 	<tr>
