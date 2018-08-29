@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function () {
+	document.getElementById("jumsu").onclick = function() {
+		if(frm.jumsu.value == "") {
+			frm.jumsu.value = 0;
+		}
+			
+	} 
+}
+</script>
+</head>
+<body>
+<h1>* 점수 계산(세션 연습) *</h1>
+<form action="session_ex1.jsp" method="post" name="frm">
+이름 : <input type="text" name="name"><br>
+점수 : <input type="text" id="jumsu" name="jumsu"><br><br>
+<input type="submit" value="전송">
+</form>
+</body>
+</html>

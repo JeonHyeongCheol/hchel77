@@ -23,7 +23,7 @@ public class SessionTest extends HttpServlet {
 		HttpSession session = request.getSession(true); // 세션이 있으면 읽고 없으면 생성.
 		//HttpSession session = request.getSession(false); // 세션이 있으면 읽고 없으면 생성안함.
 		
-		session.setMaxInactiveInterval(10); // 20초간 유효 (기본 유효시간은 30분)
+		//session.setMaxInactiveInterval(10); // 20초간 유효 (기본 유효시간은 30분)
 		
 		if(session != null) { // 세션이 null 이 아니면.
 			session.setAttribute("name", "홍길동");
