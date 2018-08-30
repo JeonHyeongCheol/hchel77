@@ -30,6 +30,7 @@ for(int a = 0; a < 9; a++) {
 <!-- model 1 방식 -->
 <jsp:useBean id="gugu" class="beanpack.Gugudan" scope="session"/>
 <!-- id가 객체가 됨. class명 정해줌-->
+<!-- action tag 사용시 클래스명은 Full Path를 다 써줘야 하며, import하면 안됨. -->
 <%
 System.out.println(gugu.toString());
 int re2 [] = gugu.compute(dan);

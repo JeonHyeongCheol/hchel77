@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function() {
+	document.getElementById("btnIns").onclick = func;
+}
+
+function func() {
+	if(frm.sang.value === "") {
+		alert("상품명 입력");
+		frm.sang.focus();
+		return;
+	}
+	// 나머진 생략...
+	
+	frm.submit();
+}
+</script>
+</head>
+<body>
+** 상품 추가 **<p/>
+<form action="beandb2_ins.jsp" method="post" name=frm>
+품명 : <input type="text" name="sang">
+수량 : <input type="text" name="su">
+단가 : <input type="text" name="dan">
+<br>
+<input type="button" id="btnIns" value="확인">
+</form>
+</body>
+</html>
