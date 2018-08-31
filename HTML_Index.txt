@@ -137,7 +137,9 @@ gugu.html, gugu.jsp - JSP Bean를 이용한 구구단 만들기(JSP action tag : usebean �
 para1.html, para1.jsp - 자동화, Property
 para2.html, para2.jsp - setProperty 자동화 시키기(*을 사용해 Bean 찾기)
 beandb1.jsp - JSP Bean + DB 연결(상품 DTO)
-beandb2_ins.html, beandb2_page - 
+
+beandb2_ins.html, beandb2_page.jsp, beandb2_ins.jsp - JSP Bean + DB추가, 페이징 처리
+beandb3.jsp, beandb3up.jsp,  beandb3up_ok.jsp, beandb3del.html, beandb3fail - 상품(JSP Bean + DB CURD)
 
 -----WEB-INF-----
 my.jsp - WEB-INF 보안(forward만 접근가능)
@@ -153,7 +155,8 @@ Para1Class - 자동화
 FromBean, ExamProcess - setProperty, 자동화, DTO, 클래스를 변수 설정을 이용하여 JSP에서 부르기
 SangpumDto - 상품 DTO
 Connbean - JSP Bean + DB 연결, ArrayList method(메소드)
-ConnBean2 - 
+ConnBean2, SangpumForm - JSP Bean + DB Insert, 페이징 처리
+ConnBeanPoling,  SangpumForm, SangpumDto - 상품 (JSP Bean + DB CURD)
 
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
@@ -171,4 +174,7 @@ Product, ProductResult - bean_ex2문제(jsp bean)
 jikwon_ex3.html, beser_ex3.jsp - JSP action tag, JSP bean, DB를 이용한 직원 List 출력 문제
 JikwonDb1_ex3, JikwonDb2_ex3, JikwonDto_ex3- jikwon_ex3문제(JSP Bean + DB)
 
+-----jsp_ex4-----
+bang.jsp, bangdel_ex4.jsp, bangfail_ex4.html, bangins_ex4.html, bangins_ex4.jsp, bangup_ex4.jsp, bangup_ok_ex4.jsp - 방명록 (JSP Bean + DB CURD)
+Bang_ex4, BangDto_ex4 - 방명록 (JSP Bean + DB CURD)
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
