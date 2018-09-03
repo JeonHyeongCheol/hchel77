@@ -137,9 +137,15 @@ gugu.html, gugu.jsp - JSP Bean를 이용한 구구단 만들기(JSP action tag : usebean �
 para1.html, para1.jsp - 자동화, Property
 para2.html, para2.jsp - setProperty 자동화 시키기(*을 사용해 Bean 찾기)
 beandb1.jsp - JSP Bean + DB 연결(상품 DTO)
-
 beandb2_ins.html, beandb2_page.jsp, beandb2_ins.jsp - JSP Bean + DB추가, 페이징 처리
 beandb3.jsp, beandb3up.jsp,  beandb3up_ok.jsp, beandb3del.html, beandb3fail - 상품(JSP Bean + DB CURD)
+
+-----secure_coding-----
+form1.jsp, result1.jsp - XSS 방지용 추가 코딩
+logfail.jsp, login.jsp, loginproc.jsp, logout.jps, logsuccess.jsp - SQL injection 방지
+
+-----session_login-----
+jikwon.jsp, login_aa.jsp, login_bb.jsp, login_main.jsp, login_ok.jsp - Login JSP Session + DB 이용
 
 -----WEB-INF-----
 my.jsp - WEB-INF 보안(forward만 접근가능)
@@ -157,6 +163,9 @@ SangpumDto - 상품 DTO
 Connbean - JSP Bean + DB 연결, ArrayList method(메소드)
 ConnBean2, SangpumForm - JSP Bean + DB Insert, 페이징 처리
 ConnBeanPoling,  SangpumForm, SangpumDto - 상품 (JSP Bean + DB CURD)
+
+-----secure_pack-----
+LoginDao - Login JSP Session(DB로 확인)
 
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
@@ -177,4 +186,9 @@ JikwonDb1_ex3, JikwonDb2_ex3, JikwonDto_ex3- jikwon_ex3문제(JSP Bean + DB)
 -----jsp_ex4-----
 bang.jsp, bangdel_ex4.jsp, bangfail_ex4.html, bangins_ex4.html, bangins_ex4.jsp, bangup_ex4.jsp, bangup_ok_ex4.jsp - 방명록 (JSP Bean + DB CURD)
 Bang_ex4, BangDto_ex4 - 방명록 (JSP Bean + DB CURD)
+
+-----jsp_ex5-----
+office_jikwon_first.jsp, office_jikwon_gogek.jsp, office_jikwon_logout.jsp, 
+office_jikwon_main.jsp, office_jikwon_my_gogek.jsp, office_jikwon_ok.jsp, office_jikwon_wait.jsp - Login JSP Session + iframe + DB
+GogekDto_ex5, JikwonLogin_ex5
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ

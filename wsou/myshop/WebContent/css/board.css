@@ -1,0 +1,13 @@
+@charset "UTF-8";
+body {
+	margin : 30px;
+}
+table {
+	width : 80%;
+}
+td {
+	font-size: 10pt;
+}
+a {
+	text-decoration: none;
+}
