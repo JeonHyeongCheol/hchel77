@@ -8,9 +8,9 @@ public class BoardBean { // 폼빈(formBean) : 레코드단위에 처리를 위�
 	
 	public void setBdate() { // 작성일
 		Calendar calendar = Calendar.getInstance();
-		int year = calendar.get(calendar.YEAR);
-		int month = calendar.get(calendar.MONTH + 1);
-		int day = calendar.get(calendar.DATE);
+		int year = calendar.get(Calendar.YEAR);
+		int month = calendar.get(Calendar.MONTH) + 1;
+		int day = calendar.get(Calendar.DATE);
 		this.bdate = year + "-" + month + "-" + day;
 	}
 	
