@@ -12,6 +12,7 @@
 <script type="text/javascript">
 window.onload = function() {
 	document.getElementById("btnSearch").onclick = function() {
+		
 		if(frm.sword.value === "") {
 			frm.sword.focus();
 			alert("검색어를 입력하시오");
@@ -29,7 +30,7 @@ window.onload = function() {
 		[<a href="../index.jsp">메인으로</a>]&nbsp;
 		[<a href="boardlist.jsp?page=1">최근목록</a>]&nbsp;
 		[<a href="boardwrite.jsp">새글작성</a>]&nbsp;
-		[<a href="#" onclick="window.open('admin.jsp','','width=300,height=150,top=200,left=300')">관리자용</a>]&nbsp;
+		[<a href="#" onclick="window.open('admin.jsp','','width=380,height=150,top=200,left=300')">관리자용</a>]&nbsp;
 		<br><br>
 		<!-- 테이블안에 테이블 만들기 -->
 		<table style="width: 100%">

@@ -195,4 +195,11 @@ GogekDto_ex5, JikwonLogin_ex5
 
 myshop
 
+index.jsp
+
+board
+member
+css
+js
+
 �ѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤ�

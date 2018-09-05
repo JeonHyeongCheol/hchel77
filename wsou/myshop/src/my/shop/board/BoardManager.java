@@ -314,5 +314,85 @@ public class BoardManager {
 			
 		}
 	}
+	
+	public boolean checkPass(int num, String new_pass) { // 수정에서 비밀번호 비교
+		boolean b = false;
+		String sql = "select pass from shopboard where num=?";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				if(new_pass.equals(rs.getString("pass"))) { // 가져오는 비밀번호와 DB에 있는 비밀번호가 일치일 때만 업데이트 할 수 있도록 확인 작업
+					b = true;
+				}
+			}
+		} catch (Exception e) {
+			System.out.println("checkPass err : " + e);
+		} finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();				
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+			
+		}
+		return b;
+	}
+	
+	public void editData(BoardBean bean) { // 게시판 수정 Update
+		String sql = "update shopboard set name=?, mail=?, title=?, cont=? where num=?";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bean.getName());
+			pstmt.setString(2, bean.getMail());
+			pstmt.setString(3, bean.getTitle());
+			pstmt.setString(4, bean.getCont());
+			pstmt.setInt(5, bean.getNum());
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("editData err : " + e);
+		} finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();				
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+			
+		}
+	}
+	
+	public boolean delData(String num) { // 게시판 수정 delete
+		boolean b = false;
+		String sql = "delete from shopboard where num=?";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, num);
+			pstmt.executeUpdate();
+			if(pstmt.executeUpdate() > 0) {
+				b = true;
+			}
+			
+		} catch (Exception e) {
+			System.out.println("delData err : " + e);
+		} finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();				
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+			
+		}
+		return b;
+	}
 }
 
