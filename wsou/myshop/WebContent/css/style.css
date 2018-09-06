@@ -1,4 +1,6 @@
-BODY {FONT-SIZE: 9pt; COLOR: black; LINE-HEIGHT: 160%; FONT-FAMILY: 돋움 }
+BODY {
+	margin-top:20px;
+	FONT-SIZE: 9pt; COLOR: black; LINE-HEIGHT: 160%; FONT-FAMILY: 돋움 }
 
 TD   {FONT-SIZE: 9pt; COLOR: black; LINE-HEIGHT: 160%; FONT-FAMILY: 돋움 }
 

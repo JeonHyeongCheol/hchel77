@@ -9,6 +9,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import my.shop.board.BoardBean;
+
 public class MemberManager {
 	private Connection conn;
 	private PreparedStatement pstmt;
@@ -70,6 +72,152 @@ public class MemberManager {
 		} catch (Exception e) {
 			System.out.println("checkId err : " + e);
 		}  finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();				
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+			
+		}
+		return b;
+	}
+	
+	public boolean memInsert(MemberBean bean) { // 회원 Insert
+		boolean b = false;
+		String sql = "insert into member values(?,?,?,?,?,?,?,?)";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bean.getId());
+			pstmt.setString(2, bean.getPasswd());
+			pstmt.setString(3, bean.getName());
+			pstmt.setString(4, bean.getEmail());
+			pstmt.setString(5, bean.getPhone());
+			pstmt.setString(6, bean.getZipcode());
+			pstmt.setString(7, bean.getAddress());
+			pstmt.setString(8, bean.getJob());
+			if(pstmt.executeUpdate() > 0) b = true;
+		} catch (Exception e) {
+			System.out.println("memInsert err : " + e);
+		} finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();				
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+			
+		}
+		return b;
+	}
+	
+	public boolean loginCheck(String id, String passwd) { // 회원 Insert
+		boolean b = false;
+		
+		String sql = "select id, passwd from member where id=? and passwd=?";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, passwd);
+			rs = pstmt.executeQuery();
+			b = rs.next();
+		} catch (Exception e) {
+			System.out.println("loginCheck err : " + e);
+		} finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();				
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+			
+		}
+		return b;
+	}
+	
+	public MemberBean getMember(String id) { // 수정할 자료 Road
+		MemberBean bean = null;
+		String sql = "select * from member where id=?";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				bean = new MemberBean();
+				bean.setId(rs.getString("id"));
+				bean.setPasswd(rs.getString("passwd"));
+				bean.setName(rs.getString("name"));
+				bean.setEmail(rs.getString("email"));
+				bean.setPhone(rs.getString("phone"));
+				bean.setZipcode(rs.getString("zipcode"));
+				bean.setAddress(rs.getString("address"));
+				bean.setJob(rs.getString("job"));
+			}
+		} catch (Exception e) {
+			System.out.println("getMember err : " + e);
+		} finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();				
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+			
+		}
+		return bean;
+	}
+	
+	public boolean memberUpdate(MemberBean bean, String id) { // 회원정보 Update
+		boolean b = false;
+		String sql = "update member set passwd=?, name=?, email=?, phone=?, zipcode=?, address=?, job=? where id=?";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bean.getPasswd());
+			pstmt.setString(2, bean.getName());
+			pstmt.setString(3, bean.getEmail());
+			pstmt.setString(4, bean.getPhone());
+			pstmt.setString(5, bean.getZipcode());
+			pstmt.setString(6, bean.getAddress());
+			pstmt.setString(7, bean.getJob());
+			pstmt.setString(8, id);
+
+			if(pstmt.executeUpdate() > 0) b = true;
+		} catch (Exception e) {
+			System.out.println("memberUpdate err : " + e);
+		} finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();				
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+			
+		}
+		return b;
+	}
+	
+	public boolean adminLoginChk(String adminid, String adminpasswd) { // 회원정보 Update
+		boolean b = false;
+		String sql = "select * from admin where admin_id=? and admin_passwd=?";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, adminid);
+			pstmt.setString(2, adminpasswd);
+			rs = pstmt.executeQuery();
+			b = rs.next();
+		} catch (Exception e) {
+			System.out.println("memberUpdate err : " + e);
+		} finally {
 			try {
 				if(rs != null) rs.close();
 				if(pstmt != null) pstmt.close();
