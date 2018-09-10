@@ -57,3 +57,40 @@ function memUpdateCancelFunc() {
 function memDeleteFunc() {
 	alert("회원탈퇴는 불가!!!");
 }
+
+
+// 관리자가 회원수정
+function memUpdate(id) {
+	alert(id + "님의 정보를 수정합니다");
+	document.updateFrm.id.value = id;
+	document.updateFrm.submit();
+}
+
+function memUpdateAdminFunc() {
+	document.updateFormAdmin.submit();
+	
+}
+
+function memUpdateCancelAdminFunc() {
+	location.href = "membermanager.jsp";
+}
+
+function productDetail(no) {
+	//alert(no);
+	document.detailFrm.no.value = no;
+	document.detailFrm.submit();
+}
+
+function productUpdate(no) {
+	//alert(no);
+	document.updateFrm.no.value = no;
+	document.updateFrm.submit();
+}
+
+function productDelete(no) {
+	//alert(no);
+	if(confirm("정말로 삭제할까요?") == true) {
+		document.delFrm.no.value = no;
+		document.delFrm.submit();		
+	}
+}

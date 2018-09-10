@@ -24,8 +24,9 @@ window.onload = function() {
 </script>
 </head>
 <body>
+<h2 align="center">게시판</h2>
 <table style="width: 100%">
-	<tr align="center">
+	<tr align="right">
 		<td>
 		[<a href="../index.jsp">메인으로</a>]&nbsp;
 		[<a href="boardlist.jsp?page=1">최근목록</a>]&nbsp;
@@ -81,8 +82,11 @@ window.onload = function() {
 			}
 		%>
 		</table>
-		<br>
-		<table >
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<table>
 			<tr>
 				<td align="center">
 					<%

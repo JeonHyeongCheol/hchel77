@@ -197,9 +197,14 @@ myshop
 
 index.jsp
 
-board
-member
-css
+admin - 관리자 입장 관련 Page
+board - 게시판
+css - 웹페이지 전체 디자인
+data - 상품목록 이미지
+guest - 고객 입장 관련 Page
+images - 웹페이지 관련 이미지
+js - jsp 전체 java script
+member - 회원가입한 고객 관련 Page 
 js
 
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ

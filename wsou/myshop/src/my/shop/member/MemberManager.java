@@ -216,7 +216,7 @@ public class MemberManager {
 			rs = pstmt.executeQuery();
 			b = rs.next();
 		} catch (Exception e) {
-			System.out.println("memberUpdate err : " + e);
+			System.out.println("adminLoginChk err : " + e);
 		} finally {
 			try {
 				if(rs != null) rs.close();
@@ -228,5 +228,36 @@ public class MemberManager {
 			
 		}
 		return b;
+	}
+	
+	public ArrayList<MemberBean> getmemberAll() {
+		ArrayList<MemberBean> list = new ArrayList<>();
+		String sql = "select * from member";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+
+			while(rs.next()) {
+				MemberBean bean = new MemberBean();
+				bean.setId(rs.getString("id"));
+				bean.setName(rs.getString("name"));
+				bean.setPasswd(rs.getString("passwd"));
+				bean.setEmail(rs.getString("email"));
+				bean.setPhone(rs.getString("phone"));
+				list.add(bean);
+			}
+		} catch (Exception e) {
+			System.out.println("getmemberAll err : " + e);
+		} finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();				
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+		return list;
 	}
 }

@@ -10,7 +10,7 @@
 <body>
 <table style="width: 100%">
 	<tr>
-		<td style="font-size: 20px;">전문쇼핑몰</td>
+		<td style="font-size: 20px;" align="center"><h1>KIC 쇼핑몰</h1></td>
 	</tr>
 </table>
 
