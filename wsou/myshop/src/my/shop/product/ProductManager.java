@@ -31,7 +31,7 @@ public class ProductManager {
 		}
 	}
 	
-	public ArrayList<ProductBean> getProductAll() {
+	public ArrayList<ProductBean> getProductAll() { // 전체 상품 목록
 		ArrayList<ProductBean> list = new ArrayList<>();
 		try {
 			conn = ds.getConnection();
@@ -64,7 +64,7 @@ public class ProductManager {
 		return list;
 	}
 	
-	public boolean insertProduct(HttpServletRequest request) { 
+	public boolean insertProduct(HttpServletRequest request) { // 상품 등록
 		// 예전에 했던 방식은 bean을 사용했지만 request로 모든 값을 받아서 사용 할 수 있음.
 		// request로 변수를 받음. httpServletRequest Interface 사용.
 		boolean b = false;
@@ -103,7 +103,7 @@ public class ProductManager {
 		return b;
 	}
 	
-	public ProductBean getProduct(String no) {
+	public ProductBean getProduct(String no) { // 상품정보 가져오기(상세정보)
 		ProductBean bean = null;
 		try {
 			conn = ds.getConnection();
@@ -136,7 +136,7 @@ public class ProductManager {
 		return bean;
 	}
 	
-	public boolean updateProduct(HttpServletRequest request) { 
+	public boolean updateProduct(HttpServletRequest request) { // 상품 수정
 		boolean b = false;
 		try { 
 			String uploadDir = "C:/work/wsou/myshop/WebContent/data";
@@ -171,7 +171,7 @@ public class ProductManager {
 		return b;
 	}
 	
-	public boolean deleteProduct(HttpServletRequest request) { 
+	public boolean deleteProduct(HttpServletRequest request) { // 상품 삭제
 		boolean b = false;
 		try { 
 			conn = ds.getConnection();
@@ -192,5 +192,26 @@ public class ProductManager {
 			
 		}
 		return b;
+	}
+	
+	public void reduceProduct(OrderBean order) { // 주문한 상품 수만큼 재고 수량 빼기
+		try {
+			conn = ds.getConnection();
+			String sql = "update shop_product set stock=(stock - ?) where no=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, order.getQuantity());
+			pstmt.setString(2, order.getProduct_no());
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("reduceProduct err : " + e);
+		}  finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();				
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
 	}
 }

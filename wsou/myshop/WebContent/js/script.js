@@ -94,3 +94,26 @@ function productDelete(no) {
 		document.delFrm.submit();		
 	}
 }
+
+function cartUpdate(form) { // form 자체를 넘길 수도 있음.
+	//alert(form.quantity.value);
+	form.flag.value = "update"; // flag 값 update로 변경
+	form.submit();
+}
+
+function cartDelete(form) { 
+	//alert(form.quantity.value);
+	form.flag.value = "del" // flag 값 delete로 변경
+	form.submit();
+}
+
+function orderDetail(no) {
+	document.detailFrm.no.value = no;
+	document.detailFrm.submit();
+}
+
+function orderUpdate(form) {
+	form.flag.value = "update";
+	//document.orderDetailFrm.flag.value = "update";
+	form.submit();
+}
