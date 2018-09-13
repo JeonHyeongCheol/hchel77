@@ -1,4 +1,4 @@
-package basic;
+package for_;
 
 public class WeLoveKriii { // 여러번 출력하기
 	public static void main(String[] args) {

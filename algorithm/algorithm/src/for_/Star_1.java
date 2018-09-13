@@ -1,10 +1,10 @@
-package basic;
+package for_;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Star_1 { // 별찍기 1
+public class Star_1 { // 별찍기 1, 규칙찾기
 
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

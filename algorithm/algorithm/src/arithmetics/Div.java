@@ -1,18 +1,19 @@
-package basic;
+package arithmetics;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Multi { // 곱하기
+public class Div { // 나누기
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		String a [] = br.readLine().split(" ");
-		int b = Integer.parseInt(a[0]) * Integer.parseInt(a[1]);
+		
+		double b = Double.parseDouble(a[0]) / Double.parseDouble(a[1]);
+		
 		System.out.println(b);
-
 	}
 
 }
