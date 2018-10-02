@@ -42,3 +42,8 @@ library(corrgram)
 corrgram(result)
 corrgram(result, upper.panel = panel.conf) # 위쪽
 corrgram(result, lower.panel = panel.conf) # 아래
+
+
+install.packages("PerformanceAnalytics")
+library(PerformanceAnalytics)
+chart.Correlation(result, histogram = , pch = "+")

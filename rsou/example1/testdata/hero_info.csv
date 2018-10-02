@@ -1,0 +1,528 @@
+"","X","name","Gender","Eye.color","Race","Hair.color","Height","Publisher","Skin.color","Alignment","Weight","group"
+"1",0,"A-Bomb","Male","yellow","Human","No Hair",203,"Marvel Comics",NA,"good",441,2
+"8",7,"Adam Strange","Male","blue","Human","Blond",185,"DC Comics",NA,"good",88,3
+"10",9,"Agent Bob","Male","brown","Human","Brown",178,"Marvel Comics",NA,"good",81,4
+"17",16,"Alfred Pennyworth","Male","blue","Human","Black",178,"DC Comics",NA,"good",72,4
+"28",27,"Animal Man","Male","blue","Human","Blond",183,"DC Comics",NA,"good",83,2
+"30",29,"Ant-Man","Male","blue","Human","Blond",211,"Marvel Comics",NA,"good",122,1
+"31",30,"Ant-Man II","Male","blue","Human","Blond",183,"Marvel Comics",NA,"good",86,2
+"39",38,"Arachne","Female","blue","Human","Blond",175,"Marvel Comics",NA,"good",63,1
+"46",45,"Arsenal","Male",NA,"Human",NA,NA,"DC Comics",NA,"good",NA,2
+"53",52,"Atom II","Male","brown","Human","Auburn",183,"DC Comics",NA,"good",81,2
+"58",57,"Azrael","Male","brown","Human","Black",NA,"DC Comics",NA,"good",NA,3
+"61",60,"Banshee","Male","green","Human","Strawberry Blond",183,"Marvel Comics",NA,"good",77,2
+"64",63,"Batgirl","Female","green","Human","Red",170,"DC Comics",NA,"good",57,4
+"66",65,"Batgirl IV","Female","green","Human","Black",165,"DC Comics",NA,"good",52,1
+"69",68,"Batman","Male","blue","Human","black",188,"DC Comics",NA,"good",95,4
+"70",69,"Batman","Male","blue","Human","Black",178,"DC Comics",NA,"good",77,2
+"71",70,"Batman II","Male","blue","Human","Black",178,"DC Comics",NA,"good",79,4
+"73",72,"Batwoman V","Female","green","Human","Red",178,"DC Comics",NA,"good",NA,3
+"76",75,"Beast Boy","Male","green","Human","Green",173,"DC Comics","green","good",68,2
+"97",96,"Black Canary","Female","blue","Human","Blond",165,"DC Comics",NA,"good",58,4
+"99",98,"Black Cat","Female","green","Human","Blond",178,"Marvel Comics",NA,"good",54,4
+"102",101,"Black Knight III","Male","brown","Human","Brown",183,"Marvel Comics",NA,"good",86,4
+"106",105,"Black Panther","Male","brown","Human","Black",183,"Marvel Comics",NA,"good",90,3
+"107",106,"Black Widow","Female","green","Human","Auburn",170,"Marvel Comics",NA,"good",59,3
+"126",125,"Blue Beetle III","Male","brown","Human","Black",NA,"DC Comics",NA,"good",NA,3
+"132",131,"Booster Gold","Male","blue","Human","Blond",196,"DC Comics",NA,"good",97,1
+"138",137,"Brother Voodoo","Male","brown","Human","Brown / White",183,"Marvel Comics",NA,"good",99,1
+"140",139,"Buffy","Female","green","Human","Blond",157,"Dark Horse Comics",NA,"good",52,2
+"142",141,"Bumblebee","Female","brown","Human","Black",170,"DC Comics",NA,"good",59,2
+"144",143,"Bushido","Male",NA,"Human",NA,NA,"DC Comics",NA,"good",NA,4
+"149",148,"Captain America","Male","blue","Human","blond",188,"Marvel Comics",NA,"good",108,4
+"151",150,"Captain Britain","Male","blue","Human","Blond",198,"Marvel Comics",NA,"good",116,1
+"152",151,"Captain Cold","Male","brown","Human","Brown",NA,"DC Comics",NA,"neutral",NA,4
+"154",153,"Captain Hindsight","Male",NA,"Human","Black",NA,"South Park",NA,"good",NA,4
+"157",156,"Captain Marvel","Male","blue","Human","Black",193,"DC Comics",NA,"good",101,3
+"158",157,"Captain Marvel II","Male","blue","Human","Black",175,"DC Comics",NA,"good",74,1
+"159",158,"Captain Midnight","Male",NA,"Human",NA,NA,"Dark Horse Comics",NA,"good",NA,2
+"165",164,"Catwoman","Female","green","Human","Black",175,"DC Comics",NA,"good",61,1
+"177",176,"Citizen Steel","Male","green","Human","Red",183,"DC Comics",NA,"good",170,3
+"201",200,"Daredevil","Male","blue","Human","Red",183,"Marvel Comics",NA,"good",90,4
+"202",201,"Darkhawk","Male","brown","Human","Brown",185,"Marvel Comics",NA,"good",81,3
+"209",208,"Dash","Male","blue","Human","Blond",122,"Dark Horse Comics",NA,"good",27,2
+"212",211,"Deadman","Male","blue","Human","Black",183,"DC Comics",NA,"good",90,1
+"216",215,"Deathstroke","Male","blue","Human","White",193,"DC Comics",NA,"neutral",101,3
+"224",223,"Doctor Fate","Male","blue","Human","Blond",188,"DC Comics",NA,"good",89,1
+"226",225,"Doctor Strange","Male","grey","Human","Black",188,"Marvel Comics",NA,"good",81,4
+"227",226,"Domino","Female","blue","Human","Black",173,"Marvel Comics","white","good",54,2
+"236",235,"Elastigirl","Female","brown","Human","Brown",168,"Dark Horse Comics",NA,"good",56,4
+"238",237,"Elektra","Female","blue","Human","Black",175,"Marvel Comics",NA,"good",59,3
+"242",241,"Enchantress","Female","blue","Human","Blond",168,"DC Comics",NA,"good",57,1
+"245",244,"Ethan Hunt","Male","brown","Human","Brown",168,"",NA,"good",NA,1
+"251",250,"Falcon","Male","brown","Human","Black",188,"Marvel Comics",NA,"good",108,2
+"261",260,"Firestorm","Male","blue","Human","Auburn",188,"DC Comics",NA,"good",91,4
+"263",262,"Flash","Male","blue","Human","Brown / White",180,"DC Comics",NA,"good",81,3
+"265",264,"Flash II","Male","blue","Human","Blond",183,"DC Comics",NA,"good",88,3
+"266",265,"Flash III","Male",NA,"Human",NA,183,"DC Comics",NA,"good",86,2
+"267",266,"Flash IV","Male","yellow","Human","Auburn",157,"DC Comics",NA,"good",52,2
+"282",281,"Giant-Man","Male",NA,"Human",NA,NA,"Marvel Comics",NA,"good",NA,2
+"291",290,"Goliath","Male",NA,"Human",NA,NA,"Marvel Comics",NA,"good",NA,4
+"292",291,"Goliath","Male",NA,"Human",NA,NA,"Marvel Comics",NA,"good",NA,2
+"296",295,"Gravity","Male","blue","Human","Brown",178,"Marvel Comics",NA,"good",79,4
+"298",297,"Green Arrow","Male","green","Human","Blond",188,"DC Comics",NA,"good",88,1
+"304",303,"Guardian","Male","brown","Human","Black",NA,"Marvel Comics",NA,"good",NA,2
+"306",305,"Hal Jordan","Male","brown","Human","Brown",188,"DC Comics",NA,"good",90,1
+"307",306,"Han Solo","Male","brown","Human","Brown",183,"George Lucas",NA,"good",79,2
+"308",307,"Hancock","Male","brown","Human","Black",188,"Sony Pictures",NA,"good",NA,4
+"310",309,"Harry Potter","Male","green","Human","Black",NA,"J. K. Rowling",NA,"good",NA,3
+"313",312,"Hawkeye","Male","blue","Human","Blond",191,"Marvel Comics",NA,"good",104,2
+"314",313,"Hawkeye II","Female","blue","Human","Black",165,"Marvel Comics",NA,"good",57,3
+"323",322,"Hellcat","Female","blue","Human","Red",173,"Marvel Comics",NA,"good",61,3
+"327",326,"Hit-Girl","Female",NA,"Human",NA,NA,"Icon Comics",NA,"good",NA,2
+"340",339,"Impulse","Male","yellow","Human","Auburn",170,"DC Comics",NA,"good",65,4
+"341",340,"Indiana Jones","Male",NA,"Human",NA,183,"George Lucas",NA,"good",79,3
+"345",344,"Iron Fist","Male","blue","Human","Blond",180,"Marvel Comics",NA,"good",79,1
+"346",345,"Iron Man","Male","blue","Human","Black",198,"Marvel Comics",NA,"good",191,1
+"350",349,"Jack of Hearts","Male","blue / white","Human","Brown",155,"Marvel Comics",NA,"good",79,2
+"351",350,"Jack-Jack","Male","blue","Human","Brown",71,"Dark Horse Comics",NA,"good",14,4
+"352",351,"James Bond","Male","blue","Human","Blond",183,"Titan Books",NA,"good",NA,1
+"353",352,"James T. Kirk","Male","hazel","Human","Brown",178,"Star Trek",NA,"good",77,2
+"355",354,"Jason Bourne","Male",NA,"Human",NA,NA,"",NA,"good",NA,1
+"357",356,"Jean-Luc Picard","Male",NA,"Human",NA,NA,"Star Trek",NA,"good",NA,1
+"359",358,"Jesse Quick","Female",NA,"Human",NA,NA,"DC Comics",NA,"good",NA,4
+"360",359,"Jessica Cruz","Female","green","Human","Brown",NA,"DC Comics",NA,"good",NA,1
+"361",360,"Jessica Jones","Female","brown","Human","Brown",170,"Marvel Comics",NA,"good",56,3
+"367",366,"John Constantine","Male","blue","Human","Blond",183,"DC Comics",NA,"good",NA,4
+"368",367,"John Stewart","Male","green","Human","Black",185,"DC Comics",NA,"good",90,3
+"373",372,"Judge Dredd","Male",NA,"Human",NA,188,"Rebellion",NA,"good",NA,3
+"374",373,"Juggernaut","Male","blue","Human","Red",287,"Marvel Comics",NA,"neutral",855,2
+"376",375,"Justice","Male","hazel","Human","Brown",178,"Marvel Comics",NA,"good",81,1
+"377",376,"Jyn Erso","Female","green","Human","Brown",NA,"George Lucas",NA,"good",NA,3
+"380",379,"Karate Kid","Male","brown","Human","Brown",173,"DC Comics",NA,"good",72,4
+"381",380,"Kathryn Janeway","Female",NA,"Human",NA,NA,"Star Trek",NA,"good",NA,2
+"382",381,"Katniss Everdeen","Female",NA,"Human",NA,NA,"",NA,"good",NA,4
+"383",382,"Kevin 11","Male",NA,"Human","Black",NA,"DC Comics",NA,"good",NA,1
+"384",383,"Kick-Ass","Male","blue","Human","Blond",NA,"Icon Comics",NA,"good",NA,4
+"385",384,"Kid Flash","Male","green","Human","Red",NA,"DC Comics",NA,"good",NA,1
+"398",397,"Kyle Rayner","Male","green","Human","Black",180,"DC Comics",NA,"good",79,4
+"416",415,"Longshot","Male","blue","Human","Blond",188,"Marvel Comics",NA,"good",36,3
+"417",416,"Luke Cage","Male","brown","Human","Black",198,"Marvel Comics",NA,"good",191,2
+"419",418,"Luke Skywalker","Male","blue","Human","Blond",168,"George Lucas",NA,"good",77,3
+"420",419,"Luna","Female",NA,"Human",NA,NA,"Marvel Comics",NA,"good",NA,2
+"428",427,"Man-Bat","Male","brown","Human","Brown",NA,"DC Comics",NA,"neutral",NA,4
+"463",462,"Mockingbird","Female","blue","Human","Blond",175,"Marvel Comics",NA,"good",61,2
+"471",470,"Moon Knight","Male","brown","Human","Brown",188,"Marvel Comics",NA,"good",101,1
+"477",476,"Mr Incredible","Male","blue","Human","Blond",201,"Dark Horse Comics",NA,"good",158,1
+"486",485,"Naruto Uzumaki","Male",NA,"Human",NA,168,"Shueisha",NA,"good",54,1
+"490",489,"Nick Fury","Male","brown","Human","Brown / White",185,"Marvel Comics",NA,"good",99,1
+"492",491,"Nightwing","Male","blue","Human","Black",178,"DC Comics",NA,"good",79,3
+"497",496,"Nova","Male","brown","Human","Brown",185,"Marvel Comics",NA,"good",86,4
+"503",502,"One Punch Man","Male",NA,"Human","No Hair",175,"Shueisha",NA,"good",69,4
+"506",505,"Oracle","Female","blue","Human","Red",178,"DC Comics",NA,"good",59,2
+"511",510,"Paul Blart","Male",NA,"Human",NA,170,"Sony Pictures",NA,"good",117,2
+"522",521,"Plastic Man","Male","blue","Human","Black",185,"DC Comics",NA,"good",80,3
+"533",532,"Punisher","Male","blue","Human","Black",183,"Marvel Comics",NA,"good",90,4
+"538",537,"Question","Male","blue","Human","Blond",188,"DC Comics",NA,"good",83,3
+"543",542,"Rambo","Male","brown","Human","Black",178,"",NA,"good",83,3
+"545",544,"Raven","Female","indigo","Human","Black",165,"DC Comics",NA,"neutral",50,2
+"546",545,"Ray","Male","green","Human","Red",178,"DC Comics",NA,"good",70,4
+"548",547,"Red Arrow","Male","green","Human","Red",180,"DC Comics",NA,"good",83,4
+"549",548,"Red Hood","Male","blue","Human","Black",183,"DC Comics",NA,"neutral",81,4
+"552",551,"Red Robin","Male","blue","Human","Black",165,"DC Comics",NA,"good",56,3
+"558",557,"Rey","Female","hazel","Human","Brown",297,"George Lucas",NA,"good",NA,2
+"562",561,"Rip Hunter","Male","blue","Human","Blond",NA,"DC Comics",NA,"good",NA,4
+"564",563,"Robin","Male","blue","Human","Black",178,"DC Comics",NA,"good",79,1
+"565",564,"Robin II","Male","blue","Human","Red",183,"DC Comics",NA,"good",101,2
+"566",565,"Robin III","Male","blue","Human","Black",165,"DC Comics",NA,"good",56,3
+"567",566,"Robin V","Male","blue","Human","Black",137,"DC Comics",NA,"good",38,1
+"568",567,"Robin VI","Female","green","Human","Red",NA,"DC Comics",NA,"neutral",NA,1
+"571",570,"Ronin","Male","blue","Human","Blond",191,"Marvel Comics",NA,"good",104,1
+"572",571,"Rorschach","Male","blue","Human","Red",168,"DC Comics",NA,"good",63,1
+"575",574,"Sandman","Male","brown","Human","Brown",185,"Marvel Comics",NA,"neutral",203,2
+"580",579,"Scarlet Spider","Male","blue","Human","Blond",178,"Marvel Comics",NA,"good",74,3
+"590",589,"Shang-Chi","Male","brown","Human","Black",178,"Marvel Comics",NA,"good",79,1
+"592",591,"She-Hulk","Female","green","Human","Green",201,"Marvel Comics",NA,"good",315,2
+"598",597,"Silk","Female","brown","Human","Black",NA,"Marvel Comics",NA,"good",NA,1
+"603",602,"Simon Baz","Male","bown","Human","Black",NA,"DC Comics",NA,"good",NA,3
+"614",613,"Space Ghost","Male",NA,"Human",NA,188,"DC Comics",NA,"good",113,2
+"618",617,"Speedy","Male",NA,"Human",NA,NA,"DC Comics",NA,"good",NA,4
+"619",618,"Speedy","Female","green","Human","Brown",NA,"DC Comics",NA,"good",NA,2
+"621",620,"Spider-Girl","Female","blue","Human","Brown",170,"Marvel Comics",NA,"good",54,3
+"622",621,"Spider-Gwen","Female","blue","Human","Blond",165,"Marvel Comics",NA,"good",56,2
+"623",622,"Spider-Man","Male","hazel","Human","Brown",178,"Marvel Comics",NA,"good",74,4
+"624",623,"Spider-Man",NA,"red","Human","Brown",178,"Marvel Comics",NA,"good",77,1
+"625",624,"Spider-Man","Male","brown","Human","Black",157,"Marvel Comics",NA,"good",56,3
+"626",625,"Spider-Woman","Female","green","Human","Black",178,"Marvel Comics",NA,"good",59,1
+"636",635,"Stargirl","Female","blue","Human","Blond",165,"DC Comics",NA,"good",62,1
+"660",659,"The Comedian","Male","brown","Human","Black",188,"DC Comics",NA,"neutral",101,1
+"677",676,"Trickster","Male","blue","Human","Blond",183,"DC Comics",NA,NA,81,3
+"695",694,"Vibe","Male","brown","Human","Black",178,"DC Comics",NA,"good",71,3
+"696",695,"Vindicator","Female","green","Human","Red",165,"Marvel Comics",NA,"good",54,1
+"699",698,"Violet Parr","Female","violet","Human","Black",137,"Dark Horse Comics",NA,"good",41,1
+"702",701,"Vixen","Female","amber","Human","Black",175,"DC Comics",NA,"good",63,3
+"706",705,"War Machine","Male","brown","Human","Brown",185,"Marvel Comics",NA,"good",95,4
+"711",710,"Wasp","Female","blue","Human","Auburn",163,"Marvel Comics",NA,"good",50,3
+"717",716,"Winter Soldier","Male","brown","Human","Brown",175,"Marvel Comics",NA,"good",117,3
+"729",728,"Yellowjacket","Male","blue","Human","Blond",183,"Marvel Comics",NA,"good",83,4
+"730",729,"Yellowjacket II","Female","blue","Human","Strawberry Blond",165,"Marvel Comics",NA,"good",52,2
+"733",732,"Zatanna","Female","blue","Human","Black",170,"DC Comics",NA,"good",57,3
+"7",6,"Adam Monroe","Male","blue",NA,"Blond",NA,"NBC - Heroes",NA,"good",NA,1
+"9",8,"Agent 13","Female","blue",NA,"Blond",173,"Marvel Comics",NA,"good",61,1
+"11",10,"Agent Zero","Male",NA,NA,NA,191,"Marvel Comics",NA,"good",104,4
+"14",13,"Alan Scott","Male","blue",NA,"Blond",180,"DC Comics",NA,"good",90,1
+"16",15,"Alex Woolsly","Male",NA,NA,NA,NA,"NBC - Heroes",NA,"good",NA,3
+"19",18,"Allan Quatermain","Male",NA,NA,NA,NA,"Wildstorm",NA,"good",NA,3
+"22",21,"Ando Masahashi","Male",NA,NA,NA,NA,"NBC - Heroes",NA,"good",NA,1
+"23",22,"Angel","Male","blue",NA,"Blond",183,"Marvel Comics",NA,"good",68,3
+"26",25,"Angel Salvadore","Female","brown",NA,"Black",163,"Marvel Comics",NA,"good",54,4
+"36",35,"Aquababy","Male","blue",NA,"Blond",NA,"DC Comics",NA,"good",NA,4
+"43",42,"Ares","Male","brown",NA,"Brown",185,"Marvel Comics",NA,"good",270,1
+"44",43,"Ariel","Female","purple",NA,"Pink",165,"Marvel Comics",NA,"good",59,3
+"45",44,"Armor","Female","black",NA,"Black",163,"Marvel Comics",NA,"good",50,3
+"47",46,"Astro Boy","Male","brown",NA,"Black",NA,"",NA,"good",NA,2
+"50",49,"Atom","Male","blue",NA,"Red",178,"DC Comics",NA,"good",68,2
+"51",50,"Atom","Male",NA,NA,NA,NA,"DC Comics",NA,"good",NA,3
+"52",51,"Atom Girl","Female","black",NA,"Black",168,"DC Comics",NA,"good",54,3
+"54",53,"Atom III","Male",NA,NA,"Red",NA,"DC Comics",NA,"good",NA,2
+"55",54,"Atom IV","Male","brown",NA,"Black",NA,"DC Comics",NA,"good",72,2
+"59",58,"Aztar","Male",NA,NA,NA,NA,"DC Comics",NA,"good",NA,2
+"62",61,"Bantam","Male","brown",NA,"Black",165,"Marvel Comics",NA,"good",54,1
+"63",62,"Batgirl","Female",NA,NA,NA,NA,"DC Comics",NA,"good",NA,4
+"65",64,"Batgirl III","Female",NA,NA,NA,NA,"DC Comics",NA,"good",NA,1
+"67",66,"Batgirl V","Female",NA,NA,NA,NA,"DC Comics",NA,"good",NA,4
+"68",67,"Batgirl VI","Female","blue",NA,"Blond",168,"DC Comics",NA,"good",61,1
+"72",71,"Battlestar","Male","brown",NA,"Black",198,"Marvel Comics",NA,"good",133,4
+"74",73,"Beak","Male","black",NA,"White",175,"Marvel Comics",NA,"good",63,4
+"78",77,"Ben 10","Male",NA,NA,NA,NA,"DC Comics",NA,"good",NA,3
+"79",78,"Beta Ray Bill","Male",NA,NA,"No Hair",201,"Marvel Comics",NA,"good",216,4
+"82",81,"Big Daddy","Male",NA,NA,NA,NA,"Icon Comics",NA,"good",NA,1
+"86",85,"Binary","Female","blue",NA,"Blond",180,"Marvel Comics",NA,"good",54,4
+"88",87,"Bird-Brain",NA,NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,1
+"101",100,"Black Goliath","Male",NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,3
+"103",102,"Black Lightning","Male","brown",NA,"No Hair",185,"DC Comics",NA,"good",90,4
+"108",107,"Black Widow II","Female","blue",NA,"Blond",170,"Marvel Comics",NA,"good",61,1
+"113",112,"Blaquesmith",NA,"black",NA,"No Hair",NA,"Marvel Comics",NA,"good",NA,2
+"114",113,"Bling!","Female",NA,NA,NA,168,"Marvel Comics",NA,"good",68,1
+"123",122,"Blue Beetle","Male","blue",NA,"Brown",NA,"DC Comics",NA,"good",NA,4
+"124",123,"Blue Beetle","Male",NA,NA,NA,NA,"DC Comics",NA,"good",NA,4
+"125",124,"Blue Beetle II","Male","blue",NA,"Brown",183,"DC Comics",NA,"good",86,1
+"128",127,"Bolt","Male",NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,2
+"131",130,"Boomer","Female",NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,3
+"133",132,"Box","Male",NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,4
+"134",133,"Box III",NA,"blue",NA,"Blond",193,"Marvel Comics",NA,"good",110,1
+"135",134,"Box IV",NA,"brown",NA,"Brown / Black",NA,"Marvel Comics",NA,"good",NA,2
+"137",136,"Brainiac 5","Male","green",NA,"Blond",170,"DC Comics",NA,"good",61,3
+"143",142,"Bumbleboy","Male",NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,2
+"148",147,"Cannonball","Male","blue",NA,"Blond",183,"Marvel Comics",NA,"good",81,3
+"153",152,"Captain Epic","Male","blue",NA,"Brown",188,"Team Epic TV",NA,"good",NA,2
+"155",154,"Captain Mar-vell","Male","blue",NA,"Blond",188,"Marvel Comics",NA,"good",108,2
+"163",162,"Cat","Female","blue",NA,"Blond",173,"Marvel Comics",NA,"good",61,1
+"164",163,"Cat II","Female",NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,2
+"166",165,"Cecilia Reyes",NA,"brown",NA,"Brown",170,"Marvel Comics",NA,"good",62,2
+"176",175,"Chuck Norris","Male",NA,NA,NA,178,"",NA,"good",NA,2
+"178",177,"Claire Bennet","Female","blue",NA,"Blond",NA,"NBC - Heroes",NA,"good",NA,2
+"179",178,"Clea",NA,NA,NA,"White",NA,"Marvel Comics",NA,"good",NA,3
+"180",179,"Cloak","Male","brown",NA,"black",226,"Marvel Comics",NA,"good",70,4
+"183",182,"Colin Wagner","Male","grey",NA,"Brown",NA,"HarperCollins",NA,"good",NA,4
+"184",183,"Colossal Boy","Male",NA,NA,NA,NA,"DC Comics",NA,"good",NA,4
+"187",186,"Corsair","Male","brown",NA,"Brown",191,"Marvel Comics",NA,"good",79,2
+"189",188,"Crimson Crusader","Male","blue",NA,"Strawberry Blond",NA,"Marvel Comics",NA,"good",NA,2
+"190",189,"Crimson Dynamo","Male","brown",NA,"No Hair",180,"Marvel Comics",NA,"good",104,1
+"197",196,"Cypher",NA,"blue",NA,"Blond",175,"Marvel Comics",NA,"good",68,2
+"198",197,"Dagger","Female","blue",NA,"Blond",165,"Marvel Comics",NA,"good",52,3
+"199",198,"Danny Cooper","Male","brown",NA,"Blond",NA,"HarperCollins",NA,"good",NA,2
+"200",199,"Daphne Powell","Female",NA,NA,NA,NA,"ABC Studios",NA,"good",NA,4
+"203",202,"Darkman","Male",NA,NA,NA,NA,"Universal Studios",NA,"good",NA,4
+"220",219,"DL Hawkins","Male",NA,NA,NA,NA,"NBC - Heroes",NA,"good",NA,4
+"240",239,"Elongated Man","Male","blue",NA,"Red",185,"DC Comics",NA,"good",80,3
+"241",240,"Emma Frost","Female","blue",NA,"Blond",178,"Marvel Comics",NA,"good",65,3
+"243",242,"Energy","Female",NA,NA,NA,NA,"HarperCollins",NA,"good",NA,2
+"244",243,"ERG-1","Male",NA,NA,NA,NA,"DC Comics",NA,"good",NA,3
+"254",253,"Feral",NA,"yellow (without irises)",NA,"Orange / White",175,"Marvel Comics",NA,"good",50,4
+"255",254,"Fighting Spirit","Female",NA,NA,"Red",NA,"DC Comics",NA,"good",NA,1
+"257",256,"Firebird","Female","brown",NA,"Black",165,"Marvel Comics",NA,"good",56,1
+"258",257,"Firelord",NA,"white",NA,"Yellow",193,"Marvel Comics",NA,"good",99,3
+"260",259,"Firestorm","Male","brown",NA,"Black",NA,"DC Comics",NA,"good",NA,1
+"264",263,"Flash Gordon","Male",NA,NA,NA,NA,"",NA,"good",NA,3
+"268",267,"Forge",NA,"brown",NA,"Black",183,"Marvel Comics",NA,"good",81,3
+"270",269,"Franklin Storm",NA,"blue",NA,"Grey",188,"Marvel Comics",NA,"good",92,1
+"272",271,"Frigga","Female","blue",NA,"White",180,"Marvel Comics",NA,"good",167,4
+"279",278,"Genesis","Male","blue",NA,"Blond",185,"Marvel Comics",NA,"good",86,4
+"281",280,"Ghost Rider II",NA,NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,1
+"283",282,"Giant-Man II","Male",NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,3
+"290",289,"Goliath","Male",NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,4
+"293",292,"Goliath IV","Male","brown",NA,"Black",183,"Marvel Comics",NA,"good",90,2
+"301",300,"Green Goblin III","Male",NA,NA,NA,183,"Marvel Comics",NA,"good",88,4
+"302",301,"Green Goblin IV","Male","green",NA,"Brown",178,"Marvel Comics",NA,"good",79,1
+"312",311,"Hawk","Male","red",NA,"Brown",185,"DC Comics",NA,"good",89,4
+"315",314,"Hawkgirl","Female","green",NA,"Red",175,"DC Comics",NA,"good",61,4
+"316",315,"Hawkman","Male","blue",NA,"Brown",185,"DC Comics",NA,"good",88,2
+"317",316,"Hawkwoman","Female","green",NA,"Red",175,"DC Comics",NA,"good",54,2
+"318",317,"Hawkwoman II","Female",NA,NA,NA,NA,"DC Comics",NA,"good",NA,4
+"319",318,"Hawkwoman III","Female","blue",NA,"Red",170,"DC Comics",NA,"good",65,4
+"324",323,"Hellstorm","Male","red",NA,"Red",185,"Marvel Comics",NA,"good",81,4
+"326",325,"Hiro Nakamura","Male",NA,NA,NA,NA,"NBC - Heroes",NA,"good",NA,3
+"329",328,"Hollow","Female","blue",NA,"Red",170,"Marvel Comics",NA,"good",NA,3
+"330",329,"Hope Summers","Female","green",NA,"Red",168,"Marvel Comics",NA,"good",48,2
+"331",330,"Howard the Duck","Male","brown",NA,"Yellow",79,"Marvel Comics",NA,"good",18,1
+"334",333,"Huntress","Female","blue",NA,"Black",180,"DC Comics",NA,"good",59,4
+"348",347,"Isis","Female",NA,NA,NA,NA,"DC Comics",NA,"good",NA,1
+"349",348,"Jack Bauer","Male",NA,NA,NA,NA,"",NA,"good",NA,1
+"358",357,"Jennifer Kale","Female","blue",NA,"Blond",168,"Marvel Comics",NA,"good",55,1
+"362",361,"Jessica Sanders","Female",NA,NA,NA,NA,"NBC - Heroes",NA,"good",NA,2
+"364",363,"Jim Powell","Male",NA,NA,NA,NA,"ABC Studios",NA,"good",NA,1
+"365",364,"JJ Powell","Male",NA,NA,NA,NA,"ABC Studios",NA,"good",NA,3
+"366",365,"Johann Krauss","Male",NA,NA,NA,NA,"Dark Horse Comics",NA,"good",NA,2
+"369",368,"John Wraith","Male","brown",NA,"Black",183,"Marvel Comics",NA,"good",88,4
+"371",370,"Jolt","Female","blue",NA,"Black",165,"Marvel Comics",NA,"good",49,2
+"386",385,"Kid Flash II","Male",NA,NA,NA,NA,"DC Comics",NA,"good",NA,1
+"394",393,"Kool-Aid Man","Male","black",NA,"No Hair",NA,"","red","good",NA,3
+"403",402,"Leech","Male",NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,4
+"407",406,"Light Lass","Female","blue",NA,"Red",165,"DC Comics",NA,"good",54,3
+"408",407,"Lightning Lad","Male","blue",NA,"Red",155,"DC Comics",NA,"good",65,1
+"412",411,"Liz Sherman","Female",NA,NA,NA,NA,"Dark Horse Comics",NA,"good",NA,3
+"421",420,"Lyja","Female","green",NA,"Green",NA,"Marvel Comics",NA,"good",NA,2
+"423",422,"Machine Man",NA,"red",NA,"Black",183,"Marvel Comics",NA,"good",383,4
+"425",424,"Magog","Male","blue",NA,"Blond",NA,"DC Comics",NA,"good",NA,4
+"429",428,"Man-Thing","Male","red",NA,"No Hair",213,"Marvel Comics","green","good",225,4
+"430",429,"Man-Wolf","Male","brown",NA,"Auburn",188,"Marvel Comics",NA,"good",90,2
+"434",433,"Marvel Girl","Female","green",NA,"Red",170,"Marvel Comics",NA,"good",56,4
+"435",434,"Master Brood","Male","blue",NA,"Black",183,"Team Epic TV",NA,"good",81,2
+"438",437,"Matt Parkman","Male",NA,NA,NA,NA,"NBC - Heroes",NA,"good",NA,3
+"439",438,"Maverick","Male","blue",NA,"Black",193,"Marvel Comics",NA,"good",110,1
+"441",440,"Maya Herrera","Female",NA,NA,NA,NA,"NBC - Heroes",NA,"good",NA,4
+"443",442,"Meltdown","Female","blue",NA,"Blond",165,"Marvel Comics",NA,"good",54,4
+"447",446,"Metamorpho","Male","black",NA,"No Hair",185,"DC Comics",NA,"good",90,1
+"448",447,"Meteorite","Female",NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,3
+"449",448,"Metron","Male","blue",NA,"Black",185,"DC Comics",NA,"good",86,2
+"450",449,"Micah Sanders","Male","brown",NA,"Black",NA,"NBC - Heroes",NA,"good",NA,4
+"452",451,"Micro Lad","Male","grey",NA,"Brown",183,"DC Comics",NA,"good",77,4
+"453",452,"Mimic","Male","brown",NA,"Brown",188,"Marvel Comics",NA,"good",101,2
+"454",453,"Minna Murray","Female",NA,NA,NA,NA,"Wildstorm",NA,"good",NA,1
+"455",454,"Misfit","Female","blue",NA,"Red",NA,"DC Comics",NA,"good",NA,2
+"456",455,"Miss Martian","Female","red",NA,"Red",178,"DC Comics",NA,"good",61,4
+"466",465,"Mohinder Suresh","Male",NA,NA,NA,NA,"NBC - Heroes",NA,"good",NA,3
+"469",468,"Monarch","Male","blue",NA,"White",193,"DC Comics",NA,"good",90,4
+"470",469,"Monica Dawson","Female",NA,NA,NA,NA,"NBC - Heroes",NA,"good",NA,1
+"474",473,"Morph","Male","white",NA,"No Hair",178,"Marvel Comics",NA,"good",79,1
+"478",477,"Ms Marvel II","Female","blue",NA,"Red",173,"Marvel Comics",NA,"good",61,1
+"479",478,"Multiple Man","Male","blue",NA,"Brown",180,"Marvel Comics",NA,"good",70,4
+"482",481,"Namor","Male",NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,1
+"484",483,"Namora","Female","blue",NA,"Blond",180,"Marvel Comics",NA,"good",85,2
+"485",484,"Namorita","Female","blue",NA,"Blond",168,"Marvel Comics",NA,"good",101,2
+"487",486,"Nathan Petrelli","Male","brown",NA,NA,NA,"NBC - Heroes",NA,"good",NA,4
+"491",490,"Nightcrawler","Male","yellow",NA,"Indigo",175,"Marvel Comics",NA,"good",88,2
+"493",492,"Niki Sanders","Female","blue",NA,"Blond",NA,"NBC - Heroes",NA,"good",NA,3
+"495",494,"Nite Owl II","Male",NA,NA,NA,NA,"DC Comics",NA,"good",NA,2
+"496",495,"Northstar","Male","blue",NA,"Black",180,"Marvel Comics",NA,"good",83,3
+"500",499,"Offspring","Male",NA,NA,NA,NA,"DC Comics",NA,"good",NA,3
+"502",501,"Omniscient","Male","brown",NA,"Black",180,"Team Epic TV",NA,"good",65,2
+"507",506,"Osiris","Male","brown",NA,"Brown",NA,"DC Comics",NA,"good",NA,3
+"512",511,"Penance",NA,NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,1
+"513",512,"Penance I","Female",NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,2
+"514",513,"Penance II","Male","blue",NA,"Blond",183,"Marvel Comics",NA,"good",89,4
+"516",515,"Peter Petrelli","Male",NA,NA,NA,NA,"NBC - Heroes",NA,"good",NA,1
+"517",516,"Phantom","Male",NA,NA,NA,NA,"DC Comics",NA,"good",NA,3
+"518",517,"Phantom Girl","Female","blue",NA,"Black",168,"DC Comics",NA,"good",54,1
+"521",520,"Plastic Lad","Male",NA,NA,NA,NA,"DC Comics",NA,"good",NA,3
+"537",536,"Quantum","Male",NA,NA,NA,NA,"HarperCollins",NA,"good",NA,2
+"540",539,"Quill","Male","brown",NA,"Brown",163,"Marvel Comics",NA,"good",56,3
+"557",556,"Renata Soliz","Female",NA,NA,NA,NA,"HarperCollins",NA,"good",NA,2
+"563",562,"Ripcord","Female","green",NA,"Black",180,"Marvel Comics",NA,"good",72,4
+"570",569,"Rogue","Female","green",NA,"Brown / White",173,"Marvel Comics",NA,"good",54,3
+"574",573,"Sage","Female","blue",NA,"Black",170,"Marvel Comics",NA,"good",61,1
+"576",575,"Sasquatch","Male","red",NA,"Orange",305,"Marvel Comics",NA,"good",900,3
+"578",577,"Savage Dragon","Male",NA,NA,NA,NA,"Image Comics",NA,"good",NA,4
+"587",586,"Shadow King",NA,"red",NA,NA,185,"Marvel Comics",NA,"good",149,3
+"591",590,"Shatterstar","Male","brown",NA,"Red",191,"Marvel Comics",NA,"good",88,2
+"595",594,"Shriek","Female","yellow / blue",NA,"Black",173,"Marvel Comics",NA,"good",52,3
+"596",595,"Shrinking Violet","Female",NA,NA,NA,NA,"DC Comics",NA,"good",NA,2
+"599",598,"Silk Spectre","Female",NA,NA,NA,NA,"DC Comics",NA,"good",NA,3
+"600",599,"Silk Spectre II","Female",NA,NA,NA,NA,"DC Comics",NA,"good",NA,3
+"602",601,"Silverclaw","Female","brown",NA,"Black",157,"Marvel Comics",NA,"good",50,4
+"608",607,"Skaar","Male","green",NA,"Black",198,"Marvel Comics",NA,"good",180,1
+"610",609,"Snowbird","Female","white",NA,"Blond",178,"Marvel Comics",NA,"good",49,1
+"611",610,"Sobek","Male","white",NA,"No Hair",NA,"DC Comics",NA,"good",NA,1
+"613",612,"Songbird","Female","green",NA,"Red / White",165,"Marvel Comics",NA,"good",65,2
+"617",616,"Speedball","Male",NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,3
+"627",626,"Spider-Woman II","Female",NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,4
+"628",627,"Spider-Woman III","Female","brown",NA,"Brown",173,"Marvel Comics",NA,"good",55,2
+"632",631,"Stacy X","Female",NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,1
+"634",633,"Stardust","Male",NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,2
+"638",637,"Steel","Male","brown",NA,"No Hair",201,"DC Comics",NA,"good",131,3
+"639",638,"Stephanie Powell","Female",NA,NA,"Blond",NA,"ABC Studios",NA,"good",NA,4
+"644",643,"Superboy","Male","blue",NA,"Black",170,"DC Comics",NA,"good",68,3
+"651",650,"Synch","Male","brown",NA,"Black",180,"Marvel Comics",NA,"good",74,2
+"657",656,"Tempest","Female","brown",NA,"Black",163,"Marvel Comics",NA,"good",54,1
+"659",658,"The Cape","Male",NA,NA,NA,NA,"",NA,"good",NA,1
+"664",663,"Thunderbird","Male","brown",NA,"Black",185,"Marvel Comics",NA,"good",101,1
+"665",664,"Thunderbird II","Male",NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,4
+"666",665,"Thunderbird III","Male","brown",NA,"Black",175,"Marvel Comics",NA,"good",74,3
+"667",666,"Thunderstrike","Male","blue",NA,"Blond",198,"Marvel Comics",NA,"good",288,2
+"668",667,"Thundra","Female","green",NA,"Red",218,"Marvel Comics",NA,"good",158,1
+"670",669,"Tigra","Female","green",NA,"Auburn",178,"Marvel Comics",NA,"good",81,2
+"672",671,"Titan","Male",NA,NA,NA,NA,"HarperCollins",NA,"good",NA,1
+"676",675,"Tracy Strauss","Female",NA,NA,NA,NA,"NBC - Heroes",NA,"good",NA,2
+"679",678,"Triplicate Girl","Female","purple",NA,"Brown",168,"DC Comics",NA,"good",59,3
+"682",681,"Ultragirl","Female","blue",NA,"Blond",168,"Marvel Comics",NA,"good",105,1
+"685",684,"Vagabond","Female","blue",NA,"Strawberry Blond",168,"Marvel Comics",NA,"good",54,1
+"686",685,"Valerie Hart","Female","hazel",NA,"Black",175,"Team Epic TV",NA,"good",56,2
+"687",686,"Valkyrie","Female","blue",NA,"Blond",191,"Marvel Comics",NA,"good",214,1
+"694",693,"Vertigo II","Female","blue",NA,"Silver",168,"Marvel Comics",NA,"good",52,2
+"697",696,"Vindicator","Male",NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,1
+"701",700,"Vision II",NA,"red",NA,"No Hair",191,"Marvel Comics",NA,"good",135,2
+"703",702,"Vulcan","Male","black",NA,"Black",NA,"Marvel Comics",NA,"good",NA,1
+"707",706,"Warbird","Female","blue",NA,"Blond",180,"Marvel Comics",NA,"good",54,1
+"708",707,"Warlock","Male","red",NA,"Blond",188,"Marvel Comics",NA,"good",108,4
+"712",711,"Watcher","Male",NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,4
+"715",714,"White Queen","Female","blue",NA,"Blond",178,"Marvel Comics",NA,"good",65,3
+"716",715,"Wildfire","Male",NA,NA,NA,NA,"DC Comics",NA,"good",NA,4
+"718",717,"Wiz Kid",NA,"brown",NA,"Black",140,"Marvel Comics",NA,"good",39,3
+"719",718,"Wolfsbane","Female","green",NA,"Auburn",366,"Marvel Comics",NA,"good",473,3
+"722",721,"Wonder Man","Male","red",NA,"Black",188,"Marvel Comics",NA,"good",171,2
+"724",723,"Wondra","Female",NA,NA,NA,NA,"Marvel Comics",NA,"good",NA,3
+"725",724,"Wyatt Wingfoot","Male","brown",NA,"Black",196,"Marvel Comics",NA,"good",117,3
+"727",726,"X-Man","Male","blue",NA,"Brown",175,"Marvel Comics",NA,"good",61,3
+"2",1,"Abe Sapien","Male","blue","Icthyo Sapien","No Hair",191,"Dark Horse Comics","blue","good",65,4
+"3",2,"Abin Sur","Male","blue","Ungaran","No Hair",185,"DC Comics","red","good",90,1
+"24",23,"Angel","Male",NA,"Vampire",NA,NA,"Dark Horse Comics",NA,"good",NA,4
+"25",24,"Angel Dust","Female","yellow","Mutant","Black",165,"Marvel Comics",NA,"good",57,2
+"34",33,"Anti-Venom","Male","blue","Symbiote","Blond",229,"Marvel Comics",NA,NA,358,2
+"37",36,"Aqualad","Male","blue","Atlantean","Black",178,"DC Comics",NA,"good",106,2
+"38",37,"Aquaman","Male","blue","Atlantean","Blond",185,"DC Comics",NA,"good",146,1
+"40",39,"Archangel","Male","blue","Mutant","Blond",183,"Marvel Comics","blue","good",68,1
+"42",41,"Ardina","Female","white","Alien","Orange",193,"Marvel Comics","gold","good",98,2
+"48",47,"Atlas","Male","brown","Mutant","Red",183,"Marvel Comics",NA,"good",101,2
+"56",55,"Aurora","Female","blue","Mutant","Black",180,"Marvel Comics",NA,"good",63,2
+"75",74,"Beast","Male","blue","Mutant","Blue",180,"Marvel Comics","blue","good",181,2
+"80",79,"Beyonder","Male",NA,"God / Eternal",NA,NA,"Marvel Comics",NA,"good",NA,3
+"84",83,"Bill Harken","Male",NA,"Alpha",NA,NA,"SyFy",NA,"good",NA,1
+"87",86,"Bionic Woman","Female","blue","Cyborg","Black",NA,"",NA,"good",NA,4
+"91",90,"Birdman","Male",NA,"God / Eternal",NA,NA,"Hanna-Barbera",NA,"good",NA,2
+"92",91,"Bishop","Male","brown","Mutant","No Hair",198,"Marvel Comics",NA,"good",124,4
+"93",92,"Bizarro","Male","black","Bizarro","Black",191,"DC Comics","white","neutral",155,4
+"96",95,"Black Bolt","Male","blue","Inhuman","Black",188,"Marvel Comics",NA,"good",95,1
+"98",97,"Black Canary","Female","blue","Metahuman","Blond",170,"DC Comics",NA,"good",59,4
+"100",99,"Black Flash","Male",NA,"God / Eternal",NA,NA,"DC Comics",NA,"neutral",NA,1
+"111",110,"Blackwulf","Male","red","Alien","White",188,"Marvel Comics",NA,NA,88,2
+"112",111,"Blade","Male","brown","Vampire","Black",188,"Marvel Comics",NA,"good",97,4
+"115",114,"Blink","Female","green","Mutant","Magenta",165,"Marvel Comics","pink","good",56,4
+"121",120,"Bloodhawk","Male","black","Mutant","No Hair",NA,"Marvel Comics",NA,"good",NA,3
+"130",129,"Boom-Boom","Female","blue","Mutant","Blond",165,"Marvel Comics",NA,"good",55,4
+"139",138,"Brundlefly","Male",NA,"Mutant",NA,193,"",NA,NA,NA,1
+"145",144,"Cable","Male","blue","Mutant","White",203,"Marvel Comics",NA,"good",158,3
+"147",146,"Cameron Hicks","Male",NA,"Alpha",NA,NA,"SyFy",NA,"good",NA,3
+"150",149,"Captain Atom","Male","blue","Human / Radiation","Silver",193,"DC Comics","silver","good",90,4
+"156",155,"Captain Marvel","Female","blue","Human-Kree","Blond",180,"Marvel Comics",NA,"good",74,2
+"160",159,"Captain Planet","Male","red","God / Eternal","Green",NA,"Marvel Comics",NA,"good",NA,3
+"161",160,"Captain Universe",NA,NA,"God / Eternal",NA,NA,"Marvel Comics",NA,"good",NA,4
+"167",166,"Century","Male","white","Alien","White",201,"Marvel Comics","grey","good",97,2
+"168",167,"Cerebra","Female",NA,"Mutant",NA,NA,"Marvel Comics",NA,"good",NA,4
+"169",168,"Chamber","Male","brown","Mutant","Brown",175,"Marvel Comics",NA,"good",63,4
+"185",184,"Colossus","Male","silver","Mutant","Black",226,"Marvel Comics",NA,"good",225,1
+"186",185,"Copycat","Female","red","Mutant","White",183,"Marvel Comics","blue","neutral",67,3
+"191",190,"Crystal","Female","green","Inhuman","Red",168,"Marvel Comics",NA,"good",50,1
+"194",193,"Cyborg","Male","brown","Cyborg","Black",198,"DC Comics",NA,"good",173,4
+"196",195,"Cyclops","Male","brown","Mutant","Brown",191,"Marvel Comics",NA,"good",88,2
+"206",205,"Darkstar","Female","brown","Mutant","Blond",168,"Marvel Comics",NA,"good",56,2
+"210",209,"Data","Male","yellow","Android","Brown",NA,"Star Trek",NA,"good",NA,4
+"211",210,"Dazzler","Female","blue","Mutant","Blond",173,"Marvel Comics",NA,"good",52,1
+"213",212,"Deadpool","Male","brown","Mutant","No Hair",188,"Marvel Comics",NA,"neutral",95,2
+"215",214,"Deathlok","Male","brown","Cyborg","Grey",193,"Marvel Comics",NA,"good",178,2
+"221",220,"Doc Samson","Male","blue","Human / Radiation","Green",198,"Marvel Comics",NA,"good",171,4
+"228",227,"Donatello","Male","green","Mutant","No Hair",NA,"IDW Publishing","green","good",NA,4
+"229",228,"Donna Troy","Female","blue","Amazon","Black",175,"DC Comics",NA,"good",63,4
+"233",232,"Dr Manhattan","Male","white","Human / Cosmic","No Hair",NA,"DC Comics","blue","good",NA,3
+"234",233,"Drax the Destroyer","Male","red","Human / Altered","No Hair",193,"Marvel Comics","green","good",306,3
+"246",245,"Etrigan","Male","red","Demon","No Hair",193,"DC Comics","yellow","neutral",203,1
+"256",255,"Fin Fang Foom","Male","red","Kakarantharaian","No Hair",975,"Marvel Comics","green","good",18,3
+"259",258,"Firestar","Female","green","Mutant","Red",173,"Marvel Comics",NA,"good",56,3
+"269",268,"Franklin Richards","Male","blue","Mutant","Blond",142,"Marvel Comics",NA,"good",45,4
+"273",272,"Galactus","Male","black","Cosmic Entity","Black",876,"Marvel Comics",NA,"neutral",16,1
+"274",273,"Gambit","Male","red","Mutant","Brown",185,"Marvel Comics",NA,"good",81,4
+"275",274,"Gamora","Female","yellow","Zen-Whoberian","Black",183,"Marvel Comics","green","good",77,3
+"276",275,"Garbage Man","Male",NA,"Mutant",NA,NA,"DC Comics",NA,"good",NA,1
+"277",276,"Gary Bell","Male",NA,"Alpha",NA,NA,"SyFy",NA,"good",NA,3
+"280",279,"Ghost Rider","Male","red","Demon","No Hair",188,"Marvel Comics",NA,"good",99,4
+"285",284,"Gladiator","Male","blue","Strontian","Blue",198,"Marvel Comics","purple","neutral",268,2
+"289",288,"Goku","Male",NA,"Saiyan",NA,175,"Shueisha",NA,"good",62,2
+"303",302,"Groot","Male","yellow","Flora Colossus",NA,701,"Marvel Comics",NA,"good",4,2
+"305",304,"Guy Gardner","Male","blue","Human-Vuldarian","Red",188,"DC Comics",NA,"good",95,2
+"311",310,"Havok","Male","blue","Mutant","Blond",183,"Marvel Comics",NA,"good",79,4
+"322",321,"Hellboy","Male","gold","Demon","Black",259,"Dark Horse Comics",NA,"good",158,2
+"325",324,"Hercules","Male","blue","Demi-God","Brown",196,"Marvel Comics",NA,"good",146,2
+"332",331,"Hulk","Male","green","Human / Radiation","Green",244,"Marvel Comics","green","good",630,3
+"333",332,"Human Torch","Male","blue","Human / Radiation","Blond",178,"Marvel Comics",NA,"good",77,3
+"335",334,"Husk","Female","blue","Mutant","Blond",170,"Marvel Comics",NA,"good",58,2
+"336",335,"Hybrid","Male","brown","Symbiote","Black",175,"Marvel Comics",NA,"good",77,1
+"338",337,"Hyperion","Male","blue","Eternal","Red",183,"Marvel Comics",NA,"good",207,4
+"339",338,"Iceman","Male","brown","Mutant","Brown",173,"Marvel Comics",NA,"good",65,2
+"342",341,"Indigo","Female",NA,"Alien","Purple",NA,"DC Comics",NA,"neutral",NA,3
+"343",342,"Ink","Male","blue","Mutant","No Hair",180,"Marvel Comics",NA,"good",81,3
+"344",343,"Invisible Woman","Female","blue","Human / Radiation","Blond",168,"Marvel Comics",NA,"good",54,4
+"354",353,"Jar Jar Binks","Male","yellow","Gungan",NA,193,"George Lucas","orange / white","good",NA,3
+"356",355,"Jean Grey","Female","green","Mutant","Red",168,"Marvel Comics",NA,"good",52,3
+"372",371,"Jubilee","Female","red","Mutant","Black",165,"Marvel Comics",NA,"good",52,2
+"378",377,"K-2SO","Male","white","Android","No Hair",213,"George Lucas","gray","good",NA,3
+"389",388,"Kilowog","Male","red","Bolovaxian","No Hair",234,"DC Comics","pink","good",324,3
+"390",389,"King Kong","Male","yellow","Animal","Black",30.5,"",NA,"good",NA,1
+"397",396,"Krypto","Male","blue","Kryptonian","White",64,"DC Comics",NA,"good",18,4
+"404",403,"Legion","Male","green / blue","Mutant","Black",175,"Marvel Comics",NA,"good",59,3
+"405",404,"Leonardo","Male","blue","Mutant","No Hair",NA,"IDW Publishing","green","good",NA,3
+"411",410,"Living Tribunal",NA,"blue","Cosmic Entity","No Hair",NA,"Marvel Comics","gold","neutral",NA,2
+"414",413,"Lobo","Male","red","Czarnian","Black",229,"DC Comics","blue-white","neutral",288,2
+"427",426,"Man of Miracles",NA,"blue","God / Eternal","Silver",NA,"Image Comics",NA,NA,NA,2
+"432",431,"Mantis","Female","green","Human-Kree","Black",168,"Marvel Comics","green","good",52,1
+"433",432,"Martian Manhunter","Male","red","Martian","No Hair",201,"DC Comics","green","good",135,3
+"436",435,"Master Chief","Male","brown","Human / Altered","Brown",213,"Microsoft",NA,"good",NA,2
+"442",441,"Medusa","Female","green","Inhuman","Red",180,"Marvel Comics",NA,"good",59,3
+"445",444,"Mera","Female","blue","Atlantean","Red",175,"DC Comics",NA,"good",72,3
+"451",450,"Michelangelo","Male","blue","Mutant",NA,NA,"IDW Publishing","green","good",NA,3
+"457",456,"Mister Fantastic","Male","brown","Human / Radiation","Brown",185,"Marvel Comics",NA,"good",81,2
+"465",464,"Mogo","Male",NA,"Planet",NA,NA,"DC Comics",NA,"good",NA,1
+"476",475,"Mr Immortal","Male","blue","Mutant","Blond",188,"Marvel Comics",NA,"good",70,3
+"483",482,"Namor","Male","grey","Atlantean","Black",188,"Marvel Comics",NA,"good",125,1
+"489",488,"Negasonic Teenage Warhead","Female","black","Mutant","Black",NA,"Marvel Comics",NA,"good",NA,1
+"494",493,"Nina Theroux","Female",NA,"Alpha",NA,NA,"SyFy",NA,"good",NA,4
+"498",497,"Nova","Female","white","Human / Cosmic","Red",163,"Marvel Comics","gold","good",59,1
+"499",498,"Odin","Male","blue","God / Eternal","White",206,"Marvel Comics",NA,"good",293,3
+"504",503,"One-Above-All",NA,NA,"Cosmic Entity",NA,NA,"Marvel Comics",NA,"neutral",NA,2
+"519",518,"Phoenix","Female","green","Mutant","Red",168,"Marvel Comics",NA,"good",52,1
+"525",524,"Polaris","Female","green","Mutant","Green",170,"Marvel Comics",NA,"good",52,2
+"526",525,"Power Girl","Female","blue","Kryptonian","blond",180,"DC Comics",NA,"good",81,3
+"527",526,"Power Man","Male",NA,"Mutant",NA,NA,"Marvel Comics",NA,"good",NA,4
+"529",528,"Professor X","Male","blue","Mutant","No Hair",183,"Marvel Comics",NA,"good",86,4
+"532",531,"Psylocke","Female","blue","Mutant","Purple",180,"Marvel Comics",NA,"good",70,1
+"536",535,"Q","Male",NA,"God / Eternal",NA,NA,"Star Trek",NA,NA,NA,2
+"539",538,"Quicksilver","Male","blue","Mutant","Silver",183,"Marvel Comics",NA,"good",79,1
+"542",541,"Rachel Pirzad","Female",NA,"Alpha",NA,NA,"SyFy",NA,"good",NA,4
+"544",543,"Raphael","Male",NA,"Mutant","No Hair",NA,"IDW Publishing","green","good",NA,3
+"550",549,"Red Hulk","Male","yellow","Human / Radiation","Black",213,"Marvel Comics","red","neutral",630,3
+"554",553,"Red Tornado","Male","green","Android","No Hair",185,"DC Comics",NA,"good",146,1
+"569",568,"Rocket Raccoon","Male","brown","Animal","Brown",122,"Marvel Comics",NA,"good",25,4
+"581",580,"Scarlet Spider II","Male","brown","Clone","Brown",193,"Marvel Comics",NA,"good",113,3
+"586",585,"Sentry","Male","blue","Mutant","Blond",188,"Marvel Comics",NA,"neutral",87,1
+"588",587,"Shadow Lass","Female","black","Talokite","Black",173,"DC Comics","blue","good",54,4
+"589",588,"Shadowcat","Female","hazel","Mutant","Brown",168,"Marvel Comics",NA,"good",50,2
+"593",592,"She-Thing","Female","blue","Human / Radiation","No Hair",183,"Marvel Comics",NA,"good",153,1
+"597",596,"Sif","Female","blue","Asgardian","Black",188,"Marvel Comics",NA,"good",191,1
+"601",600,"Silver Surfer","Male","white","Alien","No Hair",193,"Marvel Comics","silver","good",101,1
+"604",603,"Sinestro","Male","black","Korugaran","Black",201,"DC Comics","red","neutral",92,4
+"615",614,"Spawn","Male","brown","Demon","Black",211,"Image Comics",NA,"good",405,2
+"616",615,"Spectre","Male","white","God / Eternal","No Hair",NA,"DC Comics","white","good",NA,1
+"630",629,"Spock","Male","brown","Human-Vulcan","Black",185,"Star Trek",NA,"good",81,1
+"631",630,"Spyke","Male","brown","Mutant","Blond",183,"Marvel Comics",NA,"good",83,1
+"633",632,"Star-Lord","Male","blue","Human-Spartoi","Blond",188,"Marvel Comics",NA,"good",79,3
+"635",634,"Starfire","Female","green","Tamaranean","Auburn",193,"DC Comics","orange","good",71,3
+"637",636,"Static","Male","brown","Mutant","Black",170,"DC Comics",NA,"good",63,2
+"641",640,"Storm","Female","blue","Mutant","White",180,"Marvel Comics",NA,"good",57,4
+"643",642,"Sunspot","Male","brown","Mutant","black",173,"Marvel Comics",NA,"good",77,4
+"646",645,"Supergirl","Female","blue","Kryptonian","Blond",165,"DC Comics",NA,"good",54,4
+"647",646,"Superman","Male","blue","Kryptonian","Black",191,"DC Comics",NA,"good",101,4
+"661",660,"Thing","Male","blue","Human / Radiation","No Hair",183,"Marvel Comics",NA,"good",225,1
+"662",661,"Thor","Male","blue","Asgardian","Blond",198,"Marvel Comics",NA,"good",288,2
+"663",662,"Thor Girl","Female","blue","Asgardian","Blond",175,"Marvel Comics",NA,"good",143,4
+"673",672,"Toad","Male","black","Mutant","Brown",175,"Marvel Comics","green","neutral",76,2
+"674",673,"Toxin","Male","blue","Symbiote","Brown",188,"Marvel Comics",NA,"good",97,2
+"675",674,"Toxin","Male","black","Symbiote","Blond",191,"Marvel Comics",NA,"good",117,1
+"680",679,"Triton","Male","green","Inhuman","No Hair",188,"Marvel Comics","green","good",86,3
+"693",692,"Venompool","Male",NA,"Symbiote",NA,226,"Marvel Comics",NA,NA,NA,3
+"700",699,"Vision","Male","gold","Android","No Hair",191,"Marvel Comics","red","good",135,4
+"710",709,"Warpath","Male","brown","Mutant","Black",218,"Marvel Comics",NA,"good",158,1
+"720",719,"Wolverine","Male","blue","Mutant","Black",160,"Marvel Comics",NA,"good",135,1
+"721",720,"Wonder Girl","Female","blue","Demi-God","Blond",165,"DC Comics",NA,"good",51,3
+"723",722,"Wonder Woman","Female","blue","Amazon","Black",183,"DC Comics",NA,"good",74,1
+"726",725,"X-23","Female","green","Mutant / Clone","Black",155,"Marvel Comics",NA,"good",50,1
+"731",730,"Ymir","Male","white","Frost Giant","No Hair",304.8,"Marvel Comics","white","good",NA,3
+"732",731,"Yoda","Male","brown","Yoda's species","White",66,"George Lucas","green","good",17,1
