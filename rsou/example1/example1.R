@@ -53,75 +53,57 @@ seq(-15, 25, by = 5)
 vec5 <- vec4[seq(1, length(vec4), by = 2)] # 순서대로 vec4의 크기만큼 2씩 증가시켜 맞는 값만 출력.
 vec5
 
-<연습문제4> 다음의 벡터를 컬럼으로 데이터프레임을 생성하시오.
-
+# <연습문제4> 다음의 벡터를 컬럼으로 데이터프레임을 생성하시오.
 name <- c("최민수","유관순", "이순신","김유신","홍길동")
-
 age <- c(55,45,45,53,15) # 연령
-
 gender <- c(1,2,1,1,1)    # 1:남자, 2: 여자
-
 job <- c("연예인","주부","군인","직장인","학생")
-
 sat <-c(3,4,2,5,5)        # 만족도
-
 grade <- c("C","C","A","D","A")
-
 total <-c(44.4,28.5,43.5,NA,27.1)   # 총구매금액(NA:결측치)
 
+typeof(df)
+class(df)
+
+# <조건1> 위 7개 벡터를 user이름으로 데이터 프레임 생성
+user <- data.frame(name, age, gender,job,sat,grade,total)
+user
+
+# <조건2> 성별(gender) 변수를 이용하여 히스토그램 그리기
+hist(user, xlab = "gender") # 
+barplot(prop.table(table(user$gender))) # gender를 테이블로 만들고 비율을 계산해 세로형 막대로 보여줌.
+
+# <조건3> 만족도(sat) 변수를 이용하여 산점도(geom_point) 그리기
+install.packages("ggplot2")
+library(ggplot2)
+plot(sat ~ name, user, pch = 1)
+
+# <조건4> user에서 짝수행만 선택해서 user2에 넣으시오.
+seq(1, nrow(user), by = 2)
+user2 <- user[seq(1, nrow(user), by = 2),]
+user2
+
+# ★★★★★
 
 
-<조건1> 위 7개 벡터를 user이름으로 데이터 프레임 생성
 
-
-
-<조건2> 성별(gender) 변수를 이용하여 히스토그램 그리기
-
-
-
-<조건3> 만족도(sat) 변수를 이용하여 산점도 그리기
-
-
-
-<조건4> user에서 짝수행만 선택해서 user2에 넣으시오.
-
-
-
-
-
-<연습문제5> 
-  
-  r1 <- c(100, 80, 90)
-
+# <연습문제5> 
+r1 <- c(100, 80, 90)
 r2 <- c(90, 80, 75)
-
 r3 <- c(86, 78, 95)
-
 da <-data.frame(r1, r2, r3)
 
+# da를 대상으로 apply()를 적용하여 행/열 방향으로 내장 함수(max,mean())를 적용하시오.
 
+# <조건1> 행/열 방향 max()함수 적용
+# <조건2> 행/열 평균 mean()함수 적용
 
-da를 대상으로 apply()를 적용하여 행/열 방향으로 내장 함수(max,mean())를 적용하시오.
-
-<조건1> 행/열 방향 max()함수 적용
-
-
-
-<조건2> 행/열 평균 mean()함수 적용
-
-
-
-<연습문제6> kor(국어 점수 2개)과 eng(영어 점수 2개)를 id로 merge해서 score에 할당하시오.
+# <연습문제6> kor(국어 점수 2개)과 eng(영어 점수 2개)를 id로 merge해서 score에 할당하시오.
 
 kor <- data.frame(id=c(1,2), kor=c(85,75))
-
 eng <- data.frame(id=c(1,2), eng=c(95,86))
 
-
-
-
-
-<문자열 처리 연습문제> 아래의 data 객체를 대상으로 정규표현식 등을 적용하여 문자열을 처리하시오
+# <문자열 처리 연습문제> 아래의 data 객체를 대상으로 정규표현식 등을 적용하여 문자열을 처리하시오
 
 data <- c("2018-02-05 income1coin","2018-02-06 income2coin", "2018-02-07 income3coin")
 
