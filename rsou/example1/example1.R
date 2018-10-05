@@ -80,12 +80,9 @@ plot(sat ~ name, user, pch = 1)
 
 # <조건4> user에서 짝수행만 선택해서 user2에 넣으시오.
 seq(1, nrow(user), by = 2)
-user2 <- user[seq(1, nrow(user), by = 2),]
+user2 <- user[seq(2, nrow(user), by = 2),] # 2행부터 마지막행까지 뽑아냄. by = 2씩 증가. []는 행,열 출력
 user2
-
-# ★★★★★
-
-
+? seq
 
 # <연습문제5> 
 r1 <- c(100, 80, 90)
@@ -94,176 +91,194 @@ r3 <- c(86, 78, 95)
 da <-data.frame(r1, r2, r3)
 
 # da를 대상으로 apply()를 적용하여 행/열 방향으로 내장 함수(max,mean())를 적용하시오.
-
+da
 # <조건1> 행/열 방향 max()함수 적용
+apply(da, MARGIN = 1, max) # 행 단위
+apply(da, 2, max) # 열 단위
 # <조건2> 행/열 평균 mean()함수 적용
+apply(da, 1, mean)
+apply(da, 2, mean)
+# apply에서 1는 행, 2는 열을 뜻함.
 
 # <연습문제6> kor(국어 점수 2개)과 eng(영어 점수 2개)를 id로 merge해서 score에 할당하시오.
-
 kor <- data.frame(id=c(1,2), kor=c(85,75))
 eng <- data.frame(id=c(1,2), eng=c(95,86))
 
+kor
+eng
+
+score <- merge(x = kor, y = eng, by.x = "id", by.y = "id")
+# socre <- merge(kor, eng, by.x = "id", by.y = "id") # 위에와 동일
+score
+
 # <문자열 처리 연습문제> 아래의 data 객체를 대상으로 정규표현식 등을 적용하여 문자열을 처리하시오
-
 data <- c("2018-02-05 income1coin","2018-02-06 income2coin", "2018-02-07 income3coin")
+data
 
-
-
-<처리1> 일자별 수입(코인 수)을 출력하시오.
-
-출력 결과) 1coin 2coin 3coin
-
+# <처리1> 일자별 수입(코인 수)을 출력하시오.
+# 출력 결과) 1coin 2coin 3coin
 str_extract(data, "[0-9]{1}[a-z]{4}")    # 숫자 1개 이후에 영문자 4개 등장
 
+# <처리2> 위 벡터에서 연속하여 2개 이상 나오는 모든 숫자를 제거하시오. 
+# 출력 결과) "-- income1coin" "-- income2coin" "-- income3coin" 
+gsub("[0-9]","", data) # gsub : 정규표현식 및 문자열이 맞는 값을 바꾸는 함수.
 
+# <처리3> 위 벡터에서 - 를 / 로 치환하시오.
+gsub("-", "/", data)
 
-<처리2> 위 벡터에서 연속하여 2개 이상 나오는 모든 숫자를 제거하시오. 
+# <처리4> 모든 원소를 쉼표(,)에 의해서 하나의 문자열로 합치시오.
+# 조건) paste() 함수를 이용 
+paste(data[1], data[2], data[3], sep = ", ") # 모든 데이터를 엮어 주면 가능.
 
-출력 결과) "-- income1coin" "-- income2coin" "-- income3coin" 
-
-
-
-<처리3> 위 벡터에서 - 를 / 로 치환하시오.
-
-
-
-<처리4> 모든 원소를 쉼표(,)에 의해서 하나의 문자열로 합치시오.
-
-조건) paste() 함수를 이용 
-
-
-
-
-
-<if 연습문제> 데이터프레임을 대상으로 조건에 맞게 처리하시오.
-
+# <if 연습문제> 데이터프레임을 대상으로 조건에 맞게 처리하시오.
 name <- c("aa","bb","cc","dd")
-
 gender <- c("F","M","M","F")
-
 price <- c(50, 65, 45, 75)
-
 person <- data.frame(name,gender,price)
+person
 
+# <처리1> price가 65만원 이상인 고객은 "Best" 미만이면 "Normal" 문자열을 result 변수에 넣고, person 객체에 칼럼으로 추가하기
+result <- ifelse(person$price >= 65, "Best", "Normal") # 먼저 값을 구해서 result 변수에 넣고,
+result
+person <- data.frame(person, result) # 기존 data.frame에 추가 해주면 됨.
+person
 
+# <처리2> result의 빈도수를 구하시오.
+# 힌트) table()함수 이용
+table(person$result) # table() : 빈도수 구하기.
 
-<처리1> price가 65만원 이상인 고객은 "Best" 미만이면 "Normal" 문자열을 result 변수에 넣고, person 객체에 칼럼으로 추가하기
+# <처리3> gender가 'M'이면 "Male", 'F'이면 "Female" 형식으로 client의 객체에 gender2 칼럼을 추가하고 빈도수 구하기
+gender2 <- ifelse(person$gender == 'M', "Male", "Female") # if문으로 값 확인 후 변환.
+client <- data.frame(gender2) # Client 객체 만든 후 칼럼 추가하기.
+table(client$gender2) # 빈도수 구하기.
 
-
-
-<처리2> result의 빈도수를 구하시오.
-
-힌트) table()함수 이용
-
-
-
-<처리3> gender가 'M'이면 "Male", 'F'이면 "Female" 형식으로 client의 객체에 gender2 칼럼을 추가하고 빈도수 구하기
-
-
-
-
-
-
-
-<사용자 정의 함수 연습문제>
-  
-  income 객체에서 날짜별 자판기의 코인 수가 2 이상이면 "수입금 맑음"을, 아니면 "수입금 흐림"를 출력하는 사용자 정의 함수를 작성하시오.
-
+# <사용자 정의 함수 연습문제>
+# income 객체에서 날짜별 자판기의 코인 수가 2 이상이면 "수입금 맑음"을, 아니면 "수입금 흐림"를 출력하는 사용자 정의 함수를 작성하시오.
 income <- c("2018-06-05 income1coin", "2018-06-06 income2coin", "2018-06-07 income3coin")
+# 힌트) 사용자 정의 함수에 사용할 내장함수 : stringr 패키지 - str_extract(), str_replace()함수
+# 숫자 변환은 as.numeric()함수를 사용한다.
+library(stringr)
+my <- function() {
+  ifelse(as.numeric(str_extract(income, pattern = "(?<=income)[0-9]*")) >= 2, "수입금 맑음", "수입금 흐림")
+}
+my()
+str_extract(income, pattern = "(?<=income)[0-9]*") # income 보다 뒤에 있는 것.
+substr(income, 18, 18) # 위에 라인이나 현재라인 이나 둘다 가능.
+
+# ** if 조건판단문이 있는 함수 작성 
+# 문제1) 입력되는 인수가 5보다 클 때는 1을 출력하고 5 보다 작거나 같으면 무조건 0을 출력하는 함수 myf1( ) 을 작성 후 실행.
+myf1 <- function() {
+  ifelse(scan() > 5, 1, 0)
+}
+
+myf1()
+
+# 문제2) 입력되는 인수가 양수일 때는 1을 출력하고 나머지는 항상 0 을 출력하는 함수 myf2( ) 를 작성 후 실행.
+myf2 <- function() {
+  ifelse(scan() > 0, 1, 0)
+}
+
+myf2()
+
+# 문제3) 두 숫자를 입력해서 첫 번째 숫자가 두 번째 숫자보다 클 경우 첫번째 숫자에서 두 번째 숫자를 뺀 값을 출력하고 
+# 두 번째 숫자가 첫 번째 숫자 보다 클 경우 두 번째 숫자에서 첫 번째 숫자를 뺀 값을 출력하는 함수 myf3( ) 을 작성 후 실행
+myf3 <- function() { # 방법 1
+  num1 <- scan()
+  num2 <- scan()
+  ifelse(num1 > num2, num1 - num2, num2 - num1)
+}
+
+myf3 <- function() { # 방법 2
+  num <- scan()
+  ifelse(num[1] > num[2], num[1] - num[2], num[2] - num[1])
+}
+
+myf3()
+
+# 문제4) 입력 값이 0 이하일 경우 0으로 출력하고 1-5 사이의 값일 경우 1 을 출력하고 
+# 5 초과의 값이 입력될 경우 10을 출력하는 함수 myf4( )를 작성 후 실행.
+
+myf4 <- function() { # 방법 1
+  num <- scan()
+  ifelse(num < 0, 0, ifelse(num > 5, 10, 1))
+}
+
+myf4 <- function() { # 방법 2
+  num <- scan()
+  ifelse(num > 5, 10, ifelse(num < 0, 0, 1))
+}
+
+myf4()
+
+
+# ** for 반복문이 있는 함수 작성
+# 사용자에게 출력을 원하는 단 수를 입력 받아서 해당 단의 구구단을 출력하는 함수를 작성하라. 
+gugudan <- function(num) {
+  for(i in 1:9) {
+    cat(num, " * ", i, "=", num*i, "\n")
+  }
+}
+
+gugudan(3)
+
+# ** while 반복문이 있는 함수 작성
+# 감자
+# 고구마
+# 양파
+# 당근
+# 미나리
+# 1. 채소.txt 를 작업 디렉토리에 생성.
+# 2. 채소.txt 를 R로 불러와서 변수 var1 에 저장.
+# 3. 채소 이름을 출력하되 양파가 나오면 양파를 건너뛰고 출력하는 문장을 작성. 
+# (if 문과 while 문을 사용하면 되겠죠?)
+x <- c("감자", "고구마", "양파", "당근", "미나리")
+write(x, file = "output/채소.txt")
+
+var1 <- read.table("output/채소.txt")
+var1
+
+i <- 0
+while(nrow(var1)) {
+  i = i + 1
+  ifelse(var1[i,] == "양파", cat(var1[i,]), cat(var1[i,], " 좋아")) 
+}
+
+ifelse(var1[3,] == "양파", cat(var1[3,], 0))
+
+# [출력결과]
+# [1] "감자 좋아"
+# [1] "고구마 좋아"
+# [1] "당근 좋아"
+
+
+# xml 문제)
+# 기상청이 제공 (http://www.weather.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=108) 하는 XML 문서를 읽어 
+# 각 지역의 온도를 갖는 data.frame을 작성하시오.
+
+# 도시      상태    최저  최고
+# 1     서울    구름많음   -9   -4
+# 2     인천    구름많음   -9   -4
+# 3     수원    구름조금  -12   -5
+# 최저온도평균
+# 최저온도 표준편차 
 
 
 
-힌트) 사용자 정의 함수에 사용할 내장함수 : stringr 패키지 - str_extract(), str_replace()함수
+# <차트 연습문제> 
+# iris 데이터를 대상으로 plot() 함수를 이용하여 조건에 맞게 차트를 그리시오.
+# 조건1) 1번 칼럼이 x축, 3번 칼럼을 y축으로 차트 그리기
 
-숫자 변환은 as.numeric()함수를 사용한다. 
+# 조건2) 5번 컬럼으로 색상 지정하기
 
+# 조건3) 제목 추가("iris 데이터 테이블 산포도 차트")
 
+# 조건4) 파일로 차트 저장하기("output/iris.jpg")
 
-** if 조건판단문이 있는 함수 작성 
-문제1) 입력되는 인수가 5보다 클 때는 1을 출력하고 5 보다 작거나 같으면 무조건 0을 출력하는 함수 myf1( ) 을 작성 후 실행.
+# <dplyr 패키지 관련>
+# <연습문제 1> 평균 비행시간(AirTime)을 구하시오
 
-문제2) 입력되는 인수가 양수일 때는 1을 출력하고 나머지는 항상 0 을 출력하는 함수 myf2( ) 를 작성 후 실행.
+# <연습문제2> n(), sum()를 이용하여 평균 비행시간을 구하시오.
 
-문제3) 두 숫자를 입력해서 첫 번째 숫자가 두 번째 숫자보다 클 경우 첫번째 숫자에서 두 번째 숫자를 뺀 값을 출력하고 
-두 번째 숫자가 첫 번째 숫자 보다 클 경우 두 번째 숫자에서 첫 번째 숫자를 뺀 값을 출력하는 함수 myf3( ) 을 작성 후 실행
+# <연습문제3> '연습문제2'에서 NA값으로 인하여 평균에 차이가 발생하였다. 평균 비행시간의 차이를 보정하시오.
 
-문제4) 입력 값이 0 이하일 경우 0으로 출력하고 1-5 사이의 값일 경우 1 을 출력하고 
-5 초과의 값이 입력될 경우 10을 출력하는 함수 myf4( )를 작성 후 실행.
-
-
-** for 반복문이 있는 함수 작성
-사용자에게 출력을 원하는 단 수를 입력 받아서 해당 단의 구구단을 출력하는 함수를 작성하라. 
-
-
-** while 반복문이 있는 함수 작성
-감자
-고구마
-양파
-당근
-미나리
-1. 채소.txt 를 작업 디렉토리에 생성.
-2. 채소.txt 를 R로 불러와서 변수 var1 에 저장.
-3. 채소 이름을 출력하되 양파가 나오면 양파를 건너뛰고 출력하는 문장을 작성. 
-(if 문과 while 문을 사용하면 되겠죠?)
-
-[출력결과]
-[1] "감자 좋아"
-[1] "고구마 좋아"
-[1] "당근 좋아"
-
-
-xml 문제)
-
-기상청이 제공 (http://www.weather.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=108) 하는 XML 문서를 읽어 
-
-각 지역의 온도를 갖는 data.frame을 작성하시오.
-
-도시      상태    최저  최고
-1     서울    구름많음   -9   -4
-2     인천    구름많음   -9   -4
-3     수원    구름조금  -12   -5
-최저온도평균
-
-최저온도 표준편차 
-
-
-
-<차트 연습문제> 
-  
-  iris 데이터를 대상으로 plot() 함수를 이용하여 조건에 맞게 차트를 그리시오.
-
-조건1) 1번 칼럼이 x축, 3번 칼럼을 y축으로 차트 그리기
-
-
-
-조건2) 5번 컬럼으로 색상 지정하기
-
-
-
-조건3) 제목 추가("iris 데이터 테이블 산포도 차트")
-
-
-
-조건4) 파일로 차트 저장하기("output/iris.jpg")
-
-
-
-
-
-
-
-<dplyr 패키지 관련>
-  
-  <연습문제 1> 평균 비행시간(AirTime)을 구하시오
-
-
-
-<연습문제2> n(), sum()를 이용하여 평균 비행시간을 구하시오.
-
-
-
-<연습문제3> '연습문제2'에서 NA값으로 인하여 평균에 차이가 발생하였다. 평균 비행시간의 차이를 보정하시오.
-
-
-
-<연습문제4> 도착시간(ArrTime) 표준편차와 분산(표준편차의 제곱근) 구하기
+# <연습문제4> 도착시간(ArrTime) 표준편차와 분산(표준편차의 제곱근) 구하기
