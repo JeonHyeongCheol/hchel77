@@ -168,7 +168,7 @@ substr(income, 18, 18) # 위에 라인이나 현재라인 이나 둘다 가능.
 # ** if 조건판단문이 있는 함수 작성 
 # 문제1) 입력되는 인수가 5보다 클 때는 1을 출력하고 5 보다 작거나 같으면 무조건 0을 출력하는 함수 myf1( ) 을 작성 후 실행.
 myf1 <- function() {
-  ifelse(scan() > 5, 1, 0)
+  ifelse(scan() > 5, 1, 0) # 조건에서, 참일때, 거짓일때 값 출력.
 }
 
 myf1()
@@ -185,7 +185,7 @@ myf2()
 myf3 <- function() { # 방법 1
   num1 <- scan()
   num2 <- scan()
-  ifelse(num1 > num2, num1 - num2, num2 - num1)
+  ifelse(num1 > num2, num1 - num2, num2 - num1) # ifelse 안에서 값 계산하여 출력.
 }
 
 myf3 <- function() { # 방법 2
@@ -200,7 +200,7 @@ myf3()
 
 myf4 <- function() { # 방법 1
   num <- scan()
-  ifelse(num < 0, 0, ifelse(num > 5, 10, 1))
+  ifelse(num < 0, 0, ifelse(num > 5, 10, 1)) # ifelse 안에 ifelse 넣기.
 }
 
 myf4 <- function() { # 방법 2
@@ -215,7 +215,7 @@ myf4()
 # 사용자에게 출력을 원하는 단 수를 입력 받아서 해당 단의 구구단을 출력하는 함수를 작성하라. 
 gugudan <- function(num) {
   for(i in 1:9) {
-    cat(num, " * ", i, "=", num*i, "\n")
+    cat(num, " * ", i, "=", num*i, "\n") # 구구단 출력, for
   }
 }
 
@@ -231,19 +231,25 @@ gugudan(3)
 # 2. 채소.txt 를 R로 불러와서 변수 var1 에 저장.
 # 3. 채소 이름을 출력하되 양파가 나오면 양파를 건너뛰고 출력하는 문장을 작성. 
 # (if 문과 while 문을 사용하면 되겠죠?)
-x <- c("감자", "고구마", "양파", "당근", "미나리")
-write(x, file = "output/채소.txt")
+x <- c("감자","고구마","양파","당근","미나리")
+write(xx, file = "output/채소.txt")
+var1 <- read.table("../example1/output/채소.txt", stringsAsFactors = F) # read.table 가져올 때 stringsAsFactors 확인하기.
 
-var1 <- read.table("output/채소.txt")
-var1
+nrow(var1)
+str(var1)
+
+ifelse(var1[1:5,] == "양파", 1, 0)
+
 
 i <- 0
-while(nrow(var1)) {
-  i = i + 1
-  ifelse(var1[i,] == "양파", cat(var1[i,]), cat(var1[i,], " 좋아")) 
+while(i < 5) {
+  i <- i + 1
+  if(var1[i,] == "양파") {
+    
+  } else {
+    cat(var1[i,], "좋아\n")
+  }
 }
-
-ifelse(var1[3,] == "양파", cat(var1[3,], 0))
 
 # [출력결과]
 # [1] "감자 좋아"
@@ -255,30 +261,74 @@ ifelse(var1[3,] == "양파", cat(var1[3,], 0))
 # 기상청이 제공 (http://www.weather.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=108) 하는 XML 문서를 읽어 
 # 각 지역의 온도를 갖는 data.frame을 작성하시오.
 
-# 도시      상태    최저  최고
+#       도시      상태    최저  최고
 # 1     서울    구름많음   -9   -4
 # 2     인천    구름많음   -9   -4
 # 3     수원    구름조금  -12   -5
 # 최저온도평균
 # 최저온도 표준편차 
 
+install.packages("XML")
+library(XML)
 
+fileurl <- "http://www.weather.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=108"
+doc <- xmlTreeParse(fileurl, useInternalNodes = TRUE)
+rootNode <- xmlRoot(doc)
+xmlName(rootNode)
+
+rootNode[[1]][[1]]
+
+city <- xpathSApply(rootNode,"//body//city",xmlValue)
+city
+status <- xpathSApply(rootNode,"//body//wf",xmlValue)
+status
+stamin <- xpathSApply(rootNode,"//tmn",xmlValue)
+stamin
+stamax <- xpathSApply(rootNode,"//tmx",xmlValue)
+
+weath <- data.frame(city, status, stamin, stamax, stringsAsFactors = F)
 
 # <차트 연습문제> 
 # iris 데이터를 대상으로 plot() 함수를 이용하여 조건에 맞게 차트를 그리시오.
 # 조건1) 1번 칼럼이 x축, 3번 칼럼을 y축으로 차트 그리기
-
+head(iris)
+plot(iris$Sepal.Length, iris$Petal.Length) # 차트 출력시 x, y 값 입력
 # 조건2) 5번 컬럼으로 색상 지정하기
+plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species) # col는 컬럼으로도 가능.
 
 # 조건3) 제목 추가("iris 데이터 테이블 산포도 차트")
+plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, main = "iris 데이터 테이블 산포도 차") # 제목은 main 사용.
 
 # 조건4) 파일로 차트 저장하기("output/iris.jpg")
+jpeg("../example1/output/iris.jpg") # 차트 저장시 jpeg 사용.
+plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, main = "iris 데이터 테이블 산포도 차") # 차트 확인 후
+dev.off() # off 하면 출력 됨.
 
 # <dplyr 패키지 관련>
 # <연습문제 1> 평균 비행시간(AirTime)을 구하시오
+install.packages("dplyr")
+install.packages("hflights")
+library(dplyr)
+library(hflights)
+
+hflight <- hflights
+
+head(hflight)
+
+mean(hflights$AirTime, na.rm = T)
 
 # <연습문제2> n(), sum()를 이용하여 평균 비행시간을 구하시오.
+sum(hflight$AirTime, na.rm = T) / nrow(hflight)
 
 # <연습문제3> '연습문제2'에서 NA값으로 인하여 평균에 차이가 발생하였다. 평균 비행시간의 차이를 보정하시오.
+hflight <- na.omit(hflight) # NA값 제거.
+nrow(hflight)
+
+sum(hflight$AirTime, na.rm = T) / nrow(hflight)
+
+mean(hflight$AirTime, na.rm = T)
 
 # <연습문제4> 도착시간(ArrTime) 표준편차와 분산(표준편차의 제곱근) 구하기
+sd(hflight$ArrTime)
+var(hflight$ArrTime)
+
