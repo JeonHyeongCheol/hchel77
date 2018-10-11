@@ -1,0 +1,16 @@
+@charset "UTF-8";
+#container {
+	font-size: 1.2em;
+	margin: 10px 2em;
+}
+
+h2 {
+	font-size: 1.3em;
+	
+}
+
+.myhover{
+	cursor : pointer;
+	background: #ffc;
+}
+

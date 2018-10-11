@@ -429,8 +429,12 @@ var.test(man, woman)
 
 # p-value = 0.03255 < 0.05이므로 등분산성을 띄지 않음.
 
-# 양측검정
+# alternative는 "two.sided", "greater", "less" 3개의 값이 있다.
+# default 값은 two.sided 이며, 이는 주어진 평균과 샘플이 단지 다르다는 것을 대립가설(H1)으로 두고자 할 때 사용되며
+# greater는 오로지 샘플이 주어진 평균보다 크다는 것을 대립가설(H1)을 두고자 할때,
+# less는 작다는 것을 대립가설로 두고자 할 때 사용된다.
 
+# 양측검정
 
 # * 대응표본 t 검정(Paired sample t-test)
 # : 이는 한 모집단의 동일한 실험 단위에 대하여 두 가지 처리를 하였을 때 나타난 처리 결과를 대응 비교하는 방법이다. 
@@ -442,7 +446,29 @@ var.test(man, woman)
 # 전	1500	2000	3500	1200	1020	1100	1150	5021	3000	3333	2112	1000
 # 후	1500	1800	2000	1000	900	1400	1200	1150	1600	1800	2200	2700
 
+# 귀무가설 : 동일상품에 대한 TV광고 여부에 따라 매출액에 차이가 없다.
+# 연구가설 : 동일상품에 대한 TV광고 여부에 따라 매출액에 차이가 있다.
 
+storebun <- seq(1, 12)
+before <- c(1500, 2000, 3500,	1200,	1020,	1100,	1150,	5021,	3000,	3333,	2112,	1000)
+after <- c(1500, 1800, 2000, 1000, 900, 1400, 1200, 1150, 1600, 1800, 2200, 2700)
+
+df <- data.frame(storebun,before, after)
+df
+
+summary(df)
+
+# 정규성 확인은 하지 않아도 됨. 일단 가정 자체가 대응되는 값들이라고 정의 하였기 때문에 정규성을 띈다는 가정하에 t.test() 하면 됨.
+
+t.test(df$before, df$after, paired = T)
+# data:  df$before and df$after
+# t = 1.4001, df = 11, p-value = 0.1891
+# alternative hypothesis: true difference in means is not equal to 0
+# 95 percent confidence interval:
+#   -318.7171 1433.0504
+# sample estimates:
+#   mean of the differences 
+# 557.1667 
 
 # [예제2] 학생 12명을 무작위로 택하여 3개월 동안 하루 2시간씩 수영을 지도하였다. 
 # 수영 지도 전,후에 폐활량을 조사하여 수영이 폐활량 증가에 좋은 효과가 있는지 연구하고자 한다. 
