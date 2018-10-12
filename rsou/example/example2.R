@@ -429,12 +429,15 @@ var.test(man, woman)
 
 # p-value = 0.03255 < 0.05이므로 등분산성을 띄지 않음.
 
+
+
+
 # alternative는 "two.sided", "greater", "less" 3개의 값이 있다.
 # default 값은 two.sided 이며, 이는 주어진 평균과 샘플이 단지 다르다는 것을 대립가설(H1)으로 두고자 할 때 사용되며
 # greater는 오로지 샘플이 주어진 평균보다 크다는 것을 대립가설(H1)을 두고자 할때,
 # less는 작다는 것을 대립가설로 두고자 할 때 사용된다.
 
-# 양측검정
+
 
 # * 대응표본 t 검정(Paired sample t-test)
 # : 이는 한 모집단의 동일한 실험 단위에 대하여 두 가지 처리를 하였을 때 나타난 처리 결과를 대응 비교하는 방법이다. 
@@ -460,6 +463,7 @@ summary(df)
 
 # 정규성 확인은 하지 않아도 됨. 일단 가정 자체가 대응되는 값들이라고 정의 하였기 때문에 정규성을 띈다는 가정하에 t.test() 하면 됨.
 
+# 양측검정
 t.test(df$before, df$after, paired = T)
 # data:  df$before and df$after
 # t = 1.4001, df = 11, p-value = 0.1891
@@ -469,6 +473,23 @@ t.test(df$before, df$after, paired = T)
 # sample estimates:
 #   mean of the differences 
 # 557.1667 
+
+# p-value = 0.1891 > 0.05 이므로 귀무가설 채택!
+
+# 단측검정
+t.test(df$before, df$after, paired = T, alternative = "less")
+
+# data:  df$before and df$after
+# t = 1.4001, df = 11, p-value = 0.9055
+# alternative hypothesis: true difference in means is less than 0
+# 95 percent confidence interval:
+#   -Inf 1271.84
+# sample estimates:
+#   mean of the differences 
+# 557.1667 
+
+# p-value = 0.9055 > 0.05 이므로 귀무가설 채택!
+
 
 # [예제2] 학생 12명을 무작위로 택하여 3개월 동안 하루 2시간씩 수영을 지도하였다. 
 # 수영 지도 전,후에 폐활량을 조사하여 수영이 폐활량 증가에 좋은 효과가 있는지 연구하고자 한다. 
