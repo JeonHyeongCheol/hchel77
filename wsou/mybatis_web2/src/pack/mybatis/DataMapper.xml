@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dev">
+ <select id="selectDataAll" resultType="dto"> 
+  select * from membertab
+ </select>
+ 
+ <!-- 재사용 구문 사용 -->
+ <sql id="my1">id, name, passwd, reg_date</sql>
+ <sql id="my2">from membertab where id=#{id}</sql>
+ 
+ <!-- PREPARED 와  STATEMENT, CALLABLE는 PreparedStatement, Statement, Callable 클래스의 약어 -->
+ <select id="selectDataPart" parameterType="string" resultType="dto" statementType="PREPARED">
+  select
+  <include refid="my1" />
+  <include refid="my2"/>
+ </select>
+   <!-- 재사용 구문을 include를 사용하여 바로 넣을 수 있음. -->
+ 
+ <insert id="insertData" parameterType="form">
+  insert into membertab
+  values(#{id},#{name},#{passwd},now())
+ </insert>
+ 
+ <update id="updateData" parameterType="form">
+  update membertab set ${name}=#{name} where id=#{id} 
+ </update>
+ <!-- 칼럼 맵핑은 $, 데이터 맵핑은 # -->
+ <delete id="deleteData" parameterType="form">
+  delete <include refid="my2" />
+ </delete>
+</mapper>

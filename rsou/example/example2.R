@@ -498,3 +498,38 @@ t.test(df$before, df$after, paired = T, alternative = "less")
 # 학생	1	2	3	4	5	6	7	8	9	10	11	12
 # 전	2750	2600	2930	2320	2550	2400	2450	2700	2130	2400	2830	2350
 # 후	2870	2730	2980	2420	2720	2560	2550	2800	2350	2520	2900	2510
+
+# 귀무가설 : 수영 지도 후 폐활량 증가에 좋은 효과가 없었다.
+# 연구가설 : 수영 지도 후 폐활량 증가에 좋은 효과가 있었다.
+
+stu <- seq(1, 12)
+before <- c(2750, 2600,	2930,	2320,	2550,	2400,	2450,	2700,	2130,	2400,	2830,	2350)
+after <- c(2870, 2730, 2980, 2420, 2720, 2560, 2550, 2800, 2350, 2520, 2900, 2510)
+df <- data.frame(stu, before, after)
+df
+
+summary(df)
+
+t.test(df$after, df$before, paired = T)
+# data:  df$before and df$after
+# t = 9.251, df = 11, p-value = 1.6e-06
+# alternative hypothesis: true difference in means is not equal to 0
+# 95 percent confidence interval:
+#   95.26016 154.73984
+# sample estimates:
+#   mean of the differences 
+# 125
+
+# p-value = 1.6e-06 < 0.05 이므로 귀무가설 기각!
+
+t.test(df$after, df$before, paired = T, alternative = "greater")
+# data:  df$after and df$before
+# t = 9.251, df = 11, p-value = 8.001e-07
+# alternative hypothesis: true difference in means is greater than 0
+# 95 percent confidence interval:
+#   100.7339      Inf
+# sample estimates:
+#   mean of the differences 
+# 125 
+
+# p-value = 8.001e-07 < 0.05 이므로 귀무가설 기각!

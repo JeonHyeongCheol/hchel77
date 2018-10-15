@@ -17,11 +17,13 @@
 	<tr>
 		<th>code</th><th>sang</th><th>su</th><th>dan</th>
 	</tr>
-	<% ArrayList<DataDto> list = (ArrayList)processData.readDataAll(); %>
+	<%
+		ArrayList<DataDto> list = (ArrayList)processData.readDataAll();
+	%>
 	<c:forEach var="s" items="<%=list %>">
 	<tr>
 		<td><a href="delete.jsp?code=${s.code}">${s.code}</a></td>
-		<td><a href="update.jsp?code=${s.sang}">${s.sang}</a></td>
+		<td><a href="update.jsp?code=${s.code}">${s.sang}</a></td>
 		<td>${s.su}</td>
 		<td>${s.dan}</td>
 	</tr>

@@ -42,7 +42,7 @@ public class ProcessData {
 	
 	public void updateData(DataForm form) throws SQLException {
 		SqlSession sqlSession = factory.openSession(); 
-		sqlSession.update("updataData", form); 
+		sqlSession.update("updateData", form); 
 		sqlSession.commit();
 		sqlSession.close();
 	}

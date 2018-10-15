@@ -17,7 +17,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  </insert>
  
  <update id="updateData" parameterType="form">
-  update sangdata set sang=#{sang} where code=#{code}
+  update sangdata set sang=#{sang}, su=#{su}, dan=#{dan} where code=#{code}
  </update>
  
  <delete id="deleteData" parameterType="form">

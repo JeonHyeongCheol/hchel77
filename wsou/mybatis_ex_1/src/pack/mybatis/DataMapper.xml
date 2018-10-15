@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dev">
+	<select id="selectDataAll" resultType="dto">
+		select jikwon_no, jikwon_name, jikwon_jik, jikwon_gen, jikwon_pay from jikwon
+	</select>
+
+	<select id="selectJikPay" resultType="dto">
+		select jikwon_jik, sum(jikwon_pay) as jiksum, avg(jikwon_pay) as jikavg from
+		jikwon group by jikwon_jik order by jikwon_jik
+	</select>
+
+	<select id="selectGenPay" resultType="dto">
+		select jikwon_gen, count(*) as jikcou, avg(jikwon_pay) as jikavg from jikwon 
+		group by jikwon_gen order by jikwon_gen
+	</select>
+  
+</mapper>
