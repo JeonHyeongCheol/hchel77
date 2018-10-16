@@ -23,6 +23,7 @@ public class SqlMapConfig {
         	 //Mapper 등록.
         	 sqlSession.getConfiguration().addMapper(m);
          }
+         System.out.println();
      } catch (Exception e) {
      System.out.println("SqlMapConfig 오류 : " + e);
   }

@@ -3,10 +3,9 @@
 # - 독립, 종속변수는 등간 또는 비율척도로 구성되어야 한다. 한 변수의 변화에 따른 다른 변수의 값을 파악.
 # - 독립변수가 종속변수에 영향을 미치는 변수를 규명하고, 이 들 변수들에 의해서 회귀방정식을 도출하여 회귀선을 추정한다.     
 
-
-
 # <단순 선형회귀 분석 연습문제>
 data(iris)
+data
 
 names(iris)   # 5개 변수
 
@@ -14,26 +13,53 @@ names(iris)   # 5개 변수
 # 조건1) 두 변수간의 상관성 - cor(x,y) 
 # Sepal Length : 꽃받침의 길이, Petal Width  : 꽃잎의 너비
 # Sepal Length : 꽃받침의 길이, Petal Length : 꽃잎의 길이
+x <- iris$Petal.Width
+y <- iris$Sepal.Length
+
+cor(x, y) # 0.8179411, 강한 상관관계 / cor : 상관관계 분석 함수.
+df <- data.frame(x, y)
 
 #조건2) 선형회귀 분석: lm() -> x변수를 대상으로 y변수값 유추 
 # Sepal.Length(종속변수), Sepal.Width(독립변수)
 
+# lm : 회귀분석 함수.
+
+model <- lm(formula = y ~ x, data = df)
+# Coefficients:
+#(Intercept)      x  
+# 1.084        2.230  
+
+summary(model)
+
+# Residuals:
+#   Min       1Q   Median       3Q      Max 
+# -1.38822 -0.29358 -0.04393  0.26429  1.34521 
+
+# Coefficients:
+#   Estimate Std. Error t value Pr(>|t|)    
+# (Intercept)  4.77763    0.07293   65.51   <2e-16 ***
+#   x            0.88858    0.05137   17.30   <2e-16 ***
+#   ---
+#   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+# Residual standard error: 0.478 on 148 degrees of freedom
+# Multiple R-squared:  0.669,	Adjusted R-squared:  0.6668 
+# F-statistic: 299.2 on 1 and 148 DF,  p-value: < 2.2e-16
+
+plot(y ~ x, data = df)
+abline(model, col = "blue")
+
+plot(jitter(y,5) ~ jitter(x,5), df)
+sunflowerplot(df)
 
 
-
-
-#<군집분석 연습문제> 물류서비스 이용 고객사들의 거래실적 데이터 
+# <군집분석 연습문제> 물류서비스 이용 고객사들의 거래실적 데이터 
 # 파일 : RFM.csv   : RFM - 고객의 충성도 평가 시 많이 사용
 
 # 변수 설명
-
 # Recency: 최신성(1: 6개월 이전, 2: 3개월 이전, 3: 최근 1달간) 
-
 # Frequency : 거래빈도
-
 # Monetary : 구매금액
-
-
 
 # <조건> 다음 단계별로 군집분석을 수행하시오.
 # 1) 패키지 설치 및 데이터 가져오기
@@ -41,6 +67,14 @@ install.packages("cluster")
 library(cluster)
 
 # 2) 계층적 군집분석
+rfm <- read.csv("testdata/RFM.csv", stringsAsFactors = T)
+rfm
+
+plot(rfm, hang = -1)
+
+hc_rfm <- hclust(rfm, method = "average")
+
+rect.hclust(rfm, k = 2,border = "red")
 
 # 3) 비계층적 군집분석 - 확인적 군집분석
 

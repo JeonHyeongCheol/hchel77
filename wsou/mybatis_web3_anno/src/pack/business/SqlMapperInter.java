@@ -17,7 +17,7 @@ public interface SqlMapperInter {
 	@Insert("insert into membertab values(#{id},#{name},#{passwd},now())")
 	public int insertData(DataFormBean bean);
 	
-	@Update("update membertab set ${name}=#{name} where id=#{id}")
+	@Update("update membertab set name=#{name} where id=#{id}")
 	public int updateData(DataFormBean bean);
 	
 	@Delete("delete from membertab where id=#{id}")

@@ -1,6 +1,6 @@
 # iris Dataseet으로 계층적 군집분석
 library(cluster)
-
+iris[,1:4]
 idist <- dist(iris[,1:4])
 idist
 
