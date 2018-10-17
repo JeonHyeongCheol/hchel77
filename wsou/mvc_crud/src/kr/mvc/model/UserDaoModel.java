@@ -40,17 +40,50 @@ public class UserDaoModel { // Maria DB와 통신하는 클래스 - 중간에 My
 		}
 		return (ArrayList<UserDto>)list; // 반환되는 타입형을 맞추기 위해 캐스팅.
 	}
-	/*
-	public static void UserInsert(UserForm form) {
+	
+	public int insertData(UserForm userForm) {
+		int re = 0;
 		SqlSession session = factory.openSession();
 		try {
-			list = session.selectList("selectDataAll");
+			re = session.insert("insertData", userForm);
+			session.commit();
 		} catch (Exception e) {
-			System.out.println("getUserAll err : " + e);
+			System.out.println("insertData err : " + e);
+			session.rollback();
 		} finally {
 			if(session != null) session.close();
 		}
-		return (ArrayList<UserForm>)list; // 반환되는 타입형을 맞추기 위해 캐스팅.
+		return re;
 	}
-	*/
+	
+	public int updateData(UserForm userForm) {
+		int re = 0;
+		SqlSession session = factory.openSession();
+		try {
+			re = session.update("updateData", userForm);
+			session.commit();
+		} catch (Exception e) {
+			System.out.println("updateData err : " + e);
+			session.rollback();
+		} finally {
+			if(session != null) session.close();
+		}
+		
+		return re;
+	}
+	
+	public int deleteData(String userid) {
+		int re = 0;
+		SqlSession session = factory.openSession();
+		try {
+			re = session.delete("deleteData", userid);
+			session.commit();
+		} catch (Exception e) {
+			System.out.println("deleteData err : " + e);
+			session.rollback();
+		} finally {
+			if(session != null) session.close();
+		}
+		return re;
+	}
 }

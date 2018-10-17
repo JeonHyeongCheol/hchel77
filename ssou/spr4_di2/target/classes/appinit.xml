@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="moneyCalc" name="kbs, mbc, sbs" class="pack.model.MoneyCalc"></bean> <!-- name은 복수개 설정 가능. -->
+
+	<bean id="myProcess" class="pack.controller.MyProcess">
+		<constructor-arg>
+			<ref bean="kbs"/> <!-- bean에 name을 쓸 수 있음. -->
+		</constructor-arg>
+	</bean>
+</beans>

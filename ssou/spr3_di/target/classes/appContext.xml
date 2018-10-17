@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<!-- Constructor injection(생성자) -->
+	<bean id="selectServiceImpl" class="controller.SelectServiceImpl">
+		<constructor-arg>
+			<ref bean="datadaoImpl"/> <!-- DataDao를 참조하기 위해 args(아규먼트)를 주는 것. -->
+		</constructor-arg>
+	</bean>
+
+	<bean id="datadaoImpl" class="model.DatadaoImpl"></bean> <!-- 생성자를 사용하기 위해 Bean을 만들어줌. -->
+</beans>

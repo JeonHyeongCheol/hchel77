@@ -60,15 +60,15 @@ public class UserServlet extends HttpServlet {
 		} else if(command.equals("logout")) {
 			controller = new LogoutAction();
 		} else if(command.equals("insert")) {
-			
+			controller = new InsertAction();
 		} else if(command.equals("view")) {
-			
+			controller = new ViewAction();
 		} else if(command.equals("updateform")) {
-			
+			controller = new UpdateFormAction();
 		} else if(command.equals("update")) {
-			
+			controller = new UpdateAction();
 		} else if(command.equals("delete")) {
-			
+			controller = new DeleteAction();
 		}
 	
 		return controller;

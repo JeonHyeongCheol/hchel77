@@ -2,6 +2,8 @@ package kr.mvc.model;
 
 import java.util.ArrayList;
 
+import kr.mvc.controller.UserForm;
+
 public class UserManager { // Servlet과 DB를 연결 해주는 Manager.
 	private static UserManager manager = new UserManager();
 	public static UserManager getinstance() { // 여기에는 UserdaoModel 클래스도 포함되어 있음.
@@ -25,5 +27,21 @@ public class UserManager { // Servlet과 DB를 연결 해주는 Manager.
 	
 	public ArrayList<UserDto> getUserAll() {
 		return getUserDaoModel().getUserAll();
+	}
+	
+	public UserDto findUser(String userid) { 
+		return getUserDaoModel().findUser(userid);
+	}
+	
+	public int insertData(UserForm userForm) {
+		return getUserDaoModel().insertData(userForm);
+	}
+	
+	public int updateData(UserForm userForm) {
+		return getUserDaoModel().updateData(userForm);
+	}
+	
+	public int deleteData(String userid) {
+		return getUserDaoModel().deleteData(userid);
 	}
 }
