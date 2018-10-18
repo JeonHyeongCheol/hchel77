@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537419790340.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1327535409",
+    "id" : "C3183601",
+    "lastKnownWriteTime" : 1537494642,
+    "last_content_update" : 1537494642533,
+    "path" : "C:/work/rsou/pro1/test24sampling.R",
+    "project_path" : "test24sampling.R",
+    "properties" : {
+        "cursorPosition" : "12,0",
+        "scrollLine" : "7",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

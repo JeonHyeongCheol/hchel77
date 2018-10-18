@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537419725751.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2722335433",
+    "id" : "5D29D1D1",
+    "lastKnownWriteTime" : 1537410384,
+    "last_content_update" : 1537410384,
+    "path" : "C:/work/rsou/pro1/test21db.R",
+    "project_path" : "test21db.R",
+    "properties" : {
+        "cursorPosition" : "90,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

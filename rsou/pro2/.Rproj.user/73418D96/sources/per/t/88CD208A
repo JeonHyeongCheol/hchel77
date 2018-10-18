@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1538623527853.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2432192755",
+    "id" : "88CD208A",
+    "lastKnownWriteTime" : 1538631642,
+    "last_content_update" : 1538631642834,
+    "path" : "C:/work/rsou/pro2/ex26log.R",
+    "project_path" : "ex26log.R",
+    "properties" : {
+        "cursorPosition" : "41,0",
+        "scrollLine" : "31",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

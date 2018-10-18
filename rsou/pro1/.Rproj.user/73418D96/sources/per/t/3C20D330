@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537419779391.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4199220532",
+    "id" : "3C20D330",
+    "lastKnownWriteTime" : 1537417177,
+    "last_content_update" : 1537417177,
+    "path" : "C:/work/rsou/pro1/test23wordcloud.R",
+    "project_path" : "test23wordcloud.R",
+    "properties" : {
+        "cursorPosition" : "48,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

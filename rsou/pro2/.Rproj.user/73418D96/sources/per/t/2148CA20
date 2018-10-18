@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1538451860928.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4132600974",
+    "id" : "2148CA20",
+    "lastKnownWriteTime" : 1538453150,
+    "last_content_update" : 1538453150977,
+    "path" : "C:/work/rsou/pro2/ex19reg.R",
+    "project_path" : "ex19reg.R",
+    "properties" : {
+        "cursorPosition" : "28,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

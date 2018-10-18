@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1538617732892.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3566310668",
+    "id" : "B9204B7",
+    "lastKnownWriteTime" : 1538623203,
+    "last_content_update" : 1538623203481,
+    "path" : "C:/work/rsou/pro2/ex24reg.R",
+    "project_path" : "ex24reg.R",
+    "properties" : {
+        "cursorPosition" : "49,36",
+        "scrollLine" : "34",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1538462754911.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1786330394",
+    "id" : "A83434F9",
+    "lastKnownWriteTime" : 1538467983,
+    "last_content_update" : 1538467983742,
+    "path" : "C:/work/rsou/pro2/ex22reg.R",
+    "project_path" : "ex22reg.R",
+    "properties" : {
+        "cursorPosition" : "7,52",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

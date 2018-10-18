@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537419704723.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1169183946",
+    "id" : "5757EB12",
+    "lastKnownWriteTime" : 1537411831,
+    "last_content_update" : 1537411831,
+    "path" : "C:/work/rsou/pro1/testdata/test22형태소.R",
+    "project_path" : "testdata/test22형태소.R",
+    "properties" : {
+        "cursorPosition" : "32,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
