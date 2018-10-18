@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<!-- 생성자 주입
+	<bean id="mImpl" class="pack.MessageImpl" scope="prototype" >
+		<constructor-arg index="1" type="java.lang.String"> 
+			<value>홍길동</value>
+		</constructor-arg>
+		
+		<constructor-arg index="0" type="String">
+			<value>손오공</value>
+		</constructor-arg>
+		 
+		 
+	
+		<constructor-arg index="0" value="관우" /> 
+		<constructor-arg index="1" type="String" value="장비" />
+		<constructor-arg index="2" type="int" value="2000"/>
+		<constructor-arg index="3" type="pack.MyInfo" ref="ytn"/>
+	</bean>
+	-->
+	
+	<bean id="myinfo" name="ytn, jtbc, tvn" class="pack.MyInfo" />
+	<bean id="outfileInterImpl" class="pack2.OutfileInterImpl">	
+		<property name="filepath" value="c:/work/ssou/output/ytn.txt" />
+	</bean>
+	
+	<!-- 생성자 주입2 xmlns : c 사용 --> <!-- 생성자와 Setter를 같이 쓰고 있음/ -->  
+	<bean id="mImpl" class="pack.MessageImpl" 
+		c:name2="공기밥"
+		c:year="2000"
+		c:myinfo-ref="myinfo"
+		p:outfileInter-ref="outfileInterImpl">
+		<!-- 프로퍼티(setter) 주입1 -->
+		<constructor-arg index="0">
+			<value>홍길동</value>
+		</constructor-arg>
+		<property name="spec"> <!-- Setter injection -->
+			<value>정보처리 자격증</value>
+		</property>
+		<!-- 
+		<property name="outfileInter">
+			<ref bean="outfileInterImpl"/>			
+		</property>
+		 -->
+	</bean>
+
+</beans>

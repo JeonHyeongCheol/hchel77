@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<bean id="moneyCalc" name="kbs, mbc, sbs" class="pack.model.MoneyCalc"></bean> <!-- name은 복수개 설정 가능. -->
-
+	
+	<!-- 
 	<bean id="myProcess" class="pack.controller.MyProcess">
 		<constructor-arg>
-			<ref bean="kbs"/> <!-- bean에 name을 쓸 수 있음. -->
+			<ref bean="kbs"/> 
 		</constructor-arg>
 	</bean>
+	 -->
+	 
+	<!-- NameSpaces C를 사용하기 위해서는 밑에 탭에서 C 체크 후 사용 -->
+	<bean id="myProcess" class="pack.controller.MyProcess" c:inter-ref="moneyCalc" /> <!-- 위에 Constructor-arg와 동일한 수행을 함. -->	
 </beans>

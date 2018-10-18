@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<!-- @Autowired를 사용하지 않은 경우 -->
+	<!-- 
+	<bean id="senderProcess" class="anno2_auto.SenderProcess">
+		<property name="sender">
+			<bean class="anno2_auto.Sender" />
+		</property>
+	</bean>
+	 -->
+	 
+	<!-- @Autowired를 사용한 경우 -->
+	<!-- 
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+	-->
+	<context:annotation-config /> <!-- 많은 Annotation을 쓰는데 이 코드를 쓰면 많은  Annotation을 알아서 클래스를 찾아 수행 시킴. -->
+	<!-- id 의미 있음. 얘는 사용--><bean id="senderProcess" class="anno2_auto.SenderProcess" /> <!-- Annotation을 설정 했기 때문에 내부적으로 sender setter를 수행. --> 
+	<!-- id 의미 없음. 타입을 찾는데만 사용--><bean id="sender1" class="anno2_auto.Sender"/> <!-- 객체만 만들면 Autowired가 알아서 찾아서 실행 시킴. -->
+	<!-- id 의미 없음. 타입을 찾는데만 사용--><bean id="sender2" class="anno2_auto.Sender2"/>
+		
+		
+	<!-- 클래스 자체로 객체생성(Annotation 설정시) -->
+	<context:component-scan base-package="anno2_auto"/> <!-- 팩 자체를 스캔하여 확인. -->
+</beans>

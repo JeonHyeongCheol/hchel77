@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- @Required 사용시 -->
+	<!-- <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" /> --><!-- 이 클래스를 줘야지 Required가 실행이 됨. -->
+	<context:annotation-config /> <!-- Required 사용시 위에 라인처럼 써도 실행이 되지만 간단하게 앞에 코드처럼 사용해도 가능. -->
+	
+	<bean id="abc" class="anno1_required.Abc" >
+		<property name="number" value="7" />
+	</bean>
+
+</beans>

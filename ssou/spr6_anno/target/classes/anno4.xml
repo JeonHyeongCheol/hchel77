@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<context:component-scan base-package="anno4_etc" />
+	
+	<!-- Annotation 보다 Xml이 우선 순위가 높음!! -->
+	<bean id="our" class="anno4_etc.OurProcess">
+		<constructor-arg>
+			<value>전산부</value>
+		</constructor-arg>
+	</bean>
+</beans>
