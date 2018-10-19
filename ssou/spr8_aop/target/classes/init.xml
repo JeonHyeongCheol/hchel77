@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- Target Class -->
+	<bean id="messageImpl" class="pack.MessageImpl">
+		<property name="name" value="한국인" />
+	</bean>
+
+	<!-- AOP 처리 : Target Class에 Weaving -->
+	<bean id="testAdvice" class="advice.TestAdvice" />
+
+	<!-- proxy를 통한 간접접근 -->
+	<bean id="proxy"
+		class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target"> <!-- target 설정 -->
+			<ref bean="messageImpl" />
+		</property>
+		<property name="interceptorNames"> <!-- Advisor 기술 -->
+			<list>
+				<value>hello</value> <!-- intercetorNames에 hello를 넣어줌. -->
+			</list>
+		</property>
+	</bean>
+
+	<!-- Advisor (advice + pointcut) -->
+	<bean id="hello" class="org.springframework.aop.support.DefaultPointcutAdvisor"> <!-- 위에 있는 hello -->
+		<property name="advice"> <!-- Advice 설정 -->
+			<ref bean="testAdvice" /> <!-- 이놈이 point cut에 들어감. -->
+		</property>
+		<property name="pointcut"> <!-- pointCut 설정 -->
+			<bean
+				class="org.springframework.aop.support.JdkRegexpMethodPointcut">
+				<property name="pattern"> <!-- testAdvice에 이 속성 값을 넣어줌. -->
+					<value>.*sayHi*.</value> <!-- package에 상관없이 메소드 중에 sayHi가 있으면 대상이 됨. 글자를 찾아야 함.-->
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+</beans>

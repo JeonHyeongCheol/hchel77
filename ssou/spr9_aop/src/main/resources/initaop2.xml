@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	
+	<!-- BL 객체 -->
+	<bean id="logicImpl" class="aop2.LogicImpl">
+		<constructor-arg>
+			<ref bean="articleDao"/>
+		</constructor-arg>
+	</bean>
+	<bean id="articleDao" class="aop2.ArticleDao"></bean>
+	
+	
+	<!-- AOP -->
+	<bean id="myAdvice" class="aop2.MyAdvice" />
+	
+	<aop:config>
+		<aop:aspect ref="myAdvice">
+			<aop:pointcut id="poi" expression="execution(public * aop2..*(..))"/> <!-- 경로가 aop2와 같은데 그안에 있는 모든 폴더내에 있는 메소드들. -->
+			<aop:around method="kbs" pointcut-ref="poi"/>
+		</aop:aspect>
+	</aop:config>
+	
+	
+		
+</beans>

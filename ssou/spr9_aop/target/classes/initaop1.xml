@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<!--  Advice(Aspect) -->
+	<bean id="loggingAspect" class="aop1.aspect.LoggingAspect">
+		<property name="myAspect" ref="myAspect" />
+	</bean>
+	<bean id="myAspect" class="aop1.aspect.MyAspect" />
+	
+	<!-- AOP 설정 -->
+	<aop:config>
+		<aop:pointcut id="p1" expression="execution(public void wri*(..))"/> <!-- 어디에서 수행시킬지 찾음. pointcut을 해놓고 밑에 코드를 써야 함. -->
+		<!-- public이고 반환형 void 메소드, wri** 라고 들어가 있는 메소드, args가 0개 이상인 것. -->
+		<aop:aspect ref="loggingAspect" > <!-- 참조 대상 설정 -->
+			<aop:around method="logging" pointcut-ref="p1"/> <!-- logginAspect안에 loggin을 수행, 대상은  id가 p1. -->
+		</aop:aspect>
+	</aop:config>
+	
+	<aop:config>
+		
+		<aop:pointcut id="p2" expression="execution(public void wri*(..)) || 
+										  execution(* *..*HelloInter*.*(..))"/> <!-- HelloInter에 있는 모든메소드들이 대상이 됨. -->
+		<!-- 어디에서 수행시킬지 찾음. pointcut을 해놓고 밑에 코드를 써야 함. -->
+		<!-- public이고 반환형 void 메소드, wri** 라고 들어가 있는 메소드, args가 0개 이상인 것. -->
+		
+		<aop:aspect ref="loggingAspect" > <!-- 참조 대상 설정 -->
+			<aop:around method="logging2" pointcut-ref="p2"/> <!-- logginAspect안에 loggin을 수행, 대상은  id가 p1. -->
+		</aop:aspect>
+	</aop:config>
+</beans>
+
