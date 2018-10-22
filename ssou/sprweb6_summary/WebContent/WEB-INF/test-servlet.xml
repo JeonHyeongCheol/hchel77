@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	
+	<!-- forward 방식이지만 xml에서 맵핑하고 있음. -->
+	
+	<!-- 방법1 : HandlerMapping 설정  - 클라이언트의 요청 URL과 동일한 이름을 갖는 Bean 컨트롤러로 사용하도 맵핑. 
+	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" /> -->
+	
+	<!-- Controller 설정 : 요청이 들어오면 바로 뷰로 뺌. -->
+	<!-- <bean name="/hello.do" class="pack.controller.HelloController" >
+		<property name="helloModel">
+			<ref bean="helloModel"/>
+		</property>
+	</bean>-->
+				
+	
+	<!-- 방법2 : Mapping 설정 - 경로 매핑 방식(패턴 방식 : *, ?) -->
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="alwaysUseFullPath" value="true"></property>
+		<property name="mappings">
+			<props>
+				<!-- <prop key="/hello.do">hi</prop> --> <!-- hello.do가 들어오면 hi에 가서 값을 받아옴. -->
+				<!-- <prop key="*.do">hi</prop> --> <!-- 확장자 .do가 들어오면 hi에 가서 값을 받아옴. -->
+				<!-- <prop key="/**/h*.do">hi</prop>  --> <!--  Context는 상관 없고, h가 들어가 있는 확장자 .do가 들어오면 hi로 가서 값을 받아옴. -->
+				<prop key="/**/?????.do">hi</prop> <!-- Context는 상관 없고, 글자수가 5자리에 확장자 .do가 들어오면 hi로 가서 값을 받아옴. -->
+			</props>
+		</property>
+	</bean>
+	
+	<bean name="hi" class="pack.controller.HelloController" >
+		<property name="helloModel" ref="helloModel" />
+	</bean>
+	
+	<bean id="helloModel" class="pack.model.HelloModel" />
+	
+	
+	<!-- ViewResolver : ViewName값이 들어오면 앞 뒤에 붙여오는 값 확인해서 그 중간 값 확인.-->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+</beans>

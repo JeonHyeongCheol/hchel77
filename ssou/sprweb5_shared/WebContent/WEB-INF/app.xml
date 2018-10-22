@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 공유자원 설정, Servlet을 가기전 먼저 데이터를 가져감. -->
+	<bean id="sharedData" class="pack.SharedData">
+		<property name="shared">
+			<value>공유자료 수행 성공</value>
+		</property>
+	</bean>
+	
+</beans>

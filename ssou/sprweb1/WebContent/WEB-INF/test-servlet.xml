@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	<!-- Network가 안될 때 이런 방식으로!! -->
+	<!-- web.xml에서 test라는 것을 만나게되면 자동으로 -servlect을 찾게 됨. -->
+	<!-- web.xml에서 test를 만나게 되면 test-servlet을 부르게 되며, 부른 후 이 안에 있는 값을 객체로 만듬. -->
+	
+	<!-- HandlerMapping 설정 : 클라이언트의 요청 URL과 동일한 이름을 갖는 Bean 컨트롤러로 사용하도 맵핑. -->
+	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
+	
+	<!-- Controller 설정 : 요청이 들어오면 바로 뷰로 뺌. -->
+	<bean name="/index.do" class="org.springframework.web.servlet.mvc.ParameterizableViewController" >
+		<property name="viewName" value="list1" /> <!-- index.do를 만나게 되면 list1을 부름. -->	
+	</bean>
+	<bean name="/good/sijak.do" class="org.springframework.web.servlet.mvc.ParameterizableViewController" >
+		<property name="viewName" value="list2" /> <!-- good/sijak.do를 만나게 되면 list2을 부름. -->	
+	</bean>	
+	
+	<!-- ViewResolver : ViewName값이 들어오면 앞 뒤에 붙여오는 값 확인해서 그 중간 값 확인.-->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/view/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+</beans>
