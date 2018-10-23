@@ -1,0 +1,77 @@
+Terminal 
+# : root 뜻함
+$ : user 뜻함
+
+ls -al 할 시
+파란색은 폴더(디렉토리)임.
+
+su - root : root 계정 이동
+pwd : 현재 작업 디렉토리 경로
+logout : 현재 연결된 계정 로그아웃
+
+linux - putty로 연결
+
+windows JAVA : oracle
+linux java : IBM JAVA
+
+java eclipse 만든 후 java 파일 linux 보내고
+linux에서 실행
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+vi editor
+i, a : 편집상태
+esc : 명령 대기 상태
+:wq : 저장
+:q : 나가기
+cat 파일명 : 파일내용 보기
+
+모든건 명령대기 상태에서 진행
+
+o : 엔터 한 다음 줄에 커서가 감
+s : 한글자 지우기
+dd : 행 삭제
+yy : 복사
+p : 붙여넣기
+d + 숫자 : 숫자만큼 행 지우기
+숫자 + yy : 숫자만큼 복사하기
+set number : 행 번호 만들기
+set nonumber : 행 번호 지우기
+/ 찾고싶은 문자 : 문자 찾기
+.파일명 : 숨김 파일
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+Terminal 내에서 명령
+
+ls [-al] 문자 *[.확장자] : 문자 및 확장자에 대한 것 찾아줌
+ls -l > 파일명.확장자 : 파일을 만들어줌.
+sort < 파일명 : 파일명을 기준으로 정렬
+man ls : 도움말
+who : 접속자
+whoami : 자기자신접속 확인
+touch : 빈 파일, 있는 파일에 업데이트 시간을 바꿀 때
+echo $PATH : PATH 설정 확인
+rm : 파일 및 디렉토리 삭제
+rm -f 문자* : 문자가 속한 파일 전부 삭제
+rm -r 디렉토리 : 디렉토리 삭제
+rm -rf 디렉토리 : 강제 디렉토리 삭제
+mkdir : 디렉토리 만들기
+mkdir -p : 없는 디렉토리에 sub디렉토리 만들시 오류. -p옵션 붙여주면 가능
+cp : 파일 복사
+mv : 디렉토리 및 파일 이동, rename
+rename 기존파일 바꿀파일명 기존파일
+head -숫자 해당파일명 : 해당 파일에 숫자만큼 출력해서 보여줌
+tail -숫자 해당파일명 : 맨끝부터 숫자만큼 출력해서 보여줌
+more 해당파일명 : 해당 파일에 문서가 클 경우 나눠서 보여줌
+find 해당 파일명 : 해당 파일명을 찾아줌
+grap "해당문자열" 해당파일명 or 해당파일문자* : 해당 문자열을 찾아서 출력해줌
+whereis, which : 실행 파일 위치를 알려줌 / -a 추가 시 : 모든 경로를 보여줌
+
+cat /etc/group or passwd 사용시 모든 계정들을 보여줌
+
+alt + ctrl + f1 : xwindow
+alt + ctrl + f2, f3 : 가상 콘솔
+
+useradd or adduser : 유저 생성
+passwd 유저id : 비밀번호 만들기
+
+userdel : 유저 지우기

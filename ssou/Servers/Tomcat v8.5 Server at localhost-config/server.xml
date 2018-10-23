@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="sprweb1" path="/sprweb1" reloadable="true" source="org.eclipse.jst.jee.server:sprweb1"/><Context docBase="sprweb2" path="/sprweb2" reloadable="true" source="org.eclipse.jst.jee.server:sprweb2"/><Context docBase="sprweb3" path="/sprweb3" reloadable="true" source="org.eclipse.jst.jee.server:sprweb3"/><Context docBase="sprweb3_anno" path="/sprweb3_anno" reloadable="true" source="org.eclipse.jst.jee.server:sprweb3_anno"/><Context docBase="sprweb4" path="/sprweb4" reloadable="true" source="org.eclipse.jst.jee.server:sprweb4"/><Context docBase="sprweb4_anno" path="/sprweb4_anno" reloadable="true" source="org.eclipse.jst.jee.server:sprweb4_anno"/><Context docBase="sprweb5_shared" path="/sprweb5_shared" reloadable="true" source="org.eclipse.jst.jee.server:sprweb5_shared"/><Context docBase="sprweb6_summary" path="/sprweb6_summary" reloadable="true" source="org.eclipse.jst.jee.server:sprweb6_summary"/></Host>
+      <Context docBase="sprweb12_call" path="/sprweb12_call" reloadable="true" source="org.eclipse.jst.jee.server:sprweb12_call"/></Host>
     </Engine>
   </Service>
 </Server>
