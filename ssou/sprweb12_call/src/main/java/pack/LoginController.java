@@ -13,7 +13,7 @@ public class LoginController {
 //	@Autowired
 //	private LoginCommand loginCommand; // setter를 만들어 커맨드 값을 받아옴.
 	
-	@ModelAttribute("command")
+	@ModelAttribute("command") // sform을 사용하게 되면 model annotation으로 인해 타입을 확인 함.
 	public LoginCommand formBack() { // logincommand 주소 값 넘기기.
 		return new LoginCommand(); // new 사용해도 됨.
 	}
