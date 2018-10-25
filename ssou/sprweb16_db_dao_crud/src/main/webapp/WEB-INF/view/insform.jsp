@@ -10,9 +10,9 @@
 <body>
 ** 자료 추가 **
 <s:form commandName="command">
-아이디 : <s:input path="id" />
-비밀번호 : <s:input path="passwd" />
-회원명 : <s:input path="name" />
+아이디 : <s:input path="id" /><br>
+비밀번호 : <s:input path="passwd" /><br>
+회원명 : <s:input path="name" /><br>
 <input type="submit" value="추가">
 </s:form>
 </body>

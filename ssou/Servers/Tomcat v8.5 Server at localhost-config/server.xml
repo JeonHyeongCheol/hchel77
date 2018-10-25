@@ -149,7 +149,8 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="sprweb12_call" path="/sprweb12_call" reloadable="true" source="org.eclipse.jst.jee.server:sprweb12_call"/><Context docBase="sprweb13_error" path="/sprweb13_error" reloadable="true" source="org.eclipse.jst.jee.server:sprweb13_error"/><Context docBase="sprweb14_db_legacy" path="/sprweb14_db_legacy" reloadable="true" source="org.eclipse.jst.jee.server:sprweb14_db_legacy"/><Context docBase="sprweb15_db_jdbcdaosupport" path="/sprweb15_db_jdbcdaosupport" reloadable="true" source="org.eclipse.jst.jee.server:sprweb15_db_jdbcdaosupport"/><Context docBase="sprweb16_db_dao_crud" path="/spr16_db_dao_crud" reloadable="true" source="org.eclipse.jst.jee.server:sprweb16_db_dao_crud"/></Host>
+        
+        <Context docBase="sprweb18_db_mybatis_anno" path="/sprweb18_db_mybatis_anno" reloadable="true" source="org.eclipse.jst.jee.server:sprweb18_db_mybatis_anno"/></Host>
     </Engine>
   </Service>
 </Server>

@@ -43,7 +43,7 @@ public class MemberDao extends JdbcDaoSupport{
 	}
 	
 	public MemberDto getMember(String id) { // 멤버하나의 값을 Dto에 넘겨줌.
-		String sql = "select from memtab where id=?";
+		String sql = "select * from memtab where id=?";
 		MemberDto dto = (MemberDto)getJdbcTemplate().queryForObject(sql, new Object[] {id}, new RowMapper() {
 			@Override
 			public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -62,23 +62,14 @@ public class MemberDao extends JdbcDaoSupport{
 	public void insData(MemberBean bean) {
 		String sql = "insert into memtab values(?,?,?,now())";
 		Object[] params = {bean.getId(), bean.getPasswd(), bean.getName() }; // 배열로 ?(물음표) 값 설정
-		getJdbcTemplate().update(sql, params); // Sql, 물음표 값 넘겨줌.
+		getJdbcTemplate().update(sql, params); 
 	}
 	
 	// 수정
 	public void upData(MemberBean bean) {
 		String sql = "update memtab set passwd=?, name=? where id = ?";
 		Object[] params = {bean.getPasswd(), bean.getName(), bean.getId()}; // 배열로 ?(물음표) 값 설정
-		getJdbcTemplate().update(sql, params, new RowMapper() {
-			@Override
-			public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
-				MemberDto dto = new MemberDto();
-				dto.setPasswd(rs.getString("passwd"));
-				dto.setName(rs.getString("name"));
-				dto.setId(rs.getString("id"));
-				return dto;
-			}
-		}); // Sql, 물음표 값 넘겨줌.
+		getJdbcTemplate().update(sql, params); 
 	}
 	
 	// 삭제
