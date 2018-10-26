@@ -150,7 +150,7 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
         
-        <Context docBase="sprweb18_db_mybatis_anno" path="/sprweb18_db_mybatis_anno" reloadable="true" source="org.eclipse.jst.jee.server:sprweb18_db_mybatis_anno"/></Host>
+        <Context docBase="sprweb22_json" path="/sprweb22_json" reloadable="true" source="org.eclipse.jst.jee.server:sprweb22_json"/><Context docBase="sprweb_ex2" path="/sprweb_ex2" reloadable="true" source="org.eclipse.jst.jee.server:sprweb_ex2"/></Host>
     </Engine>
   </Service>
 </Server>
