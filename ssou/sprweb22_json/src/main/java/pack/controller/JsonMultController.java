@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import pack.model.MyModel;
+import pack.model.MyModelInter;
 
 @Controller
 @RequestMapping("list2")

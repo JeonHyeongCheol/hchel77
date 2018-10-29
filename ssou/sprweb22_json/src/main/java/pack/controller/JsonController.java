@@ -7,18 +7,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import pack.model.MyModel;
+import pack.model.MyModelInter;
 
 @Controller
 @RequestMapping("list")
 public class JsonController {
 	
 	@Autowired
-	private MyModel myModel;
+	private MyModelInter myModel;
 	
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
-	public MyModel getJson(@RequestParam("name") String name) { // Json은 그냥 responseBody하면 자동으로 만들어줌.
+	public MyModelInter getJson(@RequestParam("name") String name) { // Json은 그냥 responseBody하면 자동으로 만들어줌.
 		myModel.setSkills(new String[] {"자바 갤발자", "웹프로그래머"});
 		myModel.setName(name);
 		return myModel;

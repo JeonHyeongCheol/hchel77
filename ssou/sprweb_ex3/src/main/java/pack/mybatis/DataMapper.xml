@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dev">
+	<select id="gogek_jikwon" resultType="jdto">
+		select jikwon_name, buser_name, jikwon_jik, buser_tel, jikwon_gen
+		from jikwon inner join buser
+		on buser_no = buser_num
+		where jikwon_no = #{jikwon_no}
+	</select>
+	
+	<select id="gogekLogin" parameterType="String" resultType="gdto">
+		select gogek_name, gogek_jumin, gogek_damsano
+		from gogek
+		where gogek_name=#{gogek_name}
+	</select>
+	
+</mapper>
