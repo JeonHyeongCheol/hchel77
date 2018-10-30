@@ -11,10 +11,9 @@
 ** 파일 업다운 **
 <s:form enctype="multipart/form-data" modelAttribute="uploadFile">
 업로드할 파일 선택 : <br>
-<input type="file" name="file"><br>
+<input type="file" name="file">
 <s:errors path="file" cssStyle="color:red" /><br>
 <input type="submit" value="전송">
-
 </s:form>
 </body>
 </html>
