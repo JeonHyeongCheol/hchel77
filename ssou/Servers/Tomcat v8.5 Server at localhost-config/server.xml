@@ -150,7 +150,7 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
         
-        <Context docBase="sprweb25_updown" path="/sprweb25_updown" reloadable="true" source="org.eclipse.jst.jee.server:sprweb25_updown"/></Host>
+        <Context docBase="auction" path="/auction" reloadable="true" source="org.eclipse.jst.jee.server:auction"/></Host>
     </Engine>
   </Service>
 </Server>

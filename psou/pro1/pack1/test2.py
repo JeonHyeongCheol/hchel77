@@ -3,7 +3,6 @@ Created on 2018. 11. 1.
 
 연산자
 '''
-from datashape.typesets import boolean
 
 v1 = 3
 v1 = v2 = v3 = 5

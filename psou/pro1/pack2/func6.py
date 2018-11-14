@@ -46,6 +46,7 @@ print(kbs(5, 10))
 sbs = lambda a, *tu, **di:print(a, tu, di)
 sbs(1,2,3,4,5,m = 6, n = 7)
 print()
+
 li = [lambda a, b : a + b, lambda a, b : a * b] # 여러개의 형식을 만들어놓고 인덱스를 설정해 사용 가능.
 print(li[0](3,4))
 print(li[1](3,4))
