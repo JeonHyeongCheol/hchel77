@@ -23,7 +23,12 @@ try:
     
     
     buser_bun = input("부서번호를 입력하세요 : ")
-    sql = "select jikwon_no, jikwon_name, buser_name, jikwon_jik from buser left join jikwon on buser_num = buser_no where buser_no = %s"
+    sql = """
+    select jikwon_no, jikwon_name, buser_name, jikwon_jik 
+    from buser left join jikwon 
+    on buser_num = buser_no 
+    where buser_no = %s
+    """
     cursor.execute(sql, (buser_bun,))
 
     cou = 0
