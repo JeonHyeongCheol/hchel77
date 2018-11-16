@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itmes>
+	<item>
+		<name id="ks1">문젠틀</name>
+		<tel>111-1111</tel>
+		<exam kor="100" eng="90" />
+	</item>
+	
+	<item>
+		<name id="ks2">고릴라</name>
+		<tel>111-1111</tel>
+		<exam kor="60" eng="70" />
+	</item>
+</itmes>

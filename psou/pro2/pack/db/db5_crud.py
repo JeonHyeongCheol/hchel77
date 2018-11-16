@@ -21,7 +21,6 @@ import wx.xrc
 ###########################################################################
 
 import MySQLdb
-from astropy.units import count
 
 config = { # dic 타입!
     'host':'127.0.0.1',
@@ -233,17 +232,102 @@ class MyForm ( wx.Frame ):
             conn.close()
         
     def MemUpdate(self):
-        pass
-    
+        dlg = wx.TextEntryDialog(None, "수정할 번호 입력!", "수정") # 입력할수 있는 폼을 만들어줌.
+        #re = dlg.ShowModal() # 입력한 값을 받아옴.
+        #print(re)
+        if dlg.ShowModal() == wx.ID_OK:
+            if dlg.GetValue() == '': # 값이 없을 때.
+                return
+            upno = dlg.GetValue() # 값이 있을 때 가져옴.
+            #print("수정할 번호는 ", upno)
+            data = self.SelectData(upno)
+            if data == None:
+                wx.MessageBox(upno + "번은 등록된 자료가 아닙니다", "알림", wx.OK)
+                return
+            
+            # 수정 준비 계속
+            self.txtNo.SetValue(str(data[0]))
+            self.txtName.SetValue(data[1])
+            self.txtTel.SetValue(data[2])
+            
+            self.txtNo.SetEditable(False) # 번호는 수정 못하게 Editable False를 만들어줌.
+            self.btnConfirm.Enable(True) # 확인 버튼 활성화.
+            self.btnUpdate.SetLabel("취소") # 수정버튼에서 취소버튼으로 바뀜.
+            self.btnUpdate.id = 5 # Update는 원래 2번이지만 id값을 동적으로 5로 바꿀 수 있음. 
+        else:
+            return
+                
     def MemUpdateOk(self):
-        pass
+        no = self.txtNo.GetValue()
+        name = self.txtName.GetValue()
+        tel = self.txtTel.GetValue()
+        
+        # 수정자료 오류검사 생략
+        
+        try:
+            conn = MySQLdb.connect(**config)
+            cursor = conn.cursor()
+            sql = "update pymem set irum=%s, junhwa=%s where bun=%s"
+            cursor.execute(sql, (name, tel, no)) # 인자값에 튜플타입으로 sql에 값을 줄 수 있음.
+            conn.commit()
+            
+            self.ViewList() # 수정 후 자료 보기
+            self.MemUpdateCancel() # 초기화
+            
+        except Exception as e:
+            wx.MessageBox("MemUpdateOk Err : " + str(e), "경고", wx.OK)
+            conn.rollback()
+        
+        finally:
+            cursor.close()
+            conn.close()
     
     def MemDelete(self):
-        pass
+        dlg = wx.TextEntryDialog(None, "삭제할 번호 입력!", "삭제") # 폼 하나 생성.
+        
+        if dlg.ShowModal() == wx.ID_OK: # 번호입력 후 OK를 눌렀을 때.
+            if dlg.GetValue() == '':  # 값이 비어 있으면.
+                return # 리턴.
+            
+            # 값이 있으면.
+            delNo = dlg.GetValue() # 값을 가져옴.
+            data = self.SelectData(delNo)
+            if data == None:
+                wx.MessageBox(delNo + "번은 등록된 자료가 아닙니다", "알림", wx.OK)
+                return
+            
+            # 삭제 계속
+            try:
+                conn = MySQLdb.connect(**config)
+                cursor = conn.cursor()
+                
+                
+                sql = "delete from pymem where bun={}".format(delNo)
+                cursor.execute(sql)
+                conn.commit()
+                
+                self.ViewList() # 삭제 후 자료보기
+                
+            except Exception as e:
+                wx.MessageBox("MemDelete Err : " + str(e), "경고", wx.OK)
+                
+            finally:
+                cursor.close()
+                conn.close()
+            
+        else:
+                return
     
     def MemUpdateCancel(self):
-        pass
+        self.txtNo.SetEditable(True) # 번호는 Cancle하면 Editable Ture를 만들어줌.
+        self.btnConfirm.Enable(False) # 확인 버튼 비활성화.
+        self.btnUpdate.SetLabel("수정") # 취소버튼에서 수정버튼으로 바뀜.
+        self.btnUpdate.id = 2 # 다시 원래 ID 값으로 되돌림.
     
+        self.txtNo.SetValue('') # 취소시 텍스트 값 비워주기.
+        self.txtName.SetValue('')
+        self.txtTel.SetValue('')
+        
     def SelectData(self, no): # 해당 번호의 자료 읽기(추가, 수정, 삭제시 사용)
         try:
             conn = MySQLdb.connect(**config)
