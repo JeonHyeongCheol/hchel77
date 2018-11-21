@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>* 친구 목록 *</h1>
+{% if friends.count > 0 %}
+	{% for a in friends %}
+		<b>{{a.id}}</b> {{a.irum}} {{a.juso}} {{a.nai}}	<br>
+	{% endfor %}
+	인원 수 : {{friends.count}}
+{% else %}
+	<h1>출력 할 자료 없더영~</h1>
+{% endif%}
+</body>
+</html>

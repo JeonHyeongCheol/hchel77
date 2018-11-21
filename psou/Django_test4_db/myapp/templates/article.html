@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- Django에 extends -->
+{% extends 'layout.html' %}
+{% block content %}
+
+<!-- Django에 if, for문 사용 방법 -->
+{% if articles.count > 0 %}
+	{% for a in articles %}
+		<b>{{a.code}}</b> {{a.name}} {{a.price}} {{a.pub_date}}<br>
+	{% endfor %}
+{% else %}
+	<h1>출력 할 자료 없어용~</h1>
+{% endif %}
+
+{% endblock %}
+</body>
+</html>
