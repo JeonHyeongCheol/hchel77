@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>** 게시판 목록 **</h1>
+<a href="board/insert">글쓰기</a>
+<table border="1">
+	<tr>
+		<td>번호</td><td>제목</td><td>작성자</td><td>작성일</td><td>조회수</td>
+	</tr>
+	{% if datas %}
+		{% for s in datas %}
+			<tr>
+				<td>{{s.id}}</td>
+				<td>{{s.title}}</td>
+				<td>{{s.name}}</td>
+				<td>{{s.bdate}}</td>
+				<td>{{s.readcnt}}</td>
+			</tr>	
+		{% endfor%}
+	{% else %}
+		<tr>
+			<td colspan="5">글이 없슴다</td>
+		</tr>	
+	{% endif %}
+</table>
+</body>
+</html>

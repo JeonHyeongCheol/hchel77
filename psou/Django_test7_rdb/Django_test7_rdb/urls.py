@@ -1,4 +1,4 @@
-"""Django_test5_mariadb URL Configuration
+"""Django_test7_rdb URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -15,13 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.urls.conf import include
 
-from myguest import views
+from sangpumapp import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.MainFunc),
-    path('guest/', include('myguest.urls')),
+    path('', views.Main),
+    path('list1', views.List1),
+    path('list2', views.List2),
+    path('list3', views.List3),
+    
 ]

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>** 방명록 글입력 **</h1>
+<form action="input" method="post">{% csrf_token %} <!-- 클라이언트가 입력 하는 부분에는 csrf_token이라고 적어야 함. 해킹에 대한 것 때문에..꼭!!!!! -->
+<table>
+	<tr>
+		<td>번호</td>
+		<td><input type="text" name="myno"/></td>
+	</tr>
+	<tr>
+		<td>제목</td>
+		<td><input type="text" name="title"/></td>
+	</tr>
+	<tr>
+		<td>내용</td>
+		<td><textarea rows="5" cols="50" name="content"></textarea></td>
+	</tr>
+	<tr>
+		<td colspan="2" style="text-align: center;">
+			<input type="submit" value="등록"/>
+		</td>
+	</tr>
+</table>
+</form>
+</body>
+</html>
