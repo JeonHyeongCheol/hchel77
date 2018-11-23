@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>** 게시판 목록 **</h1>
-<a href="board/insert">글쓰기</a>
+<a href="insert">글쓰기</a>
 <table border="1">
 	<tr>
 		<td>번호</td><td>제목</td><td>작성자</td><td>작성일</td><td>조회수</td>
@@ -15,17 +15,45 @@
 		{% for s in datas %}
 			<tr>
 				<td>{{s.id}}</td>
-				<td>{{s.title}}</td>
+				<td><a href="content?id={{s.id}}&page={{datas.number}}">{{s.title}}</a></td>
 				<td>{{s.name}}</td>
-				<td>{{s.bdate}}</td>
+				<td>{{s.bdate.year}}.{{s.bdate.month}}.{{s.bdate.day}}</td>
 				<td>{{s.readcnt}}</td>
 			</tr>	
 		{% endfor%}
+		<tr>
+			<td colspan="5" style="text-align: center;">
+				<div>
+					{% if datas.has_previous %} <!-- 이전 페이지가 있는지.. -->
+						<a href="/board/list?page={{datas.previous_page_number}}">&laquo;Prev</a>	
+					{% endif %}
+					{% if datas.has_next %}
+						<a href="/board/list?page={{datas.next_page_number}}">Next&raquo;</a>
+					{% endif %}
+					&nbsp;&nbsp;
+					(페이지 : {{datas.number}} / {{datas.paginator.num_pages}}) # 현재 페이지
+					
+				</div>
+			</td>
+		</tr>
 	{% else %}
 		<tr>
 			<td colspan="5">글이 없슴다</td>
 		</tr>	
 	{% endif %}
+	
+	<tr>
+		<td colspan="6" style="text-align: center;">
+			<form action="/board/search/" method="post">{%csrf_token%} 
+				<select name="s_type">
+					<option value="title" selected>글제목</option>
+					<option value="name">작성자</option>
+				</select> 
+				<input type="text" name="s_value"> 
+				<input type="submit"value="검색">
+			</form>
+		</td>
+	</tr>
 </table>
 </body>
 </html>
