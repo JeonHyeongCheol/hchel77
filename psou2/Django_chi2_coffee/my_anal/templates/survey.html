@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>** 커피 전문점에 대한 소비자 인식조사 **</h1>
+<form action="coffee/surveyprocess" method="post">{% csrf_token%}
+<table>
+	<tr>
+		<td>귀하의 성별은 ?</td>
+		<td>
+		<label for="genM">남자</label>
+		<input type="radio" id="genM" name="gender" value="남" checked="checked">
+		<label for="genF">여자</label>
+		<input type="radio" id="genF" name="gender" value="여">
+		</td>
+	</tr>
+	
+	<tr>
+		<td>귀하의 나이는 ?</td>
+		<td>
+		<label for="10">10대</label>
+		<input type="radio" id="age10" name="age" value="10" checked="checked">
+		<label for="20">20대</label>
+		<input type="radio" id="age20" name="age" value="20">
+		<label for="30">30대</label>
+		<input type="radio" id="age30" name="age" value="30">
+		<label for="40">40대</label>
+		<input type="radio" id="age40" name="age" value="40">
+		<label for="50">50대 이상</label>
+		<input type="radio" id="age50" name="age" value="50">
+		</td>
+	</tr>
+	
+	<tr>
+		<td>선호하는 커피전문점</td>
+		<td>
+		<label for="cof1">스타벅스</label>
+		<input type="radio" id="cof1" name="co_survey" value="스타벅스" checked="checked">
+		<label for="cof2">커피빈</label>
+		<input type="radio" id="cof2" name="co_survey" value="커피빈">
+		<label for="cof3">이디야</label>
+		<input type="radio" id="cof3" name="co_survey" value="이디야">
+		<label for="cof4">탐앤탐스</label>
+		<input type="radio" id="cof4" name="co_survey" value="탐앤탐스">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" style="text-align: center">
+		<input type="submit" value="설문완료">
+		</td>
+	</tr>
+</table>
+</form>
+</body>
+</html>
