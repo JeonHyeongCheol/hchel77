@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>지상파 시청시간에 따른 운동시간과 종편 시청시간 회귀분석</h3>
+	<div>
+		<form action="regression" target="result">
+			<input type="text" name="tv">
+			<input type="submit" value="확인">
+		</form>
+		<br>
+	</div>
+	{% if y1 %}
+		<h6>TV 시청 시간 : {{x}} 시간</h6>
+		<h6>운동 시간 : {{y2}} 시간</h6>
+		<h6>종편 시청 시간 : {{y1}} 시간</h6>
+	{% endif %}
+</body>
+</html>

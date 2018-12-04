@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>** 소비자 대상 커피 전문점에 대한 선호도 조사 **</h1>
+{% if crosstbl %}
+	{{ crosstbl|safe }}
+{% endif %}
+<br>
+{% if result%}
+	{{ result|safe }} <!-- |safe를 쓰면 html로 받음 -->
+{% endif %}
+</body>
+</html>
