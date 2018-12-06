@@ -35,7 +35,6 @@ data = np.array(data)
 x = data[:, 0:3]
 y = data[:, 3]
 
-
 # 학습용 / 검정용 자료 분리.
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.3, random_state = 0)
 
