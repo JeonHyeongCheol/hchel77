@@ -1,0 +1,354 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#imgInp").on('change', function(){
+                readURL(this);
+            });
+            $("#tagok").click(function(){
+            	if($("#imgInp").val() == ""){
+            		alert("사진을 선택해주세요")
+            	} else {
+            		$('#mloader').show();
+            		$("#form1").submit();
+            		
+            		/* $.ajax({
+        				type: "POST",
+        				url: "{% url 'post_like' %}",
+        				data: {},
+        				dataType: "json",
+        				beforeSend: function() { 
+        					$('#mloader').show();
+        				},
+        				success: function(msg){
+        					alert("성공")
+        				}, 
+        				error: function(xhr, option, error){
+        					alert(xhr.status); 
+        					alert(error);
+        				},
+        				complete: function(){
+        					$('#mloader').hide();       
+        				}
+        			}); */
+            	}
+            });
+        });
+
+        function readURL(input) {
+        	 var preview = document.querySelector('img'); //selects the query named img
+             var file    = input.files[0]; //sames as here
+             var reader  = new FileReader()
+             if (input.files && input.files[0]) {
+            	 var reader = new FileReader();
+                 reader.onload = function (e) {
+                         $('#blah').attr('src', e.target.result);
+                         frm.imgs.value  = frm.blah.src
+                     }
+              	reader.readAsDataURL(file);             	
+             }
+        }        
+        
+        <!-- 예외처리 -->
+       /*  $(function() {
+        	$("#tagok").click(function(){
+        		if($("#imgInp").val() == ""){
+        			alert('사진을 등록해주세요');        			
+        		}else
+        			$("#form1").submit();        				    		
+        	})
+        })
+         */
+    </script>
+    
+    
+    <style>
+		 /* #loading {
+		 width: 100%;   
+		 height: 100%;   
+		 top: 0px;
+		 left: 0px;
+		 position: fixed;   
+		 display: block;   
+		 opacity: 0.7;   
+		 background-color: #fff;   
+		 z-index: 99;   
+		 text-align: center; }  
+		  
+		#loading-image {   
+		 position: absolute;   
+		 top: 50%;   
+		 left: 50%;  
+		 z-index: 100; }  */
+		 
+		 
+		 /* #load {
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			position: fixed;
+			display: block;
+			opacity: 0.8;
+			background: white;
+			z-index: 99;
+			text-align: center;
+		}
+		
+		#load > img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: 100;
+		} */
+		 
+		 
+		 
+		/* #link {color: #E45635;display:block;font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;text-align:center; text-decoration: none;}
+		#link:hover {color: #CCCCCC}
+
+		#link, #link:hover {-webkit-transition: color 0.5s ease-out;-moz-transition: color 0.5s ease-out;-ms-transition: color 0.5s ease-out;-o-transition: color 0.5s ease-out;transition: color 0.5s ease-out;}
+
+		
+        body {background: #333333;}
+        @keyframes rotate-loading {
+            0%  {transform: rotate(0deg);-ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); -o-transform: rotate(0deg); -moz-transform: rotate(0deg);}
+            100% {transform: rotate(360deg);-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); -o-transform: rotate(360deg); -moz-transform: rotate(360deg);}
+        }
+
+        @-moz-keyframes rotate-loading {
+            0%  {transform: rotate(0deg);-ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); -o-transform: rotate(0deg); -moz-transform: rotate(0deg);}
+            100% {transform: rotate(360deg);-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); -o-transform: rotate(360deg); -moz-transform: rotate(360deg);}
+        }
+
+        @-webkit-keyframes rotate-loading {
+            0%  {transform: rotate(0deg);-ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); -o-transform: rotate(0deg); -moz-transform: rotate(0deg);}
+            100% {transform: rotate(360deg);-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); -o-transform: rotate(360deg); -moz-transform: rotate(360deg);}
+        }
+
+        @-o-keyframes rotate-loading {
+            0%  {transform: rotate(0deg);-ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); -o-transform: rotate(0deg); -moz-transform: rotate(0deg);}
+            100% {transform: rotate(360deg);-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); -o-transform: rotate(360deg); -moz-transform: rotate(360deg);}
+        }
+
+        @keyframes rotate-loading {
+            0%  {transform: rotate(0deg);-ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); -o-transform: rotate(0deg); -moz-transform: rotate(0deg);}
+            100% {transform: rotate(360deg);-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); -o-transform: rotate(360deg); -moz-transform: rotate(360deg);}
+        }
+
+        @-moz-keyframes rotate-loading {
+            0%  {transform: rotate(0deg);-ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); -o-transform: rotate(0deg); -moz-transform: rotate(0deg);}
+            100% {transform: rotate(360deg);-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); -o-transform: rotate(360deg); -moz-transform: rotate(360deg);}
+        }
+
+        @-webkit-keyframes rotate-loading {
+            0%  {transform: rotate(0deg);-ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); -o-transform: rotate(0deg); -moz-transform: rotate(0deg);}
+            100% {transform: rotate(360deg);-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); -o-transform: rotate(360deg); -moz-transform: rotate(360deg);}
+        }
+
+        @-o-keyframes rotate-loading {
+            0%  {transform: rotate(0deg);-ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); -o-transform: rotate(0deg); -moz-transform: rotate(0deg);}
+            100% {transform: rotate(360deg);-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); -o-transform: rotate(360deg); -moz-transform: rotate(360deg);}
+        }
+
+        @keyframes loading-text-opacity {
+            0%  {opacity: 0}
+            20% {opacity: 0}
+            50% {opacity: 1}
+            100%{opacity: 0}
+        }
+
+        @-moz-keyframes loading-text-opacity {
+            0%  {opacity: 0}
+            20% {opacity: 0}
+            50% {opacity: 1}
+            100%{opacity: 0}
+        }
+
+        @-webkit-keyframes loading-text-opacity {
+            0%  {opacity: 0}
+            20% {opacity: 0}
+            50% {opacity: 1}
+            100%{opacity: 0}
+        }
+
+        @-o-keyframes loading-text-opacity {
+            0%  {opacity: 0}
+            20% {opacity: 0}
+            50% {opacity: 1}
+            100%{opacity: 0}
+        }
+        .loading-container,
+        .loading {
+            height: 100px;
+            position: relative;
+            width: 100px;
+            border-radius: 100%;
+        }
+
+
+        .loading-container { margin: 40px auto }
+
+        .loading {
+            border: 2px solid transparent;
+            border-color: transparent #fff transparent #FFF;
+            -moz-animation: rotate-loading 1.5s linear 0s infinite normal;
+            -moz-transform-origin: 50% 50%;
+            -o-animation: rotate-loading 1.5s linear 0s infinite normal;
+            -o-transform-origin: 50% 50%;
+            -webkit-animation: rotate-loading 1.5s linear 0s infinite normal;
+            -webkit-transform-origin: 50% 50%;
+            animation: rotate-loading 1.5s linear 0s infinite normal;
+            transform-origin: 50% 50%;
+        }
+
+        .loading-container:hover .loading {
+            border-color: transparent #E45635 transparent #E45635;
+        }
+        .loading-container:hover .loading,
+        .loading-container .loading {
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            -ms-transition: all 0.5s ease-in-out;
+            -o-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+        }
+
+        #loading-text {
+            -moz-animation: loading-text-opacity 2s linear 0s infinite normal;
+            -o-animation: loading-text-opacity 2s linear 0s infinite normal;
+            -webkit-animation: loading-text-opacity 2s linear 0s infinite normal;
+            animation: loading-text-opacity 2s linear 0s infinite normal;
+            color: #ffffff;
+            font-family: "Helvetica Neue, "Helvetica", ""arial";
+            font-size: 10px;
+            font-weight: bold;
+            margin-top: 45px;
+            opacity: 0;
+            position: absolute;
+            text-align: center;
+            text-transform: uppercase;
+            top: 0;
+            width: 100px;
+        } */
+		 
+		 
+		#mloader{
+		  position: fixed;
+		  top: 0;
+		  right: 0;
+		  bottom: 0;
+		  left: 0;
+		  z-index: 99999;
+		  background-color: #000;
+		  opacity: 0.7;
+		  display:none;
+		}
+		
+		#mloader .masterkey_blink {
+			font-size:20px;
+			font-weight:bold;
+			margin: 10% 45%;
+		    -webkit-animation: masterkey_blink 3s linear infinite;
+		} 
+		@-webkit-keyframes masterkey_blink {
+		    15% { color: white; }
+		    40% { color: black; }
+		    75% { color: white; }
+		}
+				
+		 
+		 
+	</style>
+	
+	<script type="text/javascript">
+	/* $.ajax({
+		type: "POST",
+		url: "new/ajaxs",
+		data: "n=1",
+		beforeSend: function() { 
+			$('#mloader').show();
+		},
+		success: function(msg){
+			//alert( msg );
+		}, 
+		error: function(xhr, option, error){
+			alert(xhr.status); 
+			alert(error);
+		},
+		complete: function(){
+			$('#mloader').hide();       
+		}
+	}); */
+	
+	/* $("#tagok").click(function(){
+		if($("#imgInp").val() == ""){
+			alert('사진을 등록해주세요');        			
+		}else{
+			$.ajax({
+				type: "POST",
+				url: "{% url 'post_like' %}",
+				data: {'csrfmiddlewaretoken': '{{ csrf_token }}'},
+				dataType: "json"
+				beforeSend: function() { 
+					$('#mloader').show();
+				},
+				success: function(msg){
+					
+				}, 
+				error: function(xhr, option, error){
+					alert(xhr.status); 
+					alert(error);
+				},
+				complete: function(){
+					$('#mloader').hide();       
+				}
+			});
+			
+			    				    					
+		}
+	}) */
+	
+	
+	</script>
+	
+	
+	<!-- <script type="text/javascript">
+		$(window).load(function() {    
+		     $('#load').hide();  
+		    });	
+	</script> -->
+
+
+    <h1>Image Upload</h1>
+	<h2 style="font-size: 18px; color: #FCA205;"> 업로드할 이미지(사진)를 선택해주세요</h2>
+    <!-- <div id="load"><img src="/images/ajax-loader.gif" alt="Loading..." /></div> -->
+	<!-- <div class="loading-container">
+	    <div class="loading"></div>
+	    <div id="loading-text">loading</div>
+	</div> -->
+	<div id="mloader"><div class="masterkey_blink" style="margin-top:50%">LOADING...</div></div>
+   
+	<form id="form1" name="frm" runat="server" action="new/view" method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.as_p }}    
+    <div class="col-md-8">
+        <input type='file' id="imgInp" name="imgInp "accept="jpeg,png,gif" />        
+        <img id="blah" name="blah" src="{% static "images/img.png" %}" alt="your image" width=400 />
+        <input type="hidden" name="imgs">
+        <input type="hidden" id="tag" name="tag" placeholder="#태그">        
+        <input type="hidden" id="imgtest" name="imgtest" value="{% static "images/img.png" %}">
+        
+        <div style="position: absolute; width:400px; margin-top:20px">
+        	<input type="button" class="save btn btn-default" id='tagok' value="#태그확인">
+        </div>
+    </div>
+    </form>	
+    
+    
+	
+
+   
+{% endblock %}

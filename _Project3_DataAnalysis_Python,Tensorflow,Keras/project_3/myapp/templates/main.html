@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1 style="font-size: 20px;">#태그추천  #자동완성  #인스타  #나도이제셀럽</h1>
+	{% for post in posts %}
+	<!-- <div class="post">
+		<div class="date">
+			<p>published: {{ post.published_date }}</p>
+		</div>
+		<h1><a href="{% url 'post_detail' %}">{{ post.title }}</a></h1>
+		
+		<p>{{ post.text|linebreaksbr }}</p>
+	</div> -->	
+	{% endfor %}
+{% endblock %}

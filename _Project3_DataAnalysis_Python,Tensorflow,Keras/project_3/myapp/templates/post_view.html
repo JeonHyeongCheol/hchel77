@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+
+
+    <h1 style="font-family: 'Lobster', cursive;">My Image</h1>
+	
+	   
+    {% csrf_token %}  	
+    
+    
+    <img src="{{ blah }}" width=400/>
+    	
+    	{% if post.image %}
+    		{{ post.image.url }}
+    		
+    		<img src="{{ post.image.url }}" />
+    		
+    	{% endif %}   	
+    
+    
+  
+    {{ imgs }}
+    <img src="{{ imgs }}">
+   
+	<script type="text/javascript">
+	function addshap(){
+		document.getElementById("in").value = "#"
+	}
+	
+	function removes(id){
+		document.getElementById(id).style.display = 'none';
+	}
+	function add(){
+		var tag = document.getElementById('in').value
+		var Atag = document.createElement("a");
+		Atag.href = "javascript:removes('"+tag+"')";
+		Atag.setAttribute("class", "w3-tag w3-blue");
+		Atag.id=tag;
+		Atag.style = "margin-right:6px"
+		var AtagText = document.createTextNode(tag);
+		Atag.appendChild(AtagText);
+		document.getElementById("atag").appendChild(Atag);
+		document.getElementById('in').value ='#'
+	}
+	function Enter_Check(){
+	    if(event.keyCode == 13){
+	         add();  // 실행할 이벤트
+    }
+}
+	</script>
+	
+	<div id="atag" style="padding-top: 20px; width:450px">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	    {% for i in tag %}    
+	    <a href="javascript:removes('{{i}}')" class="w3-tag w3-blue" id="{{i}}" style="margin-bottom: 5px">#{{i}}</a>
+	    {% endfor %}
+	</div>
+    <br>
+    <div id="print" style="margin-left: 100;padding-top: 10px">
+    	<input type="text" id="in" name="in" placeholder="태그를 입력해주세요" onclick="addshap()" onkeydown='JavaScript:Enter_Check();''>
+    	<input type="button" value="확인" onclick="add()">
+    </div>
+    <br>
+    <br>
+    <hr>
+    <h1 style="font-family: 'Lobster', cursive;">Image Analysis</h1>
+    
+    <div>
+    <img src="/static/images/test.png" width="400"><br>
+    <a href="#" class="w3-tag w3-blue">#이미지 RGB분포도</a>
+    </div>
+    
+    <!-- <img src="{{ img }}"> -->
+    <!-- {{ form.img }}
+    {{ form.img.mainPhotoHolder }}
+    {{ form.mainPhotoHolder }} -->
+    
+   		      
+{% endblock %}
