@@ -8,7 +8,7 @@
   - 경매사이트
   - Spring, Ajax, JSP, CSS, Mybatis 등 이용
   
-_Project3_DataAnalysis_Python,Tensorflow,Keras
+* _Project3_DataAnalysis_Python,Tensorflow,Keras
   - 해시태그 분석 및 추천
   - Python, Tensorflow, Keras 등 모듈 이용
 
